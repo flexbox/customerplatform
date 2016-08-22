@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  namespace 'employees' do
 
+  end
 
+  namespace 'customers' do
 
+  end
 
 end

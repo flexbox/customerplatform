@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'customers/dashboards#show'
 
   devise_for :customers
   devise_for :employees
 
   namespace :employees do
+    root to: 'employees/dashboards#show'
     resource :dashboard, only: [:show]
 
 

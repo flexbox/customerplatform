@@ -3,6 +3,14 @@ require 'date'
 
 #Destroy -----------------------------------------------------------------------
 
+Decision.destroy_all
+
+StorageUnit.destroy_all
+ParkingUnit.destroy_all
+
+SupplierProject.destroy_all
+EmployeeProject.destroy_all
+
 Unit.destroy_all
 Building.destroy_all
 Lot.destroy_all
@@ -11,6 +19,7 @@ Project.destroy_all
 
 Customer.destroy_all
 Employee.destroy_all
+Supplier.destroy_all
 
 
 #seed Customers ----------------------------------------------------------------
@@ -25,7 +34,8 @@ customer1 = Customer.create!(
   phone_number: "+32867565675",
   mobile_number: "+337687678676",
   password: "123456",
-  signing_date: Date.new(2016,8,20))
+  signing_date: Date.new(2016,8,20)
+)
 
 customer2 = Customer.create!(
 
@@ -37,7 +47,8 @@ customer2 = Customer.create!(
   phone_number: "+32867565675",
   mobile_number: "+337687678676",
   password: "123456",
-  signing_date: Date.new(2016,8,20))
+  signing_date: Date.new(2016,8,20)
+)
 
 
 #seed Employees ----------------------------------------------------------------
@@ -47,13 +58,36 @@ employee1 = Employee.create!(
   password: "123456",
   first_name: "Josephine",
   last_name: "Decroix",
-  )
+)
 
 employee2 = Employee.create!(
   email: "employee2@gmail.com",
   password: "123456",
   first_name: "Luc",
   last_name: "Van De Moortele",
+)
+
+
+#seed Suppliers ----------------------------------------------------------------
+
+supplier1 = Supplier.create!(
+  first_name: "Nick",
+  last_name: "Van Marcke",
+  mobile_number: "+337687678676",
+  phone_number: "458555555555",
+  email: "supplier1@gmail.com",
+  company_name: "Van Marcke",
+  address: "Turnhoutste steenweg 242 Kortrijk"
+  )
+
+supplier2 = Supplier.create!(
+  first_name: "Cedric",
+  last_name: "Overijse",
+  mobile_number: "+337687678676",
+  phone_number: "458555555555",
+  email: "supplier2@gmail.com",
+  company_name: "Overijse en zoon",
+  address: "Kantijnlaan 13 Brugge",
   )
 
 
@@ -66,7 +100,7 @@ project1 = Project.create!(
   plotsize: 5000,
   longitude: 3.224200,
   latitude: 51.235224,
-  )
+)
 
 project2 = Project.create!(
   commercial_name: "Kadox",
@@ -75,7 +109,7 @@ project2 = Project.create!(
   plotsize: 4000,
   longitude: 3.696797,
   latitude: 51.072414,
-  )
+)
 
 
 #seed Phases ------------------------------------------------------------------
@@ -85,14 +119,14 @@ phase1 = Phase.create!(
   phase_number: 1,
   description: "first phase",
   duration: 2,
-  )
+)
 
 phase2 = Phase.create!(
   project_id: project2.id,
   phase_number: 2,
   description: "second phase",
   duration: 1,
-  )
+)
 
 
 #seed Lots ---------------------------------------------------------------------
@@ -102,14 +136,14 @@ lot1 = Lot.create!(
   lot_number: lot1,
   description: "first lot",
   lot_size: 140,
-  )
+)
 
 lot2 = Lot.create!(
   phase_id: phase2.id,
   lot_number: lot2,
   description: "second lot",
   lot_size: 110,
-  )
+)
 
 
 #seed Buildings ----------------------------------------------------------------
@@ -122,7 +156,7 @@ building1 = Building.create!(
   floors: 2,
   shared_space: 100,
   elevator_amount: 1,
-  )
+)
 
 building2 = Building.create!(
   lot_id: lot2.id,
@@ -132,7 +166,7 @@ building2 = Building.create!(
   floors: 3,
   shared_space: 50,
   elevator_amount: 2,
-  )
+)
 
 
 #seed Units -------------------------------------------------------------------
@@ -149,7 +183,7 @@ unit1 = Unit.create!(
   sold: false,
   price_contracted: 300_000,
   sales_person: "Dirk Dewachter"
-  )
+)
 
 unit2 = Unit.create!(
   building_id: building2.id,
@@ -163,14 +197,87 @@ unit2 = Unit.create!(
   sold: false,
   price_contracted: 300_000,
   sales_person: "Dirk Dewachter"
+)
+
+
+#seed Storage Units ------------------------------------------------------------
+
+storage_unit1 = StorageUnit.create!(
+  building_id: building1.id,
+  storage_name: "storage1",
+  storage_size: 5,
+  unit_id: unit1.id,
+  )
+
+storage_unit2 = StorageUnit.create!(
+  building_id: building2.id,
+  storage_name: "storage2",
+  storage_size: 7,
+  unit_id: unit2.id,
   )
 
 
+#seed Parking Units ------------------------------------------------------------
+
+parking_unit1 = ParkingUnit.create!(
+  lot_id: lot1.id,
+  unit_id: unit1.id,
+  parking_name: "Parking 1",
+  )
+
+parking_unit2 = ParkingUnit.create!(
+  lot_id: lot2.id,
+  unit_id: unit2.id,
+  parking_name: "Parking 2",
+  )
 
 
+#seed Employee_projects---------------------------------------------------------
+
+employee_project1 = EmployeeProject.create!(
+  employee_id: employee1.id,
+  project_id: project1.id,
+)
+
+employee_project2 = EmployeeProject.create!(
+  employee_id: employee2.id,
+  project_id: project2.id,
+)
+
+#seed Employee_projects---------------------------------------------------------
+
+supplier_project1 = SupplierProject.create!(
+  supplier_id: supplier1.id,
+  project_id: project1.id,
+)
+
+supplier_project2 = SupplierProject.create!(
+  supplier_id: supplier2.id,
+  project_id: project2.id,
+)
 
 
+#seed Decisions-----------------------------------------------------------------
 
+# decision1 = Decision.create!(
+#   unit_id: unit1.id,
+#   supplier_id: supplier1.id,
+#   title: "meeting with supplier",
+#   description: "very urgent",
+#   date: Date.new(2016,8,22),
+#   due_date: Date.new(2016,9,22),
+#   approved: false,
+#   )
+
+# decision2 = Decision.create!(
+#   unit_id: unit2.id,
+#   supplier_id: supplier2.id,
+#   title: "meeting with second supplier",
+#   description: "very very urgent",
+#   date: Date.new(2016,8,22),
+#   due_date: Date.new(2016,9,22),
+#   approved: false,
+#   )
 
 
 

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   devise_for :customers
-  devise_for :employees
+  devise_for :employees,
+    :controllers => { :omniauth_callbacks => "employees/omniauth_callbacks" }
 
   namespace :employees do
     resources :dashboards, only: [:show]

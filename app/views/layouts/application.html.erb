@@ -2,12 +2,26 @@
 <html>
 
   <head>
-
+    <!-- This will yield the title of every page being passed -->
     <title><%= full_title(yield(:title)) %></title>
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+
+    <!-- Google result description -->
+    <meta name="description" content="The Re-Vive Customer Platform accompanies you to your journey to a new home. Please visit our main website on www.revive.be">
+
+    <!-- Needed for Bootstrap support -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Facebook OpenGraph Social Card -->
+    <meta property="og:title" content="Re-Vive Customer Platform">
+    <meta property="og:image" content="<%= image_path logo-tgl.png %>">
+    <meta property="og:description" content="The Re-Vive Customer Platform accompanies you to your journey to a new home. Please visit our main website on www.revive.be">
+    <meta property="og:site_name" content="Re-Vive Customer Platform"/>
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= favicon_link_tag 'favicon.jpg'%>
 

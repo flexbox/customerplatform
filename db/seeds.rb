@@ -21,7 +21,7 @@ Customer.destroy_all
 Employee.destroy_all
 Supplier.destroy_all
 
-#dfkljdslfjqsdlkfjldsqjkflj
+Document.destroy_all
 
 
 #seed Customers ----------------------------------------------------------------
@@ -259,27 +259,43 @@ supplier_project2 = SupplierProject.create!(
 )
 
 
+#seed Documents-----------------------------------------------------------------
+
+document1 = Document.create!(
+  unit_id: unit1.id,
+  title: "PDF map",
+  description: "This is the PDF map",
+)
+
+document2 = Document.create!(
+  unit_id: unit2.id,
+  title: "PDF map",
+  description: "This is the PDF map",
+)
+
 #seed Decisions-----------------------------------------------------------------
 
-# decision1 = Decision.create!(
-#   unit_id: unit1.id,
-#   supplier_id: supplier1.id,
-#   title: "meeting with supplier",
-#   description: "very urgent",
-#   date: Date.new(2016,8,22),
-#   due_date: Date.new(2016,9,22),
-#   approved: false,
-#   )
+decision1 = Decision.create!(
+  unit_id: unit1.id,
+  supplier_id: supplier1.id,
+  title: "meeting with supplier",
+  description: "very urgent",
+  date: Date.new(2016,8,22),
+  due_date: Date.new(2016,9,22),
+  approved: false,
+  document_id: document1.id,
+  )
 
-# decision2 = Decision.create!(
-#   unit_id: unit2.id,
-#   supplier_id: supplier2.id,
-#   title: "meeting with second supplier",
-#   description: "very very urgent",
-#   date: Date.new(2016,8,22),
-#   due_date: Date.new(2016,9,22),
-#   approved: false,
-#   )
+decision2 = Decision.create!(
+  unit_id: unit2.id,
+  supplier_id: supplier2.id,
+  title: "meeting with second supplier",
+  description: "very very urgent",
+  date: Date.new(2016,8,22),
+  due_date: Date.new(2016,9,22),
+  approved: false,
+  document_id: document2.id,
+  )
 
 
 

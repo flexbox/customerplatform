@@ -57,3 +57,25 @@
 
   # add longitude and latitude to projects (to be able to use GeoCoding)
   rails g migration AddLongitudeToProjects longitude:float
+
+  # add missing fields to Employees
+  rails g migration AddFirstNameToEmployees first_name
+  rails g migration AddLastNameToEmployees last_name
+  rails g migration AddMobileNumberToEmployees mobile_number
+  rails g migration AddTitleToEmployees title
+  rails g migration AddPictureToEmployees picture
+
+  # add missing fields to Customer
+  rails g migration AddFirstNameToCustomers first_name
+  rails g migration AddLastNameToCustomers last_name
+  rails g migration AddMobileNumberToCustomers mobile_number
+  rails g migration AddAddressToCustomers address
+  rails g migration AddBirthdayToCustomers birthday:date
+  rails g migration AddPhoneNumberToCustomers phone_number
+  rails g migration AddIbanToCustomers iban
+  rails g migration AddWelcomeBoxToCustomers welcome_box
+  rails g migration AddNotesToCustomers notes:text
+  rails g migration AddUsedHoursToCustomers used_hours:integer
+  rails g migration AddSigningDateToCustomers signing_date:date
+  rails g migration AddDeedDateToCustomers deed_date:date
+  rails g migration AddPictureToCustomers picture

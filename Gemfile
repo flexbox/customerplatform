@@ -16,7 +16,6 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-
 gem 'public_activity'
 
 group :development, :test do

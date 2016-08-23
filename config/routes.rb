@@ -5,38 +5,75 @@ Rails.application.routes.draw do
   devise_for :employees
 
   namespace :employees do
-    resources :dashboards, only: [:show]
-    resources :projects, except: [:destroy]
-    resources :phases
-    resources :lots
-    resources :buildings
-    resources :units
-    resources :parking_units
-    resources :storage_units
-    resources :consulting_hours
-    # resources :suppliers TODO
-    resources :news
-    resources :documents
-    resources :decisions
-    resources :handovers
-    resources :informations
-    resources :site_visits
-    resources :payments
+    resource :dashboard, only: [:show]
+
+
+    # /projects
+    # /projects/:id # listing the phases
+    resources :projects, except: [:destroy] do
+      # /projects/:project_id/phases/new + create
+      # /projects/:project_id/phases/:id # listing lots
+      resources :phases do
+
+        # /projects/:project_id/phases/:phase_id/lots/new + create + edit/update
+        resources :lots, only: [:new, :create]
+      end
+
+      # /projects/:project_id/lots/:id # listing buildings + parking lots
+      resources :lots, only: [:show, :edit, :update, :destroy] do
+
+        # /projects/:project_id/lots/:lot_id/buildings/new + create + edit/update
+        resources :buildings, only: [:new, :create]
+        resources :parking_units, only: [:new, :create]
+      end
+
+      # /projects/:project_id/buildings/:id # listing units + storage units
+      resources :buildings, only: [:show, :edit, :update, :destroy] do
+
+        # /projects/:project_id/buildings/:building_id/units/new + create
+        resources :units, only: [:new, :create]
+        resources :storage_units, only: [:new, :create]
+      end
+
+      resources :storage_units, only: [:show, :edit, :update, :destroy]
+      resources :parking_units, only: [:show, :edit, :update, :destroy]
+
+      # /projects/:project_id/units/:id
+      resources :units, only: [:show, :edit, :update, :destroy] do
+        resources :consulting_hours
+        # resources :suppliers TODO
+        resources :news
+        resources :documents
+        resources :decisions
+        resources :handovers
+        resources :informations
+        resources :site_visits
+        resources :payments
+      end
+    end
   end
 
   namespace :customers do
-    resources :dashboards, only: [:show]
-    resources :units, only: [:show, :index]
-    resources :parking_units, only: [:show, :index]
-    resources :storage_units, only: [:show, :index]
-    resources :consulting_hours, only: [:index]
-    # resources :suppliers TODO
-    resources :news, only: [:index, :show]
-    resources :documents, only: [:index, :show]
-    resources :decisions, only: [:index, :show, :edit, :update]
-    resources :handovers, only: [:index, :show, :edit, :update] # for the remarks
-    resources :informations, only: [:index, :show]
-    resources :site_visits, only: [:index, :show]
-    resources :payments, only: [:index, :show]
+    resources :units, only: [:show, :index] do
+      resource :dashboard,  only: [:show]
+
+      resources :news,      only: [:index, :show]
+
+      resources :decisions, only: [:index, :show] do
+        member do
+          patch :approve
+          patch :reject
+        end
+      end
+
+      resources :site_visits,   only: [:index, :show]
+      resources :handovers,     only: [:index, :show, :edit, :update] # for the remarks
+      resources :payments,      only: [:index, :show]
+      resources :documents,     only: [:index, :show]
+
+      resources :parking_units, only: [:show, :index]
+      resources :storage_units, only: [:show, :index]
+      # resources :suppliers TODO
+    end
   end
 end

@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'public_activity'
 
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

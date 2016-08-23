@@ -25,6 +25,30 @@ customer2 = Customer.create!(
   signing_date: Date.new(2016,8,20))
 
 
+building1 = Building.create!(
+
+  lot_id: lot1.id,
+  building_name: "Building1",
+  description: "Building in Brugge",
+  address: "Blankenbergse Steenweg 343, 8000 Brugge",
+  floors: 2,
+  shard_space: 100,
+  elevator_amount: 1,
+  )
+
+building2 = Building.create!(
+
+  lot_id: lot2.id,
+  building_name: "Building2",
+  description: "Building in Ghent",
+  address: "Ottergemsesteenweg 364, 9000 Gent",
+  floors: 3,
+  shard_space: 50,
+  elevator_amount: 2,
+  )
+
+
+
 
 
 

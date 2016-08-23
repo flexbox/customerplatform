@@ -5,12 +5,19 @@ require 'date'
 
 Decision.destroy_all
 ConsultingHour.destroy_all
+Handover.destroy_all
+Information.destroy_all
+News.destroy_all
+Payment.destroy_all
+SiteVisit.destroy_all
 
 StorageUnit.destroy_all
 ParkingUnit.destroy_all
 
 SupplierProject.destroy_all
 EmployeeProject.destroy_all
+
+Document.destroy_all
 
 Unit.destroy_all
 Building.destroy_all
@@ -299,21 +306,116 @@ decision2 = Decision.create!(
 )
 
 
-#seed Consulting hours-----------------------------------------------------------------
+#seed Consulting hours----------------------------------------------------------
 
 consulting_hours1 = ConsultingHour.create!(
-    customer_id: customer1.id,
-    employee_id: employee1.id,
-    elapsed_time: 2,
-    description: "first consultation",
-  )
+  customer_id: customer1.id,
+  employee_id: employee1.id,
+  elapsed_time: 2,
+  description: "first consultation",
+)
 
 consulting_hours2 = ConsultingHour.create!(
-    customer_id: customer2.id,
-    employee_id: employee2.id,
-    elapsed_time: 3,
-    description: "fourth consultation",
+  customer_id: customer2.id,
+  employee_id: employee2.id,
+  elapsed_time: 3,
+  description: "fourth consultation",
+)
+
+
+#seed Handovers-----------------------------------------------------------------
+
+handover1 = Handover.create!(
+  unit_id: unit1.id,
+  document_id: document1.id,
+  title: "handover customer",
+  description: "the first handover for this customer",
+  date: Date.new(2017,10,22),
+)
+
+handover2 = Handover.create!(
+  unit_id: unit2.id,
+  document_id: document2.id,
+  title: "handover customer",
+  description: "the first handover for this customer",
+  date: Date.new(2017,10,22),
+)
+
+
+#seed Information----------------------------------------------------------------
+
+information1 = Information.create!(
+  unit_id: unit1.id,
+  title: "Information about first floor",
+  document_id: document1.id,
+  description: "Welcome to your new house",
+  read: false,
+  date: Date.new(2016,8,29),
+)
+
+information2 = Information.create!(
+  unit_id: unit2.id,
+  title: "Information about the garden",
+  document_id: document2.id,
+  description: "Welcome to your new garden",
+  read: false,
+  date: Date.new(2016,8,29),
+)
+
+
+#seed News---------------------------------------------------------------------
+
+news1 = News.create!(
+  phase_id: phase1.id,
+  title: "Revive is welcoming Nick!",
+  description: "Our newest employee",
+  date: Date.new(2016,8,12),
+)
+
+news2 = News.create!(
+  phase_id: phase2.id,
+  title: "Revive is welcoming Jan!",
+  description: "Our newest employee",
+  date: Date.new(2016,8,12),
+)
+
+
+#seed Payments------------------------------------------------------------------
+
+payment1 = Payment.create!(
+  unit_id: unit1.id,
+  name: "first payment",
+  document_id: document1.id,
+  description: "first payment of the house",
+  amount: 50_000,
+  status: "pending",
+  due_date: Date.new(2016,8,22),
+)
+
+payment2 = Payment.create!(
+  unit_id: unit2.id,
+  name: "last payment",
+  document_id: document2.id,
+  description: "last payment of the house",
+  amount: 60_000,
+  status: "pending",
+  due_date: Date.new(2016,8,22),
+)
+
+
+#seed Payments------------------------------------------------------------------
+
+site_visit1 = SiteVisit.create!(
+  unit_id: unit1.id,
+  title: "Visit your home",
+  description: "We welcome you to have a look at your home",
+  date: Date.new(2016,9,21),
   )
 
-
+site_visit2 = SiteVisit.create!(
+  unit_id: unit2.id,
+  title: "Visit your parking lot",
+  description: "We welcome you to have a look at your parking lot",
+  date: Date.new(2016,10,21),
+  )
 

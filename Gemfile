@@ -16,7 +16,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-gem 'DeviseInvatible'
+
+gem 'public_activity'
 
 group :development, :test do
   gem 'binding_of_caller'

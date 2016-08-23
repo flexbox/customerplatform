@@ -17,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'public_activity'
+gem 'cloudinary', '1.1.0'
 
 
 group :development, :test do

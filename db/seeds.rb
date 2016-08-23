@@ -1,5 +1,20 @@
 require 'date'
 
+
+#Destroy -----------------------------------------------------------------------
+
+Unit.destroy_all
+Building.destroy_all
+Lot.destroy_all
+Phase.destroy_all
+Project.destroy_all
+
+Customer.destroy_all
+Employee.destroy_all
+
+
+#seed Customers ----------------------------------------------------------------
+
 customer1 = Customer.create!(
 
   email: "customer1@gmail.com",
@@ -24,20 +39,25 @@ customer2 = Customer.create!(
   password: "123456",
   signing_date: Date.new(2016,8,20))
 
+
+#seed Employees ----------------------------------------------------------------
+
 employee1 = Employee.create!(
   email: "employee1@gmail.com",
-  encrypted_password: "123456",
+  password: "123456",
   first_name: "Josephine",
   last_name: "Decroix",
   )
 
 employee2 = Employee.create!(
   email: "employee2@gmail.com",
-  encrypted_password: "123456",
+  password: "123456",
   first_name: "Luc",
   last_name: "Van De Moortele",
   )
 
+
+#seed Projects ----------------------------------------------------------------
 
 project1 = Project.create!(
   commercial_name: "Den Indruk",
@@ -57,6 +77,9 @@ project2 = Project.create!(
   latitude: 51.072414,
   )
 
+
+#seed Phases ------------------------------------------------------------------
+
 phase1 = Phase.create!(
   project_id: project1.id,
   phase_number: 1,
@@ -70,6 +93,9 @@ phase2 = Phase.create!(
   description: "second phase",
   duration: 1,
   )
+
+
+#seed Lots ---------------------------------------------------------------------
 
 lot1 = Lot.create!(
   phase_id: phase1.id,
@@ -85,13 +111,16 @@ lot2 = Lot.create!(
   lot_size: 110,
   )
 
+
+#seed Buildings ----------------------------------------------------------------
+
 building1 = Building.create!(
   lot_id: lot1.id,
   building_name: "Building1",
   description: "Building in Brugge",
   address: "Blankenbergse Steenweg 343, 8000 Brugge",
   floors: 2,
-  shard_space: 100,
+  shared_space: 100,
   elevator_amount: 1,
   )
 
@@ -101,10 +130,12 @@ building2 = Building.create!(
   description: "Building in Ghent",
   address: "Ottergemsesteenweg 364, 9000 Gent",
   floors: 3,
-  shard_space: 50,
+  shared_space: 50,
   elevator_amount: 2,
   )
 
+
+#seed Units -------------------------------------------------------------------
 
 unit1 = Unit.create!(
   building_id: building1.id,

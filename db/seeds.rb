@@ -21,6 +21,8 @@ Customer.destroy_all
 Employee.destroy_all
 Supplier.destroy_all
 
+#dfkljdslfjqsdlkfjldsqjkflj
+
 
 #seed Customers ----------------------------------------------------------------
 

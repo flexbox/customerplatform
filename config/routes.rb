@@ -56,6 +56,10 @@ Rails.application.routes.draw do
   end
 
   namespace :customers do
+
+    root to: 'customers/dashboards#show'
+    resource :dashboard, only: [:show]
+
     resources :units, only: [:show, :index] do
       resource :dashboard,  only: [:show]
 

@@ -47,6 +47,24 @@ building2 = Building.create!(
   elevator_amount: 2,
   )
 
+lot1 = Lot.create!(
+  phase_id: phase1.id,
+
+
+
+
+  )
+
+ create_table "lots", force: :cascade do |t|
+    t.integer  "phase_id"
+    t.string   "lot_number"
+    t.text     "description"
+    t.string   "picture"
+    t.string   "cadastral_reference"
+    t.integer  "lot_size"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["phase_id"], name: "i
 
 
 

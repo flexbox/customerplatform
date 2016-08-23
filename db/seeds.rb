@@ -4,6 +4,7 @@ require 'date'
 #Destroy -----------------------------------------------------------------------
 
 Decision.destroy_all
+ConsultingHour.destroy_all
 
 StorageUnit.destroy_all
 ParkingUnit.destroy_all
@@ -284,7 +285,7 @@ decision1 = Decision.create!(
   due_date: Date.new(2016,9,22),
   approved: false,
   document_id: document1.id,
-  )
+)
 
 decision2 = Decision.create!(
   unit_id: unit2.id,
@@ -295,8 +296,24 @@ decision2 = Decision.create!(
   due_date: Date.new(2016,9,22),
   approved: false,
   document_id: document2.id,
+)
+
+
+#seed Consulting hours-----------------------------------------------------------------
+
+consulting_hours1 = ConsultingHour.create!(
+    customer_id: customer1.id,
+    employee_id: employee1.id,
+    elapsed_time: 2,
+    description: "first consultation",
   )
 
+consulting_hours2 = ConsultingHour.create!(
+    customer_id: customer2.id,
+    employee_id: employee2.id,
+    elapsed_time: 3,
+    description: "fourth consultation",
+  )
 
 
 

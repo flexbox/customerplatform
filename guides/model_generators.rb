@@ -45,3 +45,15 @@
   rails g model Information unit:references title document:references description:text read:boolean date:date
   rails g model SiteVisit unit:references title description:text date:date
   rails g model Payment unit:references name document:references description:text amount:integer status
+
+  # Adding doc_id as a ref to site visits
+  rails g migration AddDocumentRefToSiteVisits document:references
+
+  # Adding appoved to decisions
+  rails g migration AddApprovedToDecisions approved:boolean
+
+  # Remove coordinates from projects
+  rails g migration RemoveCoordinatesFromProjects coordinates:string
+
+  # add longitude and latitude to projects (to be able to use GeoCoding)
+  rails g migration AddLongitudeToProjects longitude:float

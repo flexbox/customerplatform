@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823123321) do
+ActiveRecord::Schema.define(version: 20160823154809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160823123321) do
     t.date     "due_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "approved"
     t.index ["document_id"], name: "index_decisions_on_document_id", using: :btree
     t.index ["supplier_id"], name: "index_decisions_on_supplier_id", using: :btree
     t.index ["unit_id"], name: "index_decisions_on_unit_id", using: :btree
@@ -175,6 +176,7 @@ ActiveRecord::Schema.define(version: 20160823123321) do
     t.string   "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.date     "due_date"
     t.index ["document_id"], name: "index_payments_on_document_id", using: :btree
     t.index ["unit_id"], name: "index_payments_on_unit_id", using: :btree
   end
@@ -194,10 +196,11 @@ ActiveRecord::Schema.define(version: 20160823123321) do
     t.string   "commercial_name"
     t.string   "internal_name"
     t.text     "description"
-    t.string   "coordinates"
     t.integer  "plotsize"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "site_visits", force: :cascade do |t|
@@ -207,6 +210,8 @@ ActiveRecord::Schema.define(version: 20160823123321) do
     t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "document_id"
+    t.index ["document_id"], name: "index_site_visits_on_document_id", using: :btree
     t.index ["unit_id"], name: "index_site_visits_on_unit_id", using: :btree
   end
 
@@ -305,6 +310,7 @@ ActiveRecord::Schema.define(version: 20160823123321) do
   add_foreign_key "payments", "documents"
   add_foreign_key "payments", "units"
   add_foreign_key "phases", "projects"
+  add_foreign_key "site_visits", "documents"
   add_foreign_key "site_visits", "units"
   add_foreign_key "storage_units", "buildings"
   add_foreign_key "storage_units", "units"

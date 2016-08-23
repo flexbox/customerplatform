@@ -26,14 +26,14 @@ customer2 = Customer.create!(
 
 employee1 = Employee.create!(
   email: "employee1@gmail.com",
-  encrypted_password: "123456",
+  password: "123456",
   first_name: "Josephine",
   last_name: "Decroix",
   )
 
 employee2 = Employee.create!(
   email: "employee2@gmail.com",
-  encrypted_password: "123456",
+  password: "123456",
   first_name: "Luc",
   last_name: "Van De Moortele",
   )

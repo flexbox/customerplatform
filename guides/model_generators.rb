@@ -79,3 +79,10 @@
   rails g migration AddSigningDateToCustomers signing_date:date
   rails g migration AddDeedDateToCustomers deed_date:date
   rails g migration AddPictureToCustomers picture
+
+  # Removing unit_id as a reference (foreign_key)
+  rails g migration RemoveUnitRefFromStorageUnits unit:references
+  rails g migration RemoveUnitRefFromParkingUnits unit:references
+  # Adding unit_id as a single, not reference, column
+  rails g migration AddUnitIdToStorageUnits unit_id:integer
+  rails g migration AddUnitIdToParkingUnits unit_id:integer

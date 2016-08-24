@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823162438) do
+ActiveRecord::Schema.define(version: 20160824120614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160823162438) do
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.date     "date"
     t.index ["customer_id"], name: "index_consulting_hours_on_customer_id", using: :btree
     t.index ["employee_id"], name: "index_consulting_hours_on_employee_id", using: :btree
   end
@@ -182,12 +183,11 @@ ActiveRecord::Schema.define(version: 20160823162438) do
 
   create_table "parking_units", force: :cascade do |t|
     t.integer  "lot_id"
-    t.integer  "unit_id"
     t.string   "parking_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "unit_id"
     t.index ["lot_id"], name: "index_parking_units_on_lot_id", using: :btree
-    t.index ["unit_id"], name: "index_parking_units_on_unit_id", using: :btree
   end
 
   create_table "payments", force: :cascade do |t|
@@ -240,13 +240,12 @@ ActiveRecord::Schema.define(version: 20160823162438) do
 
   create_table "storage_units", force: :cascade do |t|
     t.integer  "building_id"
-    t.integer  "unit_id"
     t.string   "storage_name"
     t.integer  "storage_size"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "unit_id"
     t.index ["building_id"], name: "index_storage_units_on_building_id", using: :btree
-    t.index ["unit_id"], name: "index_storage_units_on_unit_id", using: :btree
   end
 
   create_table "supplier_projects", force: :cascade do |t|
@@ -312,14 +311,12 @@ ActiveRecord::Schema.define(version: 20160823162438) do
   add_foreign_key "lots", "phases"
   add_foreign_key "news", "phases"
   add_foreign_key "parking_units", "lots"
-  add_foreign_key "parking_units", "units"
   add_foreign_key "payments", "documents"
   add_foreign_key "payments", "units"
   add_foreign_key "phases", "projects"
   add_foreign_key "site_visits", "documents"
   add_foreign_key "site_visits", "units"
   add_foreign_key "storage_units", "buildings"
-  add_foreign_key "storage_units", "units"
   add_foreign_key "supplier_projects", "projects"
   add_foreign_key "supplier_projects", "suppliers"
   add_foreign_key "units", "buildings"

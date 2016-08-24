@@ -14,4 +14,14 @@ class Employee < ApplicationRecord
     end
   end
 
+  validates :first_name, :last_name, :mobile_number, :picture, presence: true
+  validates :mobile_number, uniqueness: true
+  validates :email, uniqueness: { case_sensitive: false }
+
+  has_many :employee_projects, dependent: :destroy
+  has_many :projects, through: :employee_projects
+
+  has_many :consulting_hours, dependent: :destroy
+  has_many :customers, through: :consulting_hours
+
 end

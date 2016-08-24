@@ -403,7 +403,7 @@ payment2 = Payment.create!(
 )
 
 
-#seed Payments------------------------------------------------------------------
+#seed Site Visits---------------------------------------------------------------
 
 site_visit1 = SiteVisit.create!(
   unit_id: unit1.id,

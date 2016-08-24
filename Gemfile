@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 # This gem is for logging:
 gem 'public_activity'
+
 gem "omniauth-google-oauth2"
 gem 'cloudinary', '1.1.0'
 

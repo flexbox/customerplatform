@@ -1,37 +1,36 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo-revive.svg" %>
-  <% end %>
 
-  <!-- Right Navigation -->
+  <!-- Logo -->
+  <div>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo-revive.svg" %>
+    <% end %>
+  </div>
+
+  <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
   <!-- News -->
-
-    <%= link_to t(".sign_in", default: "News"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".news", default: "News"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Decisions -->
-
-    <%= link_to t(".sign_in", default: "Decisions"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".decisions", default: "Decisions"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Site Visits -->
-
-    <%= link_to t(".sign_in", default: "Site Visits"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".site visits", default: "Site Visits"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Acceptance -->
-
-    <%= link_to t(".sign_in", default: "Acceptance"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".acceptance", default: "Acceptance"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Payments -->
-
-    <%= link_to t(".sign_in", default: "Payments"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".payments", default: "Payments"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  </div>
 
 
   <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
+  <div class="navbar-wagon-item">
 
-      <div class="dropdown">
+    <div class="dropdown">
 
       <% if current_customer.nil? %>
         <%= cl_image_tag "avatar_placeholder.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -41,24 +40,22 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
       <% end %>
 
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_customer_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_customer_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
         </ul>
-
-      </div>
 
     </div>
 
@@ -66,7 +63,9 @@
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
+
     <div class="dropdown">
+
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Some mobile link</a></li>
@@ -74,6 +73,8 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
+
   </div>
+
 </div>
 

@@ -31,10 +31,9 @@
 
   <body>
 
-  <!-- enable_nav permits to enable navbar on particular page,
-        add @enable_nav = true on controller page for enabling navbar-->
-
+<% unless params[:controller] == "devise/registrations" || params[:controller] == "devise/sessions" %>
     <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

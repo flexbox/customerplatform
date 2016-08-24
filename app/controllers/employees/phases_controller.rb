@@ -1,4 +1,4 @@
-class Emloyees::PhasesController < Employees::BaseController
+class Employees::PhasesController < Employees::BaseController
   def index
   end
 

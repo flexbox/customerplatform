@@ -1,4 +1,4 @@
-class Employees::PaymentsController < Employees::BaseControler
+class Employees::PaymentsController < Employees::BaseController
 
 
 end

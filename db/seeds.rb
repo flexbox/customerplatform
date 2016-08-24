@@ -55,11 +55,11 @@ customer2 = Customer.create!(
   last_name: "Bontinckx",
   address: "Emilius Seghersplein 19, 9000 Gent",
   birthday: Date.new(1990,8,20),
-  phone_number: "+32867565675",
-  mobile_number: "+337687678676",
+  phone_number: "+32867565677",
+  mobile_number: "+337687678678",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "man1.jpg"
+  picture: "woman1.jpg"
 )
 
 
@@ -70,6 +70,8 @@ employee1 = Employee.create!(
   password: "123456",
   first_name: "Josephine",
   last_name: "Decroix",
+  mobile_number: "+32789258441",
+  picture: "woman2.jpg"
 )
 
 employee2 = Employee.create!(
@@ -77,6 +79,8 @@ employee2 = Employee.create!(
   password: "123456",
   first_name: "Luc",
   last_name: "Van De Moortele",
+  mobile_number: "+32789258442",
+  picture: "man3.jpg"
 )
 
 
@@ -85,7 +89,7 @@ employee2 = Employee.create!(
 supplier1 = Supplier.create!(
   first_name: "Nick",
   last_name: "Van Marcke",
-  mobile_number: "+337687678676",
+  mobile_number: "+337687678679",
   phone_number: "458555555555",
   email: "supplier1@gmail.com",
   company_name: "Van Marcke",
@@ -95,8 +99,8 @@ supplier1 = Supplier.create!(
 supplier2 = Supplier.create!(
   first_name: "Cedric",
   last_name: "Overijse",
-  mobile_number: "+337687678676",
-  phone_number: "458555555555",
+  mobile_number: "+337687678680",
+  phone_number: "458555555556",
   email: "supplier2@gmail.com",
   company_name: "Overijse en zoon",
   address: "Kantijnlaan 13 Brugge",
@@ -131,6 +135,7 @@ phase1 = Phase.create!(
   phase_number: 1,
   description: "first phase",
   duration: 2,
+  picture: "phase.jpg"
 )
 
 phase2 = Phase.create!(
@@ -138,6 +143,7 @@ phase2 = Phase.create!(
   phase_number: 2,
   description: "second phase",
   duration: 1,
+  picture: "phase.jpg"
 )
 
 
@@ -145,14 +151,14 @@ phase2 = Phase.create!(
 
 lot1 = Lot.create!(
   phase_id: phase1.id,
-  lot_number: lot1,
+  lot_number: 1,
   description: "first lot",
   lot_size: 140,
 )
 
 lot2 = Lot.create!(
   phase_id: phase2.id,
-  lot_number: lot2,
+  lot_number: 1,
   description: "second lot",
   lot_size: 110,
 )
@@ -275,12 +281,14 @@ document1 = Document.create!(
   unit_id: unit1.id,
   title: "PDF map",
   description: "This is the PDF map",
+  file: "sample.pdf"
 )
 
 document2 = Document.create!(
   unit_id: unit2.id,
   title: "PDF map",
   description: "This is the PDF map",
+  file: "sample.pdf"
 )
 
 #seed Decisions-----------------------------------------------------------------
@@ -372,6 +380,7 @@ news1 = News.create!(
   title: "Revive is welcoming Nick!",
   description: "Our newest employee",
   date: Date.new(2016,8,12),
+  picture: "news.jpg"
 )
 
 news2 = News.create!(
@@ -379,6 +388,7 @@ news2 = News.create!(
   title: "Revive is welcoming Jan!",
   description: "Our newest employee",
   date: Date.new(2016,8,12),
+  picture: "news2.jpg"
 )
 
 

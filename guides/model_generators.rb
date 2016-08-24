@@ -86,3 +86,17 @@
   # Adding unit_id as a single, not reference, column
   rails g migration AddUnitIdToStorageUnits unit_id:integer
   rails g migration AddUnitIdToParkingUnits unit_id:integer
+
+  # Removing document_id as a reference (foreign_key)
+  rails g migration RemoveDocumentRefFromDecisions document:references
+  rails g migration RemoveDocumentRefFromHandovers document:references
+  rails g migration RemoveDocumentRefFromInformation document:references
+  rails g migration RemoveDocumentRefFromSiteVisits document:references
+  rails g migration RemoveDocumentRefFromPayments document:references
+
+  # Adding document_id as a single, not reference, column
+  rails g migration AddDocumentIdToDecisions document_id:integer
+  rails g migration AddDocumentIdToHandovers document_id:integer
+  rails g migration AddDocumentIdToInformation document_id:integer
+  rails g migration AddDocumentIdToSiteVisits document_id:integer
+  rails g migration AddDocumentIdToPayments document_id:integer

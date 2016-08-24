@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824120614) do
+ActiveRecord::Schema.define(version: 20160824132706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,14 +75,13 @@ ActiveRecord::Schema.define(version: 20160824120614) do
     t.integer  "unit_id"
     t.integer  "supplier_id"
     t.string   "title"
-    t.integer  "document_id"
     t.text     "description"
     t.date     "date"
     t.date     "due_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.boolean  "approved"
-    t.index ["document_id"], name: "index_decisions_on_document_id", using: :btree
+    t.integer  "document_id"
     t.index ["supplier_id"], name: "index_decisions_on_supplier_id", using: :btree
     t.index ["unit_id"], name: "index_decisions_on_unit_id", using: :btree
   end
@@ -135,26 +134,24 @@ ActiveRecord::Schema.define(version: 20160824120614) do
 
   create_table "handovers", force: :cascade do |t|
     t.integer  "unit_id"
-    t.integer  "document_id"
     t.string   "title"
     t.text     "description"
     t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["document_id"], name: "index_handovers_on_document_id", using: :btree
+    t.integer  "document_id"
     t.index ["unit_id"], name: "index_handovers_on_unit_id", using: :btree
   end
 
   create_table "information", force: :cascade do |t|
     t.integer  "unit_id"
     t.string   "title"
-    t.integer  "document_id"
     t.text     "description"
     t.boolean  "read"
     t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["document_id"], name: "index_information_on_document_id", using: :btree
+    t.integer  "document_id"
     t.index ["unit_id"], name: "index_information_on_unit_id", using: :btree
   end
 
@@ -193,14 +190,13 @@ ActiveRecord::Schema.define(version: 20160824120614) do
   create_table "payments", force: :cascade do |t|
     t.integer  "unit_id"
     t.string   "name"
-    t.integer  "document_id"
     t.text     "description"
     t.integer  "amount"
     t.string   "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.date     "due_date"
-    t.index ["document_id"], name: "index_payments_on_document_id", using: :btree
+    t.integer  "document_id"
     t.index ["unit_id"], name: "index_payments_on_unit_id", using: :btree
   end
 
@@ -234,7 +230,6 @@ ActiveRecord::Schema.define(version: 20160824120614) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "document_id"
-    t.index ["document_id"], name: "index_site_visits_on_document_id", using: :btree
     t.index ["unit_id"], name: "index_site_visits_on_unit_id", using: :btree
   end
 
@@ -298,23 +293,18 @@ ActiveRecord::Schema.define(version: 20160824120614) do
   add_foreign_key "buildings", "lots"
   add_foreign_key "consulting_hours", "customers"
   add_foreign_key "consulting_hours", "employees"
-  add_foreign_key "decisions", "documents"
   add_foreign_key "decisions", "suppliers"
   add_foreign_key "decisions", "units"
   add_foreign_key "documents", "units"
   add_foreign_key "employee_projects", "employees"
   add_foreign_key "employee_projects", "projects"
-  add_foreign_key "handovers", "documents"
   add_foreign_key "handovers", "units"
-  add_foreign_key "information", "documents"
   add_foreign_key "information", "units"
   add_foreign_key "lots", "phases"
   add_foreign_key "news", "phases"
   add_foreign_key "parking_units", "lots"
-  add_foreign_key "payments", "documents"
   add_foreign_key "payments", "units"
   add_foreign_key "phases", "projects"
-  add_foreign_key "site_visits", "documents"
   add_foreign_key "site_visits", "units"
   add_foreign_key "storage_units", "buildings"
   add_foreign_key "supplier_projects", "projects"

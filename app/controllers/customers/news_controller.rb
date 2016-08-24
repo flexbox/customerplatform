@@ -1,7 +1,6 @@
 class Customers::NewsController < Customers::BaseController
   def index
-    #phase = current_customer.phase_id
-    # @news = News.all.where(phase)
+    # @unit = Unit.where(customer_id: current_customer.id)
   end
 
   def show

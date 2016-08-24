@@ -44,7 +44,8 @@ customer1 = Customer.create!(
   phone_number: "+32867565675",
   mobile_number: "+337687678676",
   password: "123456",
-  signing_date: Date.new(2016,8,20)
+  signing_date: Date.new(2016,8,20),
+  picture: "man2.jpg"
 )
 
 customer2 = Customer.create!(
@@ -57,7 +58,8 @@ customer2 = Customer.create!(
   phone_number: "+32867565675",
   mobile_number: "+337687678676",
   password: "123456",
-  signing_date: Date.new(2016,8,20)
+  signing_date: Date.new(2016,8,20),
+  picture: "man1.jpg"
 )
 
 

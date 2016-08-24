@@ -5,6 +5,22 @@
   color: white;
   position: relative;
 }
+
+.card-dashboard {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-category-dashboard {
+  font-size: 10px;
+  text-transform: uppercase;
+  flex: 1;
+}
+
 .card-user {
   position: absolute;
   right: 10px;

@@ -28,13 +28,13 @@
             </strong>
           </p>
           <p>
-            Name: <%= @units[0].unit_name %>
+            Name: <%= @unit.unit_name %>
           </p>
           <p>
-            Address: <%= @units[0].address %>
+            Address: <%= @unit.address %>
           </p>
           <p>
-            Size: <%= @units[0].floor_size %>sqm
+            Size: <%= @unit.floor_size %>sqm
           </p>
         </div>
       </div>
@@ -45,12 +45,19 @@
         <div class="card-category">
           <p>
             <strong>
-              Todo
+              Decisions
             </strong>
           </p>
         </div>
+        <div>
+          <% @unit.decisions.each do |decision| %>
+            <p>
+              <%= decision.title %>
+            </p>
+            <% end %>
+        </div>
         <div class="card-link-more">
-          <%= link_to 'more', customers_unit_decisions_path(@units[0]) %>
+          <%= link_to 'more', customers_unit_decisions_path(@unit) %>
         </div>
       </div>
     </div>
@@ -64,8 +71,15 @@
             </strong>
           </p>
         </div>
+                <div>
+          <% @unit.building.lot.phase.news.each do |news_item| %>
+            <p>
+              <%= news_item.title %>
+            </p>
+            <% end %>
+        </div>
         <div class="card-link-more">
-          <%= link_to 'more', customers_unit_news_index_path(@units[0]) %>
+          <%= link_to 'more', customers_unit_news_index_path(@unit) %>
         </div>
       </div>
     </div>

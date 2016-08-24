@@ -106,12 +106,13 @@
 /* avatar */
 .avatar-navbar {
   border-radius: 50%;
-  height: 26px;
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
 }
 
 .avatar-navbar-bordered {
-  width: 30px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: #616668 1px solid;
+  border: $gray-light 1px solid;
 }

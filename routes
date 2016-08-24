@@ -1,0 +1,132 @@
+ 					    GET      /employees(.:format)                                                               employees/employees/dashboards#show
+                        employees_dashboard GET      /employees/dashboard(.:format)                                                     employees/dashboards#show
+
+               employees_project_phase_lots POST     /employees/projects/:project_id/phases/:phase_id/lots(.:format)                    employees/lots#create
+            new_employees_project_phase_lot GET      /employees/projects/:project_id/phases/:phase_id/lots/new(.:format)                employees/lots#new
+                 edit_employees_project_lot GET      /employees/projects/:project_id/lots/:id/edit(.:format)                            employees/lots#edit
+                      employees_project_lot GET      /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#show
+                                            PATCH    /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
+                                            PUT      /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
+                                            DELETE   /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#destroy
+
+                   employees_project_phases GET      /employees/projects/:project_id/phases(.:format)                                   employees/phases#index
+                                            POST     /employees/projects/:project_id/phases(.:format)                                   employees/phases#create
+                new_employees_project_phase GET      /employees/projects/:project_id/phases/new(.:format)                               employees/phases#new
+               edit_employees_project_phase GET      /employees/projects/:project_id/phases/:id/edit(.:format)                          employees/phases#edit
+                    employees_project_phase GET      /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#show
+                                            PATCH    /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#update
+                                            PUT      /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#update
+                                            DELETE   /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#destroy
+
+            employees_project_lot_buildings POST     /employees/projects/:project_id/lots/:lot_id/buildings(.:format)                   employees/buildings#create
+         new_employees_project_lot_building GET      /employees/projects/:project_id/lots/:lot_id/buildings/new(.:format)               employees/buildings#new
+           edit_employees_project_building GET      /employees/projects/:project_id/buildings/:id/edit(.:format)                        employees/buildings#edit
+                 employees_project_building GET      /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#show
+                                            PATCH    /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#update
+                                            PUT      /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#update
+                                            DELETE   /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#destroy
+
+        employees_project_lot_parking_units POST     /employees/projects/:project_id/lots/:lot_id/parking_units(.:format)               employees/parking_units#create
+     new_employees_project_lot_parking_unit GET      /employees/projects/:project_id/lots/:lot_id/parking_units/new(.:format)           employees/parking_units#new
+        edit_employees_project_parking_unit GET      /employees/projects/:project_id/parking_units/:id/edit(.:format)                   employees/parking_units#edit
+             employees_project_parking_unit GET      /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#show
+                                            PATCH    /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#update
+                                            PUT      /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#update
+                                            DELETE   /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#destroy
+
+           employees_project_building_units POST     /employees/projects/:project_id/buildings/:building_id/units(.:format)             employees/units#create
+        new_employees_project_building_unit GET      /employees/projects/:project_id/buildings/:building_id/units/new(.:format)         employees/units#new
+    		edit_employees_project_unit GET      /employees/projects/:project_id/units/:id/edit(.:format)                           employees/units#edit
+                     employees_project_unit GET      /employees/projects/:project_id/units/:id(.:format)                                employees/units#show
+                                            PATCH    /employees/projects/:project_id/units/:id(.:format)                                employees/units#update
+                                            PUT      /employees/projects/:project_id/units/:id(.:format)                                employees/units#update
+                                            DELETE   /employees/projects/:project_id/units/:id(.:format)                                employees/units#destroy
+
+   employees_project_building_storage_units POST     /employees/projects/:project_id/buildings/:building_id/storage_units(.:format)     employees/storage_units#create
+new_employees_project_building_storage_unit GET      /employees/projects/:project_id/buildings/:building_id/storage_units/new(.:format) employees/storage_units#new
+        edit_employees_project_storage_unit GET      /employees/projects/:project_id/storage_units/:id/edit(.:format)                   employees/storage_units#edit
+             employees_project_storage_unit GET      /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#show
+                                            PATCH    /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#update
+                                            PUT      /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#update
+                                            DELETE   /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#destroy
+
+    employees_project_unit_consulting_hours GET      /employees/projects/:project_id/units/:unit_id/consulting_hours(.:format)          employees/consulting_hours#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/consulting_hours(.:format)          employees/consulting_hours#create
+ new_employees_project_unit_consulting_hour GET      /employees/projects/:project_id/units/:unit_id/consulting_hours/new(.:format)      employees/consulting_hours#new
+edit_employees_project_unit_consulting_hour GET      /employees/projects/:project_id/units/:unit_id/consulting_hours/:id/edit(.:format) employees/consulting_hours#edit
+     employees_project_unit_consulting_hour GET      /employees/projects/:project_id/units/:unit_id/consulting_hours/:id(.:format)      employees/consulting_hours#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/consulting_hours/:id(.:format)      employees/consulting_hours#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/consulting_hours/:id(.:format)      employees/consulting_hours#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/consulting_hours/:id(.:format)      employees/consulting_hours#destroy
+
+          employees_project_unit_news_index GET      /employees/projects/:project_id/units/:unit_id/news(.:format)                      employees/news#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/news(.:format)                      employees/news#create
+            new_employees_project_unit_news GET      /employees/projects/:project_id/units/:unit_id/news/new(.:format)                  employees/news#new
+           edit_employees_project_unit_news GET      /employees/projects/:project_id/units/:unit_id/news/:id/edit(.:format)             employees/news#edit
+                employees_project_unit_news GET      /employees/projects/:project_id/units/:unit_id/news/:id(.:format)                  employees/news#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/news/:id(.:format)                  employees/news#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/news/:id(.:format)                  employees/news#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/news/:id(.:format)                  employees/news#destroy
+
+           employees_project_unit_documents GET      /employees/projects/:project_id/units/:unit_id/documents(.:format)                 employees/documents#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/documents(.:format)                 employees/documents#create
+        new_employees_project_unit_document GET      /employees/projects/:project_id/units/:unit_id/documents/new(.:format)             employees/documents#new
+       edit_employees_project_unit_document GET      /employees/projects/:project_id/units/:unit_id/documents/:id/edit(.:format)        employees/documents#edit
+            employees_project_unit_document GET      /employees/projects/:project_id/units/:unit_id/documents/:id(.:format)             employees/documents#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/documents/:id(.:format)             employees/documents#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/documents/:id(.:format)             employees/documents#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/documents/:id(.:format)             employees/documents#destroy
+
+           employees_project_unit_decisions GET      /employees/projects/:project_id/units/:unit_id/decisions(.:format)                 employees/decisions#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/decisions(.:format)                 employees/decisions#create
+        new_employees_project_unit_decision GET      /employees/projects/:project_id/units/:unit_id/decisions/new(.:format)             employees/decisions#new
+       edit_employees_project_unit_decision GET      /employees/projects/:project_id/units/:unit_id/decisions/:id/edit(.:format)        employees/decisions#edit
+            employees_project_unit_decision GET      /employees/projects/:project_id/units/:unit_id/decisions/:id(.:format)             employees/decisions#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/decisions/:id(.:format)             employees/decisions#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/decisions/:id(.:format)             employees/decisions#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/decisions/:id(.:format)             employees/decisions#destroy
+
+           employees_project_unit_handovers GET      /employees/projects/:project_id/units/:unit_id/handovers(.:format)                 employees/handovers#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/handovers(.:format)                 employees/handovers#create
+        new_employees_project_unit_handover GET      /employees/projects/:project_id/units/:unit_id/handovers/new(.:format)             employees/handovers#new
+       edit_employees_project_unit_handover GET      /employees/projects/:project_id/units/:unit_id/handovers/:id/edit(.:format)        employees/handovers#edit
+            employees_project_unit_handover GET      /employees/projects/:project_id/units/:unit_id/handovers/:id(.:format)             employees/handovers#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/handovers/:id(.:format)             employees/handovers#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/handovers/:id(.:format)             employees/handovers#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/handovers/:id(.:format)             employees/handovers#destroy
+
+        employees_project_unit_informations GET      /employees/projects/:project_id/units/:unit_id/informations(.:format)              employees/informations#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/informations(.:format)              employees/informations#create
+     new_employees_project_unit_information GET      /employees/projects/:project_id/units/:unit_id/informations/new(.:format)          employees/informations#new
+    edit_employees_project_unit_information GET      /employees/projects/:project_id/units/:unit_id/informations/:id/edit(.:format)     employees/informations#edit
+         employees_project_unit_information GET      /employees/projects/:project_id/units/:unit_id/informations/:id(.:format)          employees/informations#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/informations/:id(.:format)          employees/informations#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/informations/:id(.:format)          employees/informations#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/informations/:id(.:format)          employees/informations#destroy
+
+         employees_project_unit_site_visits GET      /employees/projects/:project_id/units/:unit_id/site_visits(.:format)               employees/site_visits#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/site_visits(.:format)               employees/site_visits#create
+      new_employees_project_unit_site_visit GET      /employees/projects/:project_id/units/:unit_id/site_visits/new(.:format)           employees/site_visits#new
+     edit_employees_project_unit_site_visit GET      /employees/projects/:project_id/units/:unit_id/site_visits/:id/edit(.:format)      employees/site_visits#edit
+          employees_project_unit_site_visit GET      /employees/projects/:project_id/units/:unit_id/site_visits/:id(.:format)           employees/site_visits#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/site_visits/:id(.:format)           employees/site_visits#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/site_visits/:id(.:format)           employees/site_visits#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/site_visits/:id(.:format)           employees/site_visits#destroy
+
+            employees_project_unit_payments GET      /employees/projects/:project_id/units/:unit_id/payments(.:format)                  employees/payments#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/payments(.:format)                  employees/payments#create
+         new_employees_project_unit_payment GET      /employees/projects/:project_id/units/:unit_id/payments/new(.:format)              employees/payments#new
+        edit_employees_project_unit_payment GET      /employees/projects/:project_id/units/:unit_id/payments/:id/edit(.:format)         employees/payments#edit
+             employees_project_unit_payment GET      /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#destroy
+
+                         employees_projects GET      /employees/projects(.:format)                                                      employees/projects#index
+                                            POST     /employees/projects(.:format)                                                      employees/projects#create
+                      new_employees_project GET      /employees/projects/new(.:format)                                                  employees/projects#new
+                     edit_employees_project GET      /employees/projects/:id/edit(.:format)                                             employees/projects#edit
+                          employees_project GET      /employees/projects/:id(.:format)                                                  employees/projects#show
+                                            PATCH    /employees/projects/:id(.:format)                                                  employees/projects#update
+                                            PUT      /employees/projects/:id(.:format)                                                  employees/projects#update
+

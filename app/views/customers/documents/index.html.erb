@@ -9,32 +9,31 @@ file: "sample.pdf"
 ) -->
 
 <div class="container">
-<div class="documents-space">
-<div class="row">
-<div class="document-title">
-<h2>Official</h2>
-</div>
-
-<div class="row">
-
-<div class="ui link cards">
-<% @documents.each do |document| %>
-<div class="card">
-  <div class="image">
-    <img src="http://unsplash.it/800/800">
-  </div>
-
-  <div class="content">
-    <div class="header"><%= document.title %></div>
-    <div class="meta">
-      <a><%= document.description %></a>
+  <div class="documents-space">
+    <div class="row">
+      <div class="document-title">
+        <h3>Official</h3>
+      </div>
     </div>
-
-  </div>
-</div>
-<% end %>
-
-
+      <div class="row">
+        <div class="ui link cards">
+          <% @documents.each do |document| %>
+          <div class="card">
+            <div class="image">
+              <img src="http://unsplash.it/800/800">
+            </div>
+            <div class="content">
+              <div class="header"><%= document.title %>
+              </div>
+              <div class="meta">
+                <a><%= document.description %></a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
 
 <!-- second part of documents -->
@@ -46,36 +45,33 @@ file: "sample.pdf"
   </div>
 
 
-  <div class="container">
-    <div class="documents-space">
+  <div class="documents-space">
+    <div class="row">
+      <div class="document-title">
+        <h3>Manuals</h3>
+      </div>
+    </div>
       <div class="row">
-        <div class="document-title">
-          <h2>Official</h2>
-        </div>
-
-        <div class="row">
-
-          <div class="ui link cards">
-            <% @documents.each do |document| %>
-            <div class="card">
-              <div class="image">
-                <img src="http://unsplash.it/800/800">
+        <div class="ui link cards">
+          <% @documents.each do |document| %>
+          <div class="card">
+            <div class="image">
+              <img src="http://unsplash.it/800/800">
+            </div>
+            <div class="content">
+              <div class="header"><%= document.title %>
               </div>
-
-              <div class="content">
-                <div class="header"><%= document.title %></div>
-                <div class="meta">
-                  <a><%= document.description %></a>
-                </div>
-
+              <div class="meta">
+                <a><%= document.description %></a>
               </div>
             </div>
-            <% end %>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
 

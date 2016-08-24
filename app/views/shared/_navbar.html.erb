@@ -33,10 +33,10 @@
     <div class="dropdown">
 
       <% if current_customer.nil? %>
-        <%= cl_image_tag "avatar_placeholder.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag "avatar_placeholder.png", class: "avatar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
       <% else %>
-        <%= cl_image_tag (current_customer.picture), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag (current_customer.picture), class: "avatar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
       <% end %>
 

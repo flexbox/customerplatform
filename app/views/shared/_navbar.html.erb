@@ -14,16 +14,19 @@
     <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Decisions -->
-    <%= link_to t(".decisions", default: "Decisions"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Site Visits -->
-    <%= link_to t(".site visits", default: "Site Visits"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".site visits", default: "Site Visits"), customers_unit_site_visits_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Acceptance -->
-    <%= link_to t(".acceptance", default: "Acceptance"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".acceptance", default: "Handover"), customers_unit_handovers_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Payments -->
-    <%= link_to t(".payments", default: "Payments"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".payments", default: "Payments"), customers_unit_payments_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
+
+  <!-- Documents -->
+    <%= link_to t(".documents", default: "Documents"), customers_unit_documents_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
 

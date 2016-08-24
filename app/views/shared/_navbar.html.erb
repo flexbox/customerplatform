@@ -11,19 +11,22 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
   <!-- News -->
-    <%= link_to t(".news", default: "News"), '#' , class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Decisions -->
-    <%= link_to t(".decisions", default: "Decisions"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Site Visits -->
-    <%= link_to t(".site visits", default: "Site Visits"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".site visits", default: "Site Visits"), customers_unit_site_visits_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Acceptance -->
-    <%= link_to t(".acceptance", default: "Acceptance"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".acceptance", default: "Handover"), customers_unit_handovers_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Payments -->
-    <%= link_to t(".payments", default: "Payments"), '#', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".payments", default: "Payments"), customers_unit_payments_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
+
+  <!-- Documents -->
+    <%= link_to t(".documents", default: "Documents"), customers_unit_documents_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
 
@@ -32,13 +35,8 @@
 
     <div class="dropdown">
 
-      <% if current_customer.nil? %>
-        <%= cl_image_tag "avatar_placeholder.png", class: "avatar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag (current_customer.picture) , class: "avatar-navbar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <% else %>
-        <%= cl_image_tag (current_customer.picture), class: "avatar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <% end %>
 
         <li>
           <%= link_to "#" do %>

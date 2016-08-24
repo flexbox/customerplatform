@@ -1,5 +1,6 @@
 class Customers::DashboardsController < Customers::BaseController
   def show
-    @unit = Unit.find_by(customer_id:current_customer.id)
+    @unit = current_customer.units.first
+    @units = current_customer.units
   end
 end

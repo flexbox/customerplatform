@@ -1,6 +1,6 @@
 class Customers::NewsController < Customers::BaseController
   def index
-    # @unit = Unit.where(customer_id: current_customer.id)
+    @unit = current_customer.units.find(params[:unit_id])
   end
 
   def show

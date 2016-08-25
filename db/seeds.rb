@@ -282,28 +282,33 @@ document1 = Document.create!(
   unit_id: unit1.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "revive.pdf"
+  file: "revive.pdf",
+  kind: "Manual"
 )
 
 document2 = Document.create!(
   unit_id: unit1.id,
   title: "offer",
   description: "This is an offer",
-  file: "sample.pdf"
+  file: "sample.pdf",
+  kind: "Official"
+
 )
 
 document3 = Document.create!(
   unit_id: unit2.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "revive.pdf"
+  file: "revive.pdf",
+  kind: "Invoice"
 )
 
 document4 = Document.create!(
   unit_id: unit2.id,
   title: "offer",
   description: "This is an offer",
-  file: "sample.pdf"
+  file: "sample.pdf",
+  kind: "Manual"
 )
 
 #seed Decisions-----------------------------------------------------------------

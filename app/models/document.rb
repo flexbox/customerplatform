@@ -1,6 +1,6 @@
 class Document < ApplicationRecord
 
-  validates :unit_id, :file, :title, presence: true
+  validates :unit_id, :file, :title, :kind, presence: true
 
   belongs_to :unit
 

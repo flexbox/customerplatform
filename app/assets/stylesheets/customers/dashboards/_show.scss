@@ -2,9 +2,9 @@
   margin-top: 20px;
 }
 
-.bottom-card {
-  height: 350px;
 
+.bottom-margin {
+  margin-bottom: 25px;
 }
 
 .progress {
@@ -27,4 +27,14 @@
 .distance {
   margin-top: 20px;
   padding-top: 20px;
+}
+
+.card-footer-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.card-height-setter {
+  margin-top: 200px;
+  width: 100%;
 }

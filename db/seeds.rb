@@ -45,7 +45,8 @@ customer1 = Customer.create!(
   mobile_number: "+337687678676",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "pictures/man2.jpg"
+  picture: "pictures/man1.jpg"
+
 )
 
 customer2 = Customer.create!(
@@ -59,7 +60,7 @@ customer2 = Customer.create!(
   mobile_number: "+337687678678",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "pictures/woman1.jpg"
+  picture: "pictures/man2.jpg"
 )
 
 
@@ -285,10 +286,26 @@ document1 = Document.create!(
 )
 
 document2 = Document.create!(
+  unit_id: unit1.id,
+  title: "offer",
+  description: "This is an offer",
+  file: "sample.pdf"
+)
+
+document3 = Document.create!(
   unit_id: unit2.id,
   title: "PDF map",
   description: "This is the PDF map",
   file: "revive.pdf"
+
+)
+
+document4 = Document.create!(
+  unit_id: unit2.id,
+  title: "offer",
+  description: "This is an offer",
+  file: "sample.pdf"
+
 )
 
 #seed Decisions-----------------------------------------------------------------
@@ -296,23 +313,45 @@ document2 = Document.create!(
 decision1 = Decision.create!(
   unit_id: unit1.id,
   supplier_id: supplier1.id,
-  title: "meeting with supplier",
+  title: "meeting with first supplier",
   description: "very urgent",
   date: Date.new(2016,8,22),
   due_date: Date.new(2016,9,22),
-  approved: false,
+  status: "pending",
   document_id: document1.id,
 )
 
 decision2 = Decision.create!(
-  unit_id: unit2.id,
+  unit_id: unit1.id,
   supplier_id: supplier2.id,
   title: "meeting with second supplier",
   description: "very very urgent",
   date: Date.new(2016,8,22),
   due_date: Date.new(2016,9,22),
-  approved: false,
+  status: "pending",
   document_id: document2.id,
+)
+
+decision3 = Decision.create!(
+  unit_id: unit2.id,
+  supplier_id: supplier1.id,
+  title: "meeting with first supplier",
+  description: "urgent",
+  date: Date.new(2016,8,24),
+  due_date: Date.new(2016,9,26),
+  status: "pending",
+  document_id: document3.id,
+)
+
+decision3 = Decision.create!(
+  unit_id: unit2.id,
+  supplier_id: supplier2.id,
+  title: "meeting with second supplier",
+  description: "urgent",
+  date: Date.new(2016,8,24),
+  due_date: Date.new(2016,9,26),
+  status: "pending",
+  document_id: document4.id,
 )
 
 

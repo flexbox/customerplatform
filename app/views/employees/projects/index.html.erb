@@ -1,0 +1,10 @@
+<p>Employees::Projects::Index</p>
+
+<% @projects.each do |project| %>
+  <p>Commercial name: <%= project.commercial_name %></p>
+  <p>Internal name: <%= project.internal_name %></p>
+  <p>Description: <%= project.description %></p>
+  <p>Plotsize: <%= project.plotsize %> sqm</p>
+  <p>Longitude: <%= project.longitude %></p>
+  <p>Latitude: <%= project.latitude %></p>
+<% end %>

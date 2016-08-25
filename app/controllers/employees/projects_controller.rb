@@ -1,21 +1,39 @@
 class Employees::ProjectsController < Employees::BaseController
-  def index
+
+  def index #------------------------------------------------------
+    # Displays all projects linked to the current_employee
+    @projects = current_employee.projects
   end
 
-  def show
+  def show #-------------------------------------------------------
+    @project = nil
+    current_employee.projects.each do |project|
+      if project.id == params[:id]
+        @project = project
+      end
+    end
   end
 
-  def new
+  def new #--------------------------------------------------------
   end
 
-  def create
+  def create #-----------------------------------------------------
   end
 
-  def edit
+  def edit #-------------------------------------------------------
   end
 
-  def update
+  def update #-----------------------------------------------------
   end
+
+private ##################################################################
+
+  def params_project
+    params.fetch(:project, {}).permit(:commercial_name, :internal_name,
+                                      :description, :plotsize, :longitude,
+                                      :latitude)
+  end
+
 end
 
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: "employees/omniauth_callbacks" }
 
   namespace :employees do
-    root to: 'employees/dashboards#show'
+    root to: 'dashboards#show'
     resource :dashboard, only: [:show]
 
 

@@ -1,7 +1,10 @@
 <div class="distance">
   <div class="container">
+    <!-- First Row -->
     <div class="row">
+      <!-- Timeline col -->
       <div class="col-xs-12 col-sm-8">
+
         <div class="ui fluid card">
           <div class="content">
             <div class="header text-center">
@@ -18,45 +21,48 @@
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
+      <!-- END Timeline col -->
+
+      <!-- About your unit col -->
       <div class="col-xs-12 col-sm-4">
+
         <div class="ui fluid card">
           <div class="content">
             <div class="header">
               About your unit
             </div>
           </div>
-
           <div class="content">
             <div class="description">
               Name: <%= @unit.unit_name %>
             </div>
-
             <div class="description">
               Address: <%= @unit.address %>
             </div>
-
             <div class="description">
               Size: <%= @unit.floor_size %>sqm
             </div>
-
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-  <div class="row">
 
+      </div>
+      <!-- END About your unit col -->
+    </div>
+    <!-- END First Row -->
+
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Decisions col -->
       <div class="col-xs-12 col-sm-4">
+
         <div class="ui fluid card">
           <div class="content">
             <div class="header">
               Decisions
             </div>
           </div>
-
           <div class="content">
             <% @unit.decisions.each do |decision| %>
             <div class="description">
@@ -64,22 +70,23 @@
             </div>
             <% end %>
           </div>
-
           <div class="ui bottom attached button">
             more
           </div>
-
         </div>
-      </div>
 
+      </div>
+      <!-- END Decisions col -->
+
+      <!-- News col -->
       <div class="col-xs-12 col-sm-4">
+
         <div class="ui fluid card">
           <div class="content">
             <div class="header">
               News
             </div>
           </div>
-
           <div class="content">
             <% @unit.building.lot.phase.news.each do |news_item| %>
             <div class="description">
@@ -87,30 +94,28 @@
             </div>
             <% end %>
           </div>
-
           <div class="ui bottom attached button">
             more
           </div>
-
         </div>
+
       </div>
+      <!-- END News col -->
 
-
-
+      <!-- Webcam col -->
       <div class="col-xs-12 col-sm-4">
+
         <div class="card-base card-customer-dashboard" style="background-image: url('https://c-site.eu/dashboard/public/images/Castelijm/29/');">
           <div class="card-category">
             <div class="card-category">
               Webcam
             </div>
-
           </div>
         </div>
+
       </div>
+      <!-- END Webcam col -->
     </div>
+    <!-- END Second Row -->
   </div>
 </div>
-
-
-
-

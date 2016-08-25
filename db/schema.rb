@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824192128) do
+ActiveRecord::Schema.define(version: 20160825113817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,9 +137,11 @@ ActiveRecord::Schema.define(version: 20160824192128) do
     t.string   "title"
     t.text     "description"
     t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "document_id"
+    t.text     "customer_remarks"
+    t.text     "employee_remarks"
     t.index ["unit_id"], name: "index_handovers_on_unit_id", using: :btree
   end
 

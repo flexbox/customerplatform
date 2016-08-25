@@ -417,14 +417,46 @@ information2 = Information.create!(
 
 #seed News---------------------------------------------------------------------
 
-news1 = News.create!(
+# seed News for phase 1 -------------------------------------------------------
+News.create!(
   phase_id: phase1.id,
   title: "Revive is welcoming Nick!",
-  description: "Our newest employee",
-  date: Date.new(2016,8,12),
-  picture: "news.jpg"
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi unde laudantium ratione sequi tempora ipsam eveniet, reprehenderit quia accusantium necessitatibus magni incidunt facilis dolores ullam tenetur, cumque, sunt modi. Adipisci.",
+  date: Date.new(2016,8,10),
+  picture: "sample.jpg"
 )
 
+News.create!(
+  phase_id: phase1.id,
+  title: "We received the first price!",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
+  date: Date.new(2016,8,18),
+)
+
+News.create!(
+  phase_id: phase1.id,
+  title: "New building permit",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
+  date: Date.new(2016,8,20),
+  picture: "sample.jpg"
+)
+
+News.create!(
+  phase_id: phase1.id,
+  title: "Re-Vive wins project Oude Dokken Ghent",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
+  date: Date.new(2016,8,12),
+)
+
+News.create!(
+  phase_id: phase1.id,
+  title: "New date for opening public park",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
+  date: Date.new(2016,8,8),
+  picture: "sample.jpg"
+)
+
+# seed News for phase 1 -------------------------------------------------------
 news2 = News.create!(
   phase_id: phase2.id,
   title: "Revive is welcoming Jan!",

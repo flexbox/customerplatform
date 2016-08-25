@@ -100,3 +100,8 @@
   rails g migration AddDocumentIdToInformation document_id:integer
   rails g migration AddDocumentIdToSiteVisits document_id:integer
   rails g migration AddDocumentIdToPayments document_id:integer
+
+  # change approved from boolean to string in decistions
+  rails g migration ChangeApprovedInDecisions
+  # renaming approved to status in decision
+  rails g migration RenameApprovedInDecision

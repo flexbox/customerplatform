@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824132706) do
+ActiveRecord::Schema.define(version: 20160824192128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20160824132706) do
     t.date     "due_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.boolean  "approved"
+    t.string   "status"
     t.integer  "document_id"
     t.index ["supplier_id"], name: "index_decisions_on_supplier_id", using: :btree
     t.index ["unit_id"], name: "index_decisions_on_unit_id", using: :btree

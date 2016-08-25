@@ -46,6 +46,7 @@ customer1 = Customer.create!(
   password: "123456",
   signing_date: Date.new(2016,8,20),
   picture: "pictures/man1.jpg"
+
 )
 
 customer2 = Customer.create!(
@@ -296,6 +297,7 @@ document3 = Document.create!(
   title: "PDF map",
   description: "This is the PDF map",
   file: "revive.pdf"
+
 )
 
 document4 = Document.create!(
@@ -303,6 +305,7 @@ document4 = Document.create!(
   title: "offer",
   description: "This is an offer",
   file: "sample.pdf"
+
 )
 
 #seed Decisions-----------------------------------------------------------------

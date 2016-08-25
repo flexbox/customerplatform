@@ -45,7 +45,7 @@ customer1 = Customer.create!(
   mobile_number: "+337687678676",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "man2.jpg"
+  picture: "pictures/man1.jpg"
 )
 
 customer2 = Customer.create!(
@@ -59,7 +59,7 @@ customer2 = Customer.create!(
   mobile_number: "+337687678678",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "woman1.jpg"
+  picture: "pictures/man2.jpg"
 )
 
 
@@ -281,7 +281,7 @@ document1 = Document.create!(
   unit_id: unit1.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "sample.pdf"
+  file: "revive.pdf"
 )
 
 document2 = Document.create!(
@@ -295,7 +295,7 @@ document3 = Document.create!(
   unit_id: unit2.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "sample.pdf"
+  file: "revive.pdf"
 )
 
 document4 = Document.create!(

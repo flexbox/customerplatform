@@ -1,98 +1,121 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <div class="card-dashboard card-customer-dashboard" style="background-color: #CCCCCC;">
-        <p>
-          <div class="card-category-dashboard text-center">
-            <strong>
+<div class="distance">
+  <div class="container">
+    <!-- First Row -->
+    <div class="row">
+      <!-- Timeline col -->
+      <div class="col-xs-12 col-sm-8">
+
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="header text-center">
               Timeline
-            </strong>
+            </div>
           </div>
-        </p>
-        <div class="progress-box">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-              <span class="sr-only">60% Complete</span>
+          <div class="content">
+            <div class="progress-box">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  <span class="sr-only">60% Complete</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-base card-customer-dashboard" style="background-color: #CCCCCC;">
-        <div class="card-category">
-          <p>
-            <strong>
+      </div>
+      <!-- END Timeline col -->
+
+      <!-- About your unit col -->
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="header">
               About your unit
-            </strong>
-          </p>
-          <p>
-            Name: <%= @unit.unit_name %>
-          </p>
-          <p>
-            Address: <%= @unit.address %>
-          </p>
-          <p>
-            Size: <%= @unit.floor_size %>sqm
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-base card-customer-dashboard bottom-card" style="background-color: #CCCCCC;">
-        <div class="card-category">
-          <p>
-            <strong>
-              Decisions
-            </strong>
-          </p>
-        </div>
-        <div>
-          <% @unit.decisions.each do |decision| %>
-            <p>
-              <%= decision.title %>
-            </p>
-            <% end %>
-        </div>
-        <div class="card-link-more">
-          <%= link_to 'more', customers_unit_decisions_path(@unit) %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-base card-customer-dashboard bottom-card" style="background-color: #CCCCCC;">
-        <div class="card-category">
-          <p>
-            <strong>
-              News
-            </strong>
-          </p>
-        </div>
-                <div>
-          <% @unit.building.lot.phase.news.each do |news_item| %>
-            <p>
-              <%= news_item.title %>
-            </p>
-            <% end %>
-        </div>
-        <div class="card-link-more">
-          <%= link_to 'more', customers_unit_news_index_path(@unit) %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-base card-customer-dashboard bottom-card" style="background-color: #000000;">
-        <div class="card-category">
-          <div class="card-category">
-            Webcam
+            </div>
           </div>
-
+          <div class="content">
+            <div class="description">
+              Name: <%= @unit.unit_name %>
+            </div>
+            <div class="description">
+              Address: <%= @unit.address %>
+            </div>
+            <div class="description">
+              Size: <%= @unit.floor_size %>sqm
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
+      </div>
+      <!-- END About your unit col -->
+    </div>
+    <!-- END First Row -->
+
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Decisions col -->
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="header">
+              Decisions
+            </div>
+          </div>
+          <div class="content">
+            <% @unit.decisions.each do |decision| %>
+            <div class="description">
+              <%= decision.title %>
+            </div>
+            <% end %>
+          </div>
+          <div class="ui bottom attached button">
+            more
+          </div>
+        </div>
+
+      </div>
+      <!-- END Decisions col -->
+
+      <!-- News col -->
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="header">
+              News
+            </div>
+          </div>
+          <div class="content">
+            <% @unit.building.lot.phase.news.each do |news_item| %>
+            <div class="description">
+              <%= news_item.title %>
+            </div>
+            <% end %>
+          </div>
+          <div class="ui bottom attached button">
+            more
+          </div>
+        </div>
+
+      </div>
+      <!-- END News col -->
+
+      <!-- Webcam col -->
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="card-base card-customer-dashboard" style="background-image: url('https://c-site.eu/dashboard/public/images/Castelijm/29/');">
+          <div class="card-category">
+            <div class="card-category">
+              Webcam
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- END Webcam col -->
+    </div>
+    <!-- END Second Row -->
+  </div>
+</div>

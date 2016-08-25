@@ -1,1 +1,8 @@
-This should be Customer/site_visits#index
+<% @sitevisits.each do |visit| %>
+    <%= visit.title %>
+    <%= visit.date %>
+    <%= visit.description %>
+
+    <% end %>
+
+

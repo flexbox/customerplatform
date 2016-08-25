@@ -61,6 +61,7 @@ Rails.application.routes.draw do
 
     root to: 'customers/dashboards#show'
     resource :dashboard, only: [:show]
+    resource :profile, only: [:show, :edit, :update]
 
     resources :units, only: [:show, :index] do
       resource :dashboard,  only: [:show]

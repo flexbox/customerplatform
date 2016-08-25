@@ -61,7 +61,6 @@ customer2 = Customer.create!(
   password: "123456",
   signing_date: Date.new(2016,8,20),
   picture: "pictures/man2.jpg"
-
 )
 
 

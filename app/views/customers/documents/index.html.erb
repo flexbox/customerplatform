@@ -14,11 +14,13 @@
 
         <% @documents.each do |document| %>
         <div class="ui card">
-          <a class="image" href= <% "cl_image_tag(document.file)" %> target="_tab">
-            <img src="http://unsplash.it/400/400">
+
+          <a class="image" href="<%= cl_image_path(document.file,  resource_type: "raw") %>" target="_tab">
+            <img src="http://unsplash.it/150/150">
             </a>
+
           <div class="content">
-            <a class="header" href="#" target="_tab"><%= document.title %>
+            <a class="header" href= '#' target="_tab"><%= document.title %>
             </a>
             <div class="meta">
               <a><%= document.description %></a>

@@ -281,14 +281,14 @@ document1 = Document.create!(
   unit_id: unit1.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "sample.pdf"
+  file: "Documents/revive.pdf"
 )
 
 document2 = Document.create!(
   unit_id: unit2.id,
   title: "PDF map",
   description: "This is the PDF map",
-  file: "sample.pdf"
+  file: "Documents/revive.pdf"
 )
 
 #seed Decisions-----------------------------------------------------------------

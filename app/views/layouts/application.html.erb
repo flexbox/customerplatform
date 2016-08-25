@@ -31,13 +31,10 @@
 
   <body>
 
-<% unless params[:controller] == "devise/registrations" || params[:controller] == "devise/sessions" %>
-    <%#= render 'shared/navbar' %>
-    <% end %>
-
     <%= render 'shared/flash' %>
 
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+
     <%= javascript_include_tag 'application' %>
 
   </body>

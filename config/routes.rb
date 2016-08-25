@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root to: 'customers/dashboards#show'
 
-  devise_for :customers
+  devise_for :customers,
+    controllers: { invitations: "customers/invitations" }
+
   devise_for :employees,
-    :controllers => { :omniauth_callbacks => "employees/omniauth_callbacks" }
+    controllers: { omniauth_callbacks: "employees/omniauth_callbacks" }
 
   namespace :employees do
     root to: 'employees/dashboards#show'

@@ -1,1 +1,11 @@
 This should be customers/decisions#index
+<% @decisions.each do |decision| %>
+  <p>Unit ID: <%= decision.unit_id %></p>
+  <p>Decision ID: <%= decision.id %></p>
+  <p>Title: <%= decision.title %></p>
+  <p>Description: <%= decision.description %></p>
+  <p>Due: <%= decision.due_date %></p>
+  <p>Status: <%= decision.status %></p>
+  <%= link_to "Show", customers_unit_decision_path(@unit, decision) %>
+  <hr>
+<% end %>

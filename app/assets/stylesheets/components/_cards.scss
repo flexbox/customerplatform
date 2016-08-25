@@ -1,3 +1,13 @@
+// USED FOR THE LOGIN PAGE
+.card-transp {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+// THIS IS THE LE WAGON CARD STANDARD CLASS, WE SHOULD DECIDE TO KEEP IT OR REMOVE IT
 .card-base {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -57,9 +67,3 @@
   opacity: 0.1;
 }
 
-.card-transp {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-}

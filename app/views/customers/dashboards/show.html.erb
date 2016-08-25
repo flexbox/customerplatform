@@ -5,46 +5,68 @@
       <!-- Timeline col -->
       <div class="col-xs-12 col-sm-8">
 
-        <div class="ui fluid card">
-          <div class="content">
-            <div class="header text-center">
-              Timeline
+        <div class="card bottom-margin">
+
+          <div class="card-height-setter"></div>
+
+          <div class="card-content">
+
+            <div class="text-center">
+              <h3>
+                Timeline
+              </h3>
             </div>
-          </div>
-          <div class="content">
-            <div class="progress-box">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="sr-only">60% Complete</span>
+
+            <div class="card-body">
+                <div class="progress-box">
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                      <span class="sr-only">
+                        60% Complete
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
             </div>
+
+
           </div>
+
         </div>
-
       </div>
-      <!-- END Timeline col -->
+        <!-- END Timeline col -->
 
-      <!-- About your unit col -->
+        <!-- About your unit col -->
+
       <div class="col-xs-12 col-sm-4">
 
-        <div class="ui fluid card">
-          <div class="content">
-            <div class="header">
-              About your unit
+        <div class="card bottom-margin">
+
+          <div class="card-height-setter"></div>
+
+          <div class="card-content">
+
+            <div class="text-center">
+              <h3>
+                About your unit
+              </h3>
             </div>
+
+            <div class="card-body">
+              <p>
+                Name: <%= @unit.unit_name %>
+              </p>
+              <p>
+                Address: <%= @unit.address %>
+              </p>
+              <p>
+                Size: <%= @unit.floor_size %>sqm
+              </p>
+            </div>
+
+
           </div>
-          <div class="content">
-            <div class="description">
-              Name: <%= @unit.unit_name %>
-            </div>
-            <div class="description">
-              Address: <%= @unit.address %>
-            </div>
-            <div class="description">
-              Size: <%= @unit.floor_size %>sqm
-            </div>
-          </div>
+
         </div>
 
       </div>
@@ -55,62 +77,99 @@
     <!-- Second Row -->
     <div class="row">
       <!-- Decisions col -->
+
       <div class="col-xs-12 col-sm-4">
 
-        <div class="ui fluid card">
-          <div class="content">
-            <div class="header">
-              Decisions
+        <div class="card bottom-margin">
+
+          <div class="card-height-setter"></div>
+
+          <div class="card-content">
+
+            <div class="text-center">
+              <h3>
+                Decisions
+              </h3>
             </div>
-          </div>
-          <div class="content">
-            <% @unit.decisions.each do |decision| %>
-            <div class="description">
-              <%= decision.title %>
+
+            <div class="card-body">
+              <% @unit.decisions.each do |decision| %>
+
+              <p>
+                <%= decision.title %>
+              </p>
+
+              <% end %>
+
             </div>
-            <% end %>
+
+            <footer class="card-footer card-footer-bottom">
+              <%= link_to  customers_unit_decisions_path(@unit) do %>
+                <button class="btn btn-flat btn-primary">
+                  See all
+                </button>
+
+                <% end %>
+
+            </footer>
+
           </div>
-          <div class="ui bottom attached button">
-            more
-          </div>
+
         </div>
 
       </div>
       <!-- END Decisions col -->
 
       <!-- News col -->
+
       <div class="col-xs-12 col-sm-4">
 
-        <div class="ui fluid card">
-          <div class="content">
-            <div class="header">
-              News
+        <div class="card bottom-margin">
+
+          <div class="card-height-setter"></div>
+
+          <div class="card-content">
+
+            <div class="text-center">
+              <h3>
+                News
+              </h3>
             </div>
-          </div>
-          <div class="content">
-            <% @unit.building.lot.phase.news.each do |news_item| %>
-            <div class="description">
-              <%= news_item.title %>
+
+            <div class="card-body">
+              <% @unit.building.lot.phase.news.each do |news_item| %>
+
+              <p>
+                <%= news_item.title %>
+              </p>
+
+              <% end %>
+
             </div>
-            <% end %>
+
+            <footer class="card-footer card-footer-bottom">
+              <%= link_to  customers_unit_news_index_path(@unit) do %>
+                <button class="btn btn-flat btn-primary">
+                  See all
+                </button>
+              <% end %>
+            </footer>
+
           </div>
-          <div class="ui bottom attached button">
-            more
-          </div>
+
         </div>
 
       </div>
       <!-- END News col -->
 
       <!-- Webcam col -->
+
       <div class="col-xs-12 col-sm-4">
 
-        <div class="card-base card-customer-dashboard" style="background-image: url('https://c-site.eu/dashboard/public/images/Castelijm/29/');">
-          <div class="card-category">
-            <div class="card-category">
-              Webcam
-            </div>
-          </div>
+        <div class="card bottom-margin" style="background-image: url('https://c-site.eu/dashboard/public/images/Castelijm/29/'); background-size:     cover;  ">
+
+          <div class="card-height-setter"></div>
+
         </div>
 
       </div>

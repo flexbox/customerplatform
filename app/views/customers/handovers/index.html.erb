@@ -1,1 +1,12 @@
-This should be Customer/handovers#index
+<!-- This should be Customer/handovers#index -->
+
+<% @handovers.each do |handover| %>
+  <p>Title: <%= handover.title %></p>
+  <p>Description: <%= handover.description %></p>
+  <p>Date: <%= handover.date %></p>
+  <p>customer remarks: <%= handover.customer_remarks %>
+    <%= link_to "Edit", edit_customers_unit_handover_path(@unit.id, handover) %>
+  </p>
+  <p>Employee remarks: <%= handover.employee_remarks %></p>
+  <hr>
+<% end %>

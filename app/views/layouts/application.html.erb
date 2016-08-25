@@ -31,20 +31,16 @@
 
   <body>
 
-<% unless params[:controller] == "devise/registrations" || params[:controller] == "devise/sessions" %>
-    <%= render 'shared/navbar' %>
-    <% end %>
-
     <%= render 'shared/flash' %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
 
-    <%= yield %>
+
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=AIzaSyBcsEU5ugLAzujFqPBoxGJCbXUePncKaKA" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
     <%= javascript_include_tag "application" %>
     <%= yield(:after_js) %>
-
 
   </body>
 

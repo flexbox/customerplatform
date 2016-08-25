@@ -84,6 +84,15 @@ employee2 = Employee.create!(
   picture: "man3.jpg"
 )
 
+employee2 = Employee.create!(
+  email: "yannick@re-vive.re",
+  password: "123456",
+  first_name: "Yannick",
+  last_name: "Bontinckx",
+  mobile_number: "+3278925662",
+  picture: "man3.jpg"
+)
+
 
 #seed Suppliers ----------------------------------------------------------------
 

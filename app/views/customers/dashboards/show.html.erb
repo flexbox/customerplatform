@@ -104,9 +104,13 @@
             </div>
 
             <footer class="card-footer card-footer-bottom">
-              <button class="btn btn-flat btn-primary">
-                See all
-              </button>
+              <%= link_to  customers_unit_decisions_path(@unit) do %>
+                <button class="btn btn-flat btn-primary">
+                  See all
+                </button>
+
+                <% end %>
+
             </footer>
 
           </div>
@@ -144,9 +148,11 @@
             </div>
 
             <footer class="card-footer card-footer-bottom">
-              <button class="btn btn-flat btn-primary">
-                See all
-              </button>
+              <%= link_to  customers_unit_news_index_path(@unit) do %>
+                <button class="btn btn-flat btn-primary">
+                  See all
+                </button>
+              <% end %>
             </footer>
 
           </div>

@@ -3,12 +3,15 @@ class Employees::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
       # You need to implement the method below in your model (e.g. app/models/user.rb)
       @employee = Employee.from_omniauth(request.env["omniauth.auth"])
 
-      if @employee.persisted?
+      if @employee && @employee.persisted?
         flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
         sign_in_and_redirect @employee, :event => :authentication
       else
-        session["devise.google_data"] = request.env["omniauth.auth"]
-        redirect_to new_user_registration_url
+        oauth = request.env["omniauth.auth"].dup
+        oauth.delete("extra")
+
+        session["devise.google_data"] = oauth
+        redirect_to new_employee_session_url
       end
   end
 end

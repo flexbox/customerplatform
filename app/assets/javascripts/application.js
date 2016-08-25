@@ -7,6 +7,7 @@
 //= require gmaps/google
 
 
+
 $(".alert" ).fadeOut(5000);
 
 

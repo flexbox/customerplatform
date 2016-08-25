@@ -26,6 +26,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 
 
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

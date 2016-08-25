@@ -1,6 +1,7 @@
 class Customers::SiteVisitsController < Customers::BaseController
   def index
-    @sitevisits = SiteVisit.all
+    unit_id = @unit.id
+    @sitevisits = SiteVisit.where(unit_id: unit_id)
     @project = @unit.building.lot.phase.project
 
     @hash = Gmaps4rails.build_markers(@project) do |project, marker|

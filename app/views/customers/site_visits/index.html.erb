@@ -1,34 +1,61 @@
-<% @sitevisits.each do |visit| %>
-    <%= visit.title %>
-    <%= visit.date %>
-    <%= visit.description %>
+<div class="sitevisits-wrapper">
+  <div class="container">
 
-    <% end %>
+    <div class="documents-space">
 
-  <%= @project.longitude %>
-  <%= @project.latitude %>
+      <div class="document-title">
+
+        <div class="row">
+          <% @sitevisits.each do |visit| %>
+
+          <div class="col-md-4">
+
+            <div class="card">
+
+              <div class="card-height-indicator"></div>
+
+              <div class="card-content">
+
+                <div class="card-image">
+
+                  <h3 class="card-image-headline"><%= visit.title %></h3>
+                </div>
+
+                <div class="card-body">
+                  <h4><%= visit.description %></h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
-
-
-<div id="map" style="width: 100%; height: 600px;"></div>
+<div id="map" style="width: 100%; height: 600px; position:absolute; bottom: 0px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-  <% end %>
+<%= javascript_tag do %>
+$(document).on('ready', function() {
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+});
 <% end %>
+<% end %>
+
+
 
 

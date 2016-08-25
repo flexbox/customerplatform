@@ -21,6 +21,9 @@ gem 'public_activity'
 gem 'bootstrap-material-design'
 gem "omniauth-google-oauth2"
 gem 'cloudinary', '1.1.0'
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
 
 
 group :development, :test do
@@ -33,4 +36,6 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end

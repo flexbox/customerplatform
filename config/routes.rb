@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
 
 
-    # /projects
+    # /projects (bla)
     # /projects/:id # listing the phases
     resources :projects, except: [:destroy] do
       # /projects/:project_id/phases/new + create

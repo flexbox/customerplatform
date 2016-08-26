@@ -10,3 +10,6 @@
   <p>Longitude: <%= @project.longitude %></p>
   <p>Latitude: <%= @project.latitude %></p>
 <% end %>
+
+<%= link_to "Edit", edit_employees_project_path(@project) %>
+<%= link_to "Back", employees_projects_path %>

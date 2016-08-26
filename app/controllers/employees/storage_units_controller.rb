@@ -1,4 +1,4 @@
-class Employees::LotsController < Employees::BaseController
+class Employees::StorageUnitsController < Employees::BaseController
   def show
   end
 
@@ -16,7 +16,5 @@ class Employees::LotsController < Employees::BaseController
 
   def destroy
   end
+
 end
-
-
-

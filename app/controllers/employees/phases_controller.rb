@@ -20,3 +20,4 @@ class Employees::PhasesController < Employees::BaseController
   def destroy
   end
 end
+

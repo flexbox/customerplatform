@@ -6,12 +6,7 @@ class Employees::ProjectsController < Employees::BaseController
   end
 
   def show #-------------------------------------------------------
-    @project = nil
-    current_employee.projects.each do |project|
-      if project.id == params[:id]
-        @project = project
-      end
-    end
+    @project = current_employee.projects.find(params[:id])
   end
 
   def new #--------------------------------------------------------

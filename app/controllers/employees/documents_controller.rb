@@ -1,5 +1,5 @@
 class Employees::DocumentsController < Employees::BaseController
-    def index
+  def index
   end
 
   def show
@@ -19,6 +19,4 @@ class Employees::DocumentsController < Employees::BaseController
 
   def destroy
   end
-
-
 end

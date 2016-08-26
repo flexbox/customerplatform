@@ -32,6 +32,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem "letter_opener"
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'

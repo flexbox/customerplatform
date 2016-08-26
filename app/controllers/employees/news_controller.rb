@@ -1,13 +1,12 @@
 class Employees::NewsController < Employees::BaseController
   def index
     # /employees/projects/:project_id/units/:unit_id/news(.:format)
-    @news = News.all
     @news = @unit.building.lot.phase.news.order(date: :desc)
   end
 
   def show
     # /employees/projects/:project_id/units/:unit_id/news/:id(.:format)
-    @news = News.where(params[:id])
+    @news = (params[:id])
 
   end
 
@@ -18,9 +17,8 @@ class Employees::NewsController < Employees::BaseController
 
   def create
     # /employees/projects/:project_id/units/:unit_id/news(.:format)
-    @news = News.new(params[:id])
+    @news = News.new(params_news)
     @news.save
-
   end
 
   def edit
@@ -39,9 +37,8 @@ class Employees::NewsController < Employees::BaseController
   private
 
   def params_news
-     params.require(:news).permit(:title, :description,
+     params.require(:news).permit(:title, :description, :date)
   end
 end
-
 
 

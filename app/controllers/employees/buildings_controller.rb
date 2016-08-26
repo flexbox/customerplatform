@@ -13,4 +13,7 @@ class Employees::BuildingsController < Employees::BaseController
 
   def update
   end
+
+  def destroy
+  end
 end

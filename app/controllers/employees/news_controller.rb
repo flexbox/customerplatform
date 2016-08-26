@@ -1,36 +1,38 @@
 class Employees::NewsController < Employees::BaseController
   def index
-    # /employees/projects/:project_id/units/:unit_id/news(.:format)
-    @news = @unit.building.lot.phase.news.order(date: :desc)
+    # /employees/projects/:project_id/news(.:format)
+
+    @news = current_employee.projects.first.phases.first.news
+
   end
 
   def show
-    # /employees/projects/:project_id/units/:unit_id/news/:id(.:format)
+    # /employees/projects/:project_id/news/:id(.:format)
     @news = (params[:id])
 
   end
 
   def new
-    # /employees/projects/:project_id/units/:unit_id/news/new(.:format)
+    # /employees/projects/:project_id/phases/:phase_id/news/new(.:format)
     @news = News.new
   end
 
   def create
-    # /employees/projects/:project_id/units/:unit_id/news(.:format)
+    # /employees/projects/:project_id/phases/:phase_id/news(.:format)
     @news = News.new(params_news)
     @news.save
   end
 
   def edit
-    # /employees/projects/:project_id/units/:unit_id/news/:id/edit(.:format)
+    # /employees/projects/:project_id/news/:id(.:format)
   end
 
   def update
-    # /employees/projects/:project_id/units/:unit_id/news/:id(.:format)
+    # /employees/projects/:project_id/news/:id(.:format)
   end
 
   def destroy
-    # /employees/projects/:project_id/units/:unit_id/news/:id(.:format)
+    # /employees/projects/:project_id/news/:id(.:format)
   end
 
 

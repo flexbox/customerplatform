@@ -10,7 +10,7 @@
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% unless @projects.nil? && @units.nil?  %>
+    <% unless @project || @unit %>
   <!-- News -->
       <%= link_to t(".news", default: "News"), employees_project_unit_news_index_path(@project, @unit), class: "navbar-wagon-item navbar-wagon-link" %>
 

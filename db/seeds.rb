@@ -84,7 +84,7 @@ employee2 = Employee.create!(
   picture: "man3.jpg"
 )
 
-employee2 = Employee.create!(
+employee3 = Employee.create!(
   email: "yannick@re-vive.re",
   password: "123456",
   first_name: "Yannick",
@@ -92,6 +92,34 @@ employee2 = Employee.create!(
   mobile_number: "+3278925662",
   picture: "man3.jpg"
 )
+
+employee4 = Employee.create!(
+  email: "marc.francis.mail@gmail.com",
+  password: "123456",
+  first_name: "Marc",
+  last_name: "Francis",
+  mobile_number: "+3200000000",
+  picture: "man3.jpg"
+)
+
+employee5 = Employee.create!(
+  email: "gistelinckpieter@gmail.com",
+  password: "123456",
+  first_name: "Pieter",
+  last_name: "Gistelinck",
+  mobile_number: "+320002992929",
+  picture: "man3.jpg"
+)
+
+employee6 = Employee.create!(
+  email: "pvhammerstein@gmail.com",
+  password: "123456",
+  first_name: "Philipp",
+  last_name: "von Hammerstein",
+  mobile_number: "+3255555555",
+  picture: "man3.jpg"
+)
+
 
 
 #seed Suppliers ----------------------------------------------------------------

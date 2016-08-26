@@ -17,4 +17,6 @@ class Customer < ApplicationRecord
   # set to nil
   has_many :units, dependent: :nullify
 
+
+
 end

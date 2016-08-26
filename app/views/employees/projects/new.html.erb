@@ -1,0 +1,25 @@
+<h1>New Project</h1>
+
+<%= simple_form_for(@project, url: employees_projects_path ) do |f| %>
+
+  <%= f.error_notification %>
+
+ <div class="form-inputs">
+    <%= f.input :commercial_name %>
+    <%= f.input :internal_name %>
+    <%= f.input :description %>
+    <%= f.input :plotsize %>
+    <%= f.input :longitude %>
+    <%= f.input :latitude %>
+   </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', employees_projects_path %>
+<br>
+<br>
+<br>

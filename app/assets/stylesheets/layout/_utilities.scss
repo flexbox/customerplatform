@@ -33,3 +33,15 @@
 .backgroundcolorwrapper {
   height: 100vh;
 }
+
+.scrollable-panel {
+  overflow: auto;
+  height: 387px;
+}
+
+.wrapper-white {
+  background-color: $laurelgreen;
+  padding-top: 80px;
+  padding-bottom: 70px;
+  margin-top: 30px;
+}

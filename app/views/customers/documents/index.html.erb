@@ -1,53 +1,34 @@
 <!-- first part of documents official -->
 
-<div class="document-wrapper">
 <div class="container">
 
   <div class="documents-space">
-
     <div class="document-title">
-
-     <% @kindU.each do |unique| %>
-
-     <div class="row">
-
-
-      <h3><%= unique %></h3>
-    </div>
-    <div class="row">
-      <% @documents.each do |document| %>
-      <% if document.kind == unique %>
-      <div class="col-md-4">
-
-        <div class="card">
-
-          <div class="card-height-indicator"></div>
-
-          <div class="card-content">
-
-            <div class="card-image">
-
-              <a class="image" href="<%= cl_image_path(document.file,  resource_type: "raw") %>" target="_tab">
-
-                <img src="http://unsplash.it/200/200">
-                <h3 class="card-image-headline"><%= document.title %></h3>
-              </div>
-
-              <div class="card-body">
-                <h4><%= document.description %></h4>
-              </div>
-               </a>
-            </div>
-          </div>
+      <% @kindU.each do |unique| %>
+        <div class="row">
+          <h3><%= unique %></h3>
         </div>
-        <% end %>
-        <% end %>
-      </div>
+        <div class="row">
+          <% @documents.each do |document| %>
+            <% if document.kind == unique %>
+
+                <div class="col-md-3">
+
+                <div class="thumbnail">
+                  <img class="img-rounded" src="http://unsplash.it/100/100" >
+                  <div class="caption text-center">
+                    <h3><%= document.title %></h3>
+                    <p><%= document.description %></p>
+                    <p><a href="<%= cl_image_path(document.file,  resource_type: "raw") %>" class="btn btn-normal" role="button">Download</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+
+                </div>
+
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-</div>
-
-
-

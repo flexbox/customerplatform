@@ -23,11 +23,13 @@ Rails.application.routes.draw do
       # /projects/:project_id/phases/:id # listing lots
       resources :phases do
 
-        resources :news, only: [:index, :show, :new, :create]
+        resources :news, only: [:new, :create]
 
         # /projects/:project_id/phases/:phase_id/lots/new + create + edit/update
         resources :lots, only: [:new, :create]
       end
+
+      resources :news, only: [:index, :show, :update, :destroy]
 
       # /projects/:project_id/lots/:id # listing buildings + parking lots
       resources :lots, only: [:show, :edit, :update, :destroy] do

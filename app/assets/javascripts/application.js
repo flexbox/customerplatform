@@ -6,8 +6,12 @@
 //= require_tree .
 
 
+setTimeout(
+  function()
+  {
+    $('.alert').slideUp(500);
+  }, 2500);
 
-$(".alert" ).fadeOut(5000);
 
 
 

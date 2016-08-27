@@ -1,17 +1,20 @@
 @charset "UTF-8";
 // Graphical variables
-@import "config/variables";
-@import "config/bootstrap_variables";
-// External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
+//
 @import
+
+  // External libraries
+  "bootstrap-sprockets",
+  "bootstrap",
+  "font-awesome-sprockets",
+  "font-awesome",
 
   // Variables, Extends, Mixins
   "bootflat/global",
+
+  // Own libraries
+  "config/variables",
+  "config/bootstrap_variables",
 
   // Base
   "bootflat/typography",

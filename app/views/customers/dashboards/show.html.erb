@@ -87,7 +87,7 @@
 
         <div class="col-xs-6 col-sm-4">
           <div class="list-group">
-            <p class="list-group-item active">Consulting</p>
+            <p class="list-group-item active">Consulting hours</p>
             <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
             <a href="#" class="list-group-item">Morbi leo risus</a>
             <a href="#" class="list-group-item">Porta ac consectetur ac</a>
@@ -99,22 +99,22 @@
         <div class="col-xs-6 col-sm-4">
           <div class="list-group">
             <p class="list-group-item active">News</p>
-            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
+
+            <% @news.each do |news_item| %>
+            <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item"><%= news_item.title %></a>
+            <% end %>
+
           </div>
         </div>
+
+
 
         <div class="col-xs-6 col-sm-4">
           <div class="list-group">
             <p class="list-group-item active">Information</p>
-            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
+            <% @informations.each do |information| %>
+            <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item"><%= information.title %></a>
+            <% end %>
           </div>
         </div>
 
@@ -122,89 +122,20 @@
       <!-- END Third row -->
     </div>
   </div>
+
+  <div class="container-photo">
+  <div class="row">
+    <div class="col-sm-4">
+    <div class="picture-dashboard">
+      <img class="img-rounded" src="http://unsplash.it/800/800" >
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img class="img-rounded" src="http://unsplash.it/800/800" >
+    </div>
+    <div class="col-sm-4">
+      <img class="img-rounded" src="http://unsplash.it/100/100" >
+    </div>
+    </div>
+  </div>
 </div>
-      <!-- Decisions col -->
-
-      <div class="col-xs-12 col-sm-4">
-
-        <div class="card bottom-margin">
-
-          <div class="card-height-setter"></div>
-
-          <div class="card-content">
-
-            <div class="text-center">
-              <h3>
-                Decisions
-              </h3>
-            </div>
-
-            <div class="card-body">
-              <% @unit.decisions.each do |decision| %>
-
-              <p>
-                <%= decision.title %>
-              </p>
-
-              <% end %>
-
-            </div>
-
-            <footer class="card-footer card-footer-bottom">
-              <%= link_to  customers_unit_decisions_path(@unit) do %>
-                <button class="btn btn-flat btn-primary">
-                  See all
-                </button>
-
-                <% end %>
-
-            </footer>
-
-          </div>
-
-        </div>
-
-      </div>
-      <!-- END Decisions col -->
-
-      <!-- News col -->
-
-      <div class="col-xs-12 col-sm-4">
-
-        <div class="card bottom-margin">
-
-          <div class="card-height-setter"></div>
-
-          <div class="card-content">
-
-            <div class="text-center">
-              <h3>
-                News
-              </h3>
-            </div>
-
-            <div class="card-body">
-              <% @unit.building.lot.phase.news.each do |news_item| %>
-
-              <p>
-                <%= news_item.title %>
-              </p>
-
-              <% end %>
-
-            </div>
-
-            <footer class="card-footer card-footer-bottom">
-              <%= link_to  customers_unit_news_index_path(@unit) do %>
-                <button class="btn btn-flat btn-primary">
-                  See all
-                </button>
-              <% end %>
-            </footer>
-
-          </div>
-
-        </div>
-
-      </div>
-      <!-- END News col -->

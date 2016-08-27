@@ -1,64 +1,44 @@
-<div class="distance">
-  <div class="container">
-    <!-- Row -->
+<div class="container">
+
+  <% status = ['pending','completed','future_payment'] %>
+  <% title = ['Pending', 'Completed' , 'Future Payment'] %>
+
+  <% status.each_with_index do |status, index| %>
+
     <div class="row">
-      <!-- Payment Card col -->
 
-      <% @payments.each do |payment| %>
-        <div class="col-xs-12 col-sm-4">
+      <% if @payments.any? {|d| d.status == status } %>
 
-          <div class="card bottom-margin">
+      <h3><%= title[index] %></h3>
 
-            <div class="card-height-setter"></div>
+        <% @payments.each do |payment|%>
 
-            <div class="card-content">
+          <% if payment.status == status %>
 
-              <div class="text-center">
-                <h3>
-                  <%= payment.name %>
-                </h3>
-              </div>
+            <div class="col-xs-12 col-sm-3">
 
-              <div class="card-body">
-
-                <p>
-                  <strong>Status:</strong> <%= payment.status %>
-                </p>
-                <p>
-                  <strong>Details:</strong><%= payment.description %>
-                </p>
-                <p>
-                  <strong>Amount:</strong> <%= payment.amount %>
-                </p>
-                <p>
-                  <strong>Due:</strong> <%= payment.due_date %>
-                </p>
-
-
-              </div>
-
-              <footer class="card-footer card-footer-bottom">
-                <% @document = Document.find(payment.document_id) %>
-                <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+              <div class="thumbnail">
+                <img class="img-rounded" src="http://unsplash.it/100/100" >
+                <div class="caption text-center">
+                  <h3>  <%= payment.name %></h3>
+                  <p>   <%= payment.description %></p>
+                  <p>   <%= payment.amount %></p>
+                  <p>   <%= payment.due_date %></p>
+                  <% @document = Document.find(payment.document_id) %>
+                  <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
                     <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
                     <%= link_to pdf do %>
-                  <button class="btn btn-flat btn-primary">
-                    Download invoice
-                  </button>
+                      <button class="btn btn-normal">
+                      Download invoice
+                      </button>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </footer>
-
+                </div>
+              </div>
             </div>
-
-          </div>
-
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
-      <!-- END Payment Card col -->
-
     </div>
-    <!-- END Row -->
-
-  </div>
+  <% end %>
 </div>

@@ -1,44 +1,60 @@
 <div class="container">
+  <div class="row">
 
-  <% status = ['pending','completed','future_payment'] %>
-  <% title = ['Pending', 'Completed' , 'Future Payment'] %>
+    <div class="col-xs-8">
+      <div class="container">
 
-  <% status.each_with_index do |status, index| %>
+        <% status = ['pending','completed','future_payment'] %>
+        <% title = ['Pending', 'Completed' , 'Future Payment'] %>
 
-    <div class="row">
+        <% status.each_with_index do |status, index| %>
 
-      <% if @payments.any? {|d| d.status == status } %>
+          <div class="row">
 
-      <h3><%= title[index] %></h3>
+            <% if @payments.any? {|d| d.status == status } %>
 
-        <% @payments.each do |payment|%>
+            <h3><%= title[index] %></h3>
 
-          <% if payment.status == status %>
+              <% @payments.each do |payment|%>
 
-            <div class="col-xs-12 col-sm-3">
+                <% if payment.status == status %>
 
-              <div class="thumbnail">
-                <img class="img-rounded" src="http://unsplash.it/100/100" >
-                <div class="caption text-center">
-                  <h3>  <%= payment.name %></h3>
-                  <p>   <%= payment.description %></p>
-                  <p>   <%= payment.amount %></p>
-                  <p>   <%= payment.due_date %></p>
-                  <% @document = Document.find(payment.document_id) %>
-                  <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
-                    <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
-                    <%= link_to pdf do %>
-                      <button class="btn btn-normal">
-                      Download invoice
-                      </button>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <% end %>
+                  <div class="col-xs-12 col-sm-3">
+
+                    <div class="thumbnail">
+                      <img class="img-rounded" src="http://unsplash.it/100/100" >
+                      <div class="caption text-center">
+                        <h3><%= payment.name %></h3>
+                        <p><%= payment.description %></p>
+                        <h1>€ <%= payment.amount %></h1>
+                        <p>Due: <%= payment.due_date.to_formatted_s(:rfc822) %></p>
+                        <% @document = Document.find(payment.document_id) %>
+                        <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+                          <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
+                          <%= link_to pdf do %>
+                            <button class="btn btn-normal">
+                            Download invoice
+                            </button>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  <% end %>
+
+
+    <div class="col-xs-4">
+      <div class="well">Balance:</div>
+
+    </div>
+
+  </div>
 </div>
+
+

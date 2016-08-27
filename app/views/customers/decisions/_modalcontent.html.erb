@@ -1,0 +1,20 @@
+<p>This should be customers/decisions#show</p>
+
+<p>Unit ID: <%= @decision.unit_id %></p>
+<p>Decision ID: <%= @decision.id %></p>
+<p>Title: <%= @decision.title %></p>
+<p>Description: <%= @decision.description %></p>
+<p>Due date: <%= @decision.due_date %></p>
+<p>Status: <%= @decision.status %></p>
+
+<p>Supplier: </p>
+<p><%= @supplier.company_name %></p>
+<p>Contact: <%= "#{@supplier.first_name} #{@supplier.last_name}" %></p>
+
+<%= link_to "Approve", approve_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch %>
+<%= link_to "Reject", reject_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch %>
+<p></p>
+<% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+  <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
+  <p>Document: <%= @document.title %>  <%= link_to "Download", pdf  %></p>
+<% end %>

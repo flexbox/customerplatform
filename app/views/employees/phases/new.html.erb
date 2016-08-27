@@ -1,0 +1,28 @@
+<p>Employee::Phase::New</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+
+<h1>New Phase</h1>
+
+<%= simple_form_for(@phase, url: employees_project_phases_path ) do |f| %>
+
+  <%= f.error_notification %>
+
+ <div class="form-inputs">
+    <%= f.input :phase_number %>
+    <%= f.input :description %>
+    <%= f.input :duration %>
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', employees_project_phases_path %>
+<br>
+<br>
+<br>

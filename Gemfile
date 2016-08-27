@@ -23,6 +23,7 @@ gem 'cloudinary', '1.1.0'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "carrierwave"
 gem 'postmark-rails'
 
 

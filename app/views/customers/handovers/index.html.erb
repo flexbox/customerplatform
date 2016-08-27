@@ -1,12 +1,37 @@
 <!-- This should be Customer/handovers#index -->
 
-<% @handovers.each do |handover| %>
-  <p>Title: <%= handover.title %></p>
-  <p>Description: <%= handover.description %></p>
-  <p>Date: <%= handover.date %></p>
-  <p>customer remarks: <%= handover.customer_remarks %>
-    <%= link_to "Edit", edit_customers_unit_handover_path(@unit.id, handover) %>
-  </p>
-  <p>Employee remarks: <%= handover.employee_remarks %></p>
-  <hr>
-<% end %>
+
+<div class="container">
+
+  <div class="documents-space">
+
+    <div class="document-title">
+
+      <div class="row">
+        <% @handovers.each do |handover| %>
+
+        <div class="col-md-6">
+
+          <div class="thumbnail">
+            <img class="img-rounded" src="http://unsplash.it/400/400">
+            <div class="caption text-left">
+              <h1><%= handover.title %></h1>
+              <p><%= handover.description %></p>
+              <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
+              <p>customer remarks: <%= handover.customer_remarks %>
+                <%= link_to "Edit", edit_customers_unit_handover_path(@unit.id, handover) %>
+              </p>
+              <p>Employee remarks: <%= handover.employee_remarks %></p>
+              <a href="#" class="btn btn-normal" role="button">Details</a>
+            </div>
+          </div>
+
+        </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>

@@ -429,14 +429,24 @@ handover1 = Handover.create!(
   title: "handover customer",
   description: "the first handover for this customer",
   date: Date.new(2017,10,22),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
 )
 
 handover2 = Handover.create!(
+  unit_id: unit1.id,
+  document_id: document2.id,
+  title: "handover customer",
+  description: "the second handover for this customer",
+  date: Date.new(2017,10,30),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
+)
+handover3 = Handover.create!(
   unit_id: unit2.id,
   document_id: document2.id,
   title: "handover customer",
   description: "the first handover for this customer",
   date: Date.new(2017,10,22),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
 )
 
 

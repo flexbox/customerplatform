@@ -1,11 +1,72 @@
-This should be customers/decisions#index
-<% @decisions.each do |decision| %>
-  <p>Unit ID: <%= decision.unit_id %></p>
-  <p>Decision ID: <%= decision.id %></p>
-  <p>Title: <%= decision.title %></p>
-  <p>Description: <%= decision.description %></p>
-  <p>Due: <%= decision.due_date %></p>
-  <p>Status: <%= decision.status %></p>
-  <%= link_to "Show", customers_unit_decision_path(@unit, decision) %>
-  <hr>
-<% end %>
+<div class="container">
+
+  <% if @decisions.any? {|d| d.status == "pending" } %>
+    <div class="row">
+      <h3> Pending Decisions</h3>
+      <% @decisions.each do |decision| %>
+        <% if decision.status == "pending" %>
+          <div class="col-xs-12 col-sm-4">
+
+            <div class="thumbnail">
+              <img class="img-rounded" src="http://unsplash.it/100/100" >
+              <div class="caption text-center">
+                <h3><%= decision.title %></h3>
+                <p><%= decision.description %></p>
+                <p><%= decision.due_date %></p>
+                <p><%= decision.status %></p>
+                <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), class: "btn btn-normal", role: "button"  %> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @decisions.any? {|d| d.status == "approved" } %>
+    <div class="row">
+      <h3> Approved Decisions</h3>
+      <% @decisions.each do |decision| %>
+        <% if decision.status == "approved" %>
+          <div class="col-xs-12 col-sm-3">
+
+            <div class="thumbnail">
+              <img class="img-rounded" src="http://unsplash.it/100/100" >
+              <div class="caption text-center">
+                <h3><%= decision.title %></h3>
+                <p><%= decision.description %></p>
+                <p><%= decision.due_date %></p>
+                <p><%= decision.status %></p>
+                <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), class: "btn btn-normal", role: "button"  %> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @decisions.any? {|d| d.status == "rejected" } %>
+    <div class="row">
+      <h3> Rejected Decisions</h3>
+      <% @decisions.each do |decision| %>
+        <% if decision.status == "rejected" %>
+          <div class="col-xs-12 col-sm-3">
+              <div class="thumbnail">
+                <img class="img-rounded" src="http://unsplash.it/100/100" >
+                <div class="caption text-center">
+                  <h3><%= decision.title %></h3>
+                  <p><%= decision.description %></p>
+                  <p><%= decision.due_date %></p>
+                  <p><%= decision.status %></p>
+                  <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), class: "btn btn-normal", role: "button"  %> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

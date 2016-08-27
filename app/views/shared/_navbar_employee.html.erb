@@ -10,9 +10,11 @@
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% unless @project.nil? || @unit.nil? %>
+  <% unless @project.nil? || @unit.nil? %>
+
+
   <!-- News -->
-      <%= link_to t(".news", default: "News"), employees_project_unit_news_index_path(@project, @unit), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".news", default: "News"), employees_project_news_index_path(@project, @phase), class: "navbar-wagon-item navbar-wagon-link" %>
 
 
   <!-- Decisions -->
@@ -42,8 +44,10 @@
   <!-- Documents -->
 
       <%= link_to t(".documents", default: "Documents"), employees_project_unit_documents_path(@project, @unit), class: "navbar-wagon-item navbar-wagon-link" %>
+<% end %>
 
-    <% end %>
+<h1>Hallo</h1>
+
   </div>
 
 

@@ -18,19 +18,22 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 # This gem is for logging:
 gem 'public_activity'
-gem 'bootstrap-material-design'
 gem "omniauth-google-oauth2"
 gem 'cloudinary', '1.1.0'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem "carrierwave"
+gem 'postmark-rails'
+
+
 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem "letter_opener"
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'

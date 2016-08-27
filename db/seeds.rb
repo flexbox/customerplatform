@@ -67,30 +67,30 @@ customer2 = Customer.create!(
 #seed Employees ----------------------------------------------------------------
 
 employee1 = Employee.create!(
-  email: "employee1@gmail.com",
+  email: "gistelinckpieter@gmail.com",
   password: "123456",
-  first_name: "Josephine",
-  last_name: "Decroix",
-  mobile_number: "+32789258441",
-  picture: "woman2.jpg"
-)
-
-employee2 = Employee.create!(
-  email: "employee2@gmail.com",
-  password: "123456",
-  first_name: "Luc",
-  last_name: "Van De Moortele",
-  mobile_number: "+32789258442",
+  first_name: "Pieter",
+  last_name: "Gistelinck",
+  mobile_number: "+320002992929",
   picture: "man3.jpg"
 )
 
-employee3 = Employee.create!(
+employee2 = Employee.create!(
   email: "yannick@re-vive.re",
   password: "123456",
   first_name: "Yannick",
   last_name: "Bontinckx",
   mobile_number: "+3278925662",
   picture: "man3.jpg"
+)
+
+employee3 = Employee.create!(
+  email: "employee1@gmail.com",
+  password: "123456",
+  first_name: "Josephine",
+  last_name: "Decroix",
+  mobile_number: "+32789258441",
+  picture: "woman2.jpg"
 )
 
 employee4 = Employee.create!(
@@ -103,11 +103,11 @@ employee4 = Employee.create!(
 )
 
 employee5 = Employee.create!(
-  email: "gistelinckpieter@gmail.com",
+  email: "employee2@gmail.com",
   password: "123456",
-  first_name: "Pieter",
-  last_name: "Gistelinck",
-  mobile_number: "+320002992929",
+  first_name: "Luc",
+  last_name: "Van De Moortele",
+  mobile_number: "+32789258442",
   picture: "man3.jpg"
 )
 
@@ -159,6 +159,15 @@ project1 = Project.create!(
 project2 = Project.create!(
   commercial_name: "Kadox",
   internal_name: "Ghent1",
+  description: "new project Ghent 2008",
+  plotsize: 4000,
+  longitude: 3.696797,
+  latitude: 51.072414,
+)
+
+project3 = Project.create!(
+  commercial_name: "The O House",
+  internal_name: "Ghent2",
   description: "new project Ghent 2008",
   plotsize: 4000,
   longitude: 3.696797,
@@ -420,14 +429,24 @@ handover1 = Handover.create!(
   title: "handover customer",
   description: "the first handover for this customer",
   date: Date.new(2017,10,22),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
 )
 
 handover2 = Handover.create!(
+  unit_id: unit1.id,
+  document_id: document2.id,
+  title: "handover customer",
+  description: "the second handover for this customer",
+  date: Date.new(2017,10,30),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
+)
+handover3 = Handover.create!(
   unit_id: unit2.id,
   document_id: document2.id,
   title: "handover customer",
   description: "the first handover for this customer",
   date: Date.new(2017,10,22),
+  employee_remarks: "The best customer evaaaaaaaaaa!!"
 )
 
 
@@ -486,7 +505,7 @@ News.create!(
 )
 
 News.create!(
-  phase_id: phase1.id,
+  phase_id: phase2.id,
   title: "New date for opening public park",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
   date: Date.new(2016,8,8),
@@ -501,7 +520,6 @@ news2 = News.create!(
   date: Date.new(2016,8,12),
   picture: "news2.jpg"
 )
-
 
 #seed Payments------------------------------------------------------------------
 

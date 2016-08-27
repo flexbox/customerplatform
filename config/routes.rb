@@ -1,27 +1,35 @@
 Rails.application.routes.draw do
   root to: 'customers/dashboards#show'
 
+#devise routes -----------------------------------------------------------------
+
   devise_for :customers,
     controllers: { invitations: "customers/invitations" }
 
   devise_for :employees,
     controllers: { omniauth_callbacks: "employees/omniauth_callbacks" }
 
+#employee routes --------------------------------------------------------------
+
   namespace :employees do
     root to: 'dashboards#show'
     resource :dashboard, only: [:show]
 
 
-    # /projects
+    # /projects (bla)
     # /projects/:id # listing the phases
     resources :projects, except: [:destroy] do
       # /projects/:project_id/phases/new + create
       # /projects/:project_id/phases/:id # listing lots
       resources :phases do
 
+        resources :news, only: [:new, :create]
+
         # /projects/:project_id/phases/:phase_id/lots/new + create + edit/update
         resources :lots, only: [:new, :create]
       end
+
+      resources :news, only: [:index, :show, :update, :destroy]
 
       # /projects/:project_id/lots/:id # listing buildings + parking lots
       resources :lots, only: [:show, :edit, :update, :destroy] do
@@ -46,7 +54,7 @@ Rails.application.routes.draw do
       resources :units, only: [:show, :edit, :update, :destroy] do
         resources :consulting_hours
         # resources :suppliers TODO
-        resources :news
+        #  resources :news
         resources :documents
         resources :decisions
         resources :handovers
@@ -56,6 +64,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  #customer routes -------------------------------------------------------------
 
   namespace :customers do
 
@@ -79,6 +89,8 @@ Rails.application.routes.draw do
       resources :handovers,     only: [:index, :show, :edit, :update] # for the remarks
       resources :payments,      only: [:index, :show]
       resources :documents,     only: [:index, :show]
+
+      resources :informations, only: [:index, :show]
 
       resources :parking_units, only: [:show, :index]
       resources :storage_units, only: [:show, :index]

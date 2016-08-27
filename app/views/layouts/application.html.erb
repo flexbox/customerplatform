@@ -31,7 +31,11 @@
 
   <body>
 
-    <%= render 'shared/flash' %>
+    <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
+
+      <%= render 'shared/flash' %>
+
+    <% end %>
     <%= content_for?(:content) ? yield(:content) : yield %>
 
 

@@ -14,6 +14,9 @@ class Employees::PhasesController < Employees::BaseController
   def show #---------------------------------------------------------
     # @project = current_employee.projects.find(params[:project_id])
     @phase = @project.phases.find(params[:id])
+    set_current_phase_id(@phase) # stores current phase id if we need to
+                                 # access lots, as phase_id is not in
+                                 # the url
   end
 
   def new #----------------------------------------------------------

@@ -5,11 +5,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   process convert: 'jpg'
 
-  version :phase_std do
+  version :std do
     resize_to_fit 500, 650
   end
 
-  version :phase_small do
+  version :small do
     resize_to_fit 100, 250
   end
 

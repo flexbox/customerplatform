@@ -2,17 +2,14 @@
 
 <h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
 
-<% if @phase.nil? %>
-  <p>You have no phase.</p>
-<% else %>
-  <p>Phase number: <%= @phase.phase_number %></p>
-  <p>Description: <%= @phase.description %></p>
-  <p>Duration: <%= @phase.duration %></p>
-  <p>
-  picture
-  <%= image_tag @phase.picture.url(:phase_std)%>
-  </p>
-  <%= link_to "Edit", edit_employees_project_phase_path(@phase.project_id, @phase) %>
-<% end %>
+<p>Phase number: <%= @phase.phase_number %></p>
+<p>Description: <%= @phase.description %></p>
+<p>Duration: <%= @phase.duration %></p>
+<p>
+picture
+<%= image_tag @phase.picture.url(:std)%>
+</p>
+<%= link_to "Edit", edit_employees_project_phase_path(@phase.project_id, @phase) %>
+<%= link_to "Lots", employees_project_lots_path(@phase.project_id) %>
 
 <%= link_to "Back", employees_project_phases_path %>

@@ -1,45 +1,39 @@
+
 <div class="container">
 
-  <div class="sitevisits-wrapper">
+  <div class="documents-space">
 
-    <div class="container">
+    <div class="document-title">
 
-      <div class="sitevisits-space">
+        <div class="row">
+          <% @sitevisits.each do |visit| %>
 
-        <div class="sitevisits-title">
+                <div class="col-md-3">
 
-          <div class="row">
-            <% @sitevisits.each do |visit| %>
-
-            <div class="col-md-4">
-
-              <div class="card">
-
-                <div class="card-height-indicator">
-
-                  <div class="card-content">
-
-                    <div class="card-image">
-
-                      <h3 class="card-image-headline"><%= visit.title %></h3>
-                    </div>
-                    <div class="card-body">
-                      <h3><%= visit.date %></h3>
-                      <h4><%= visit.description %></h4>
+                  <div class="thumbnail">
+                    <img class="img-rounded" src="http://unsplash.it/800/800">
+                    <div class="caption text-center">
+                      <h3><%= visit.title %></h3>
+                      <p><%= visit.description %></p>
+                      <p><strong><%= visit.date.to_formatted_s(:rfc822)%></strong></p>
+                      <a href="#" class="btn btn-normal" role="button">Details</a>
                     </div>
                   </div>
+
                 </div>
-              </div>
-            </div>
+
             <% end %>
-          </div>
+
         </div>
-      </div>
+
     </div>
+
   </div>
 
 
-  <div id="map" style="width: 100%; height: 600px; "></div>
+
+
+  <div id="map" style="width: 100%; height: 800px; "></div>
 
   <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -63,4 +57,5 @@ handler.getMap().setZoom(14);
 
 
 </div>
+
 

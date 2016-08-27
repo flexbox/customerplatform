@@ -14,7 +14,7 @@
 
 
   <!-- News -->
-      <%= link_to t(".news", default: "News"), employees_project_news_index_path(@project), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".news", default: "News"), employees_project_news_index_path(@project, @phase), class: "navbar-wagon-item navbar-wagon-link" %>
 
 
   <!-- Decisions -->
@@ -45,6 +45,8 @@
 
       <%= link_to t(".documents", default: "Documents"), employees_project_unit_documents_path(@project, @unit), class: "navbar-wagon-item navbar-wagon-link" %>
 <% end %>
+
+<h1>Hallo</h1>
 
   </div>
 

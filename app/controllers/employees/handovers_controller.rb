@@ -1,5 +1,5 @@
 class Employees::HandoversController < Employees::BaseController
-    def index
+  def index
   end
 
   def show

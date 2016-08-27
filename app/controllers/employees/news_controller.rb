@@ -2,13 +2,16 @@ class Employees::NewsController < Employees::BaseController
   def index
     # /employees/projects/:project_id/news(.:format)
 
-    @news = current_employee.projects.first.phases.first.news
-
+    # @phase = Phase.where(project_id: params[:project_id])
+    @news= News.where(phase_id: @phase)
+    # @phase_id = @phase.id
+    # @news = News.find(@phase_id)
+    # @projects = current_employee.projects.all
   end
 
   def show
     # /employees/projects/:project_id/news/:id(.:format)
-    @news = (params[:id])
+
 
   end
 

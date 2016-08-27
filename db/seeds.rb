@@ -495,7 +495,7 @@ News.create!(
 )
 
 News.create!(
-  phase_id: phase1.id,
+  phase_id: phase2.id,
   title: "New date for opening public park",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus reiciendis doloribus corporis suscipit sunt dolorem facilis maiores, commodi sequi, molestias odit voluptatem, minus omnis quos. Facere, neque quod voluptas.",
   date: Date.new(2016,8,8),
@@ -510,7 +510,6 @@ news2 = News.create!(
   date: Date.new(2016,8,12),
   picture: "news2.jpg"
 )
-
 
 #seed Payments------------------------------------------------------------------
 

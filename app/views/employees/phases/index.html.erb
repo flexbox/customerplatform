@@ -1,1 +1,17 @@
-index.html.erb
+<p>Employees::Phases::Index</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+
+<% if @phases.nil? || @phases.empty? %>
+  <p>There is no phase for this project.</p>
+<% else %>
+  <p>Phases:</p>
+  <% @phases.each do |phase| %>
+    <p>
+    phase number: <%= phase.phase_number %>
+     <%= link_to "Show", employees_project_phase_path(phase.project_id, phase) %>
+    </p>
+  <% end %> <!-- do -->
+<% end %> <!-- if -->
+<%= link_to "New Phase", new_employees_project_phase_path %>
+<%= link_to "Back", employees_project_path(@project) %>

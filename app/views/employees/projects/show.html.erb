@@ -9,6 +9,9 @@
   <p>Plotsize: <%= @project.plotsize %> sqm</p>
   <p>Longitude: <%= @project.longitude %></p>
   <p>Latitude: <%= @project.latitude %></p>
+  <p>
+    <%= link_to "Phases", employees_project_phases_path(@project) %>
+  </p>
 <% end %>
 
 <%= link_to "Edit", edit_employees_project_path(@project) %>

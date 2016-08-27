@@ -1,6 +1,3 @@
-<!-- This should be Customer/handovers#index -->
-
-
 <div class="container">
 
   <div class="documents-space">
@@ -18,11 +15,8 @@
               <h1><%= handover.title %></h1>
               <p><%= handover.description %></p>
               <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
-              <p>customer remarks: <%= handover.customer_remarks %>
-                <%= link_to "Edit", edit_customers_unit_handover_path(@unit.id, handover) %>
+                <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button" %>
               </p>
-              <p>Employee remarks: <%= handover.employee_remarks %></p>
-              <a href="#" class="btn btn-normal" role="button">Details</a>
             </div>
           </div>
 

@@ -12,6 +12,10 @@ class Customers::DecisionsController < Customers::BaseController
     @supplier = Supplier.find(@decision.supplier_id)
     @unit = Unit.find(@decision.unit_id)
     @document = Document.find(@decision.document_id)
+    respond_to do |format|
+      format.html { redirect_to customers_unit_decision_path(@unit, @decision) }
+      format.js
+    end
   end
 
   def approve # ----------------------------------------------------

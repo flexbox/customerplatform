@@ -4,10 +4,13 @@ class Employees::BaseController < ApplicationController
   before_action :authenticate_employee!
   layout "employee"
 
+  ###################################################################
+
   private
 
-    def set_project
-      # @project will be nil if the current employee is not attached to any project
+    def set_project #------------------------------------------------
+      # @project will be nil if the current employee is not attached
+      # to any project
       @project = nil
       unless current_employee.projects.nil? || current_employee.projects.empty?
         if params[:project_id]
@@ -23,18 +26,61 @@ class Employees::BaseController < ApplicationController
       end
     end
 
-  def set_unit_employee
-    # @unit will be nil if there's no unit related to the current employee
+  def set_unit_employee #--------------------------------------------
+    # @unit will be nil if there's no unit related to the current
+    # employee
     @unit = nil
     unless current_employee.projects.nil? || current_employee.projects.empty?
-      if params[:unit_id]
+      if params[:unit_id] # if there is a current unit
         un = Unit.find(params[:unit_id])
         emp = un.building.lot.phase.project.employees.first
         @unit = un if emp == current_employee
-      else
-        @unit = current_employee.projects.first.phases.first.lots.first.buildings.first.units.first
       end
     end
+  end
+
+  def set_current_phase_id(phase)  #---------------------------------
+    # keeps track of the current phase since
+    # phase_id does not appear in all routes
+    # to lots
+    $global_current_phase_id = phase.id
+  end
+
+  def get_current_phase_id
+    return $global_current_phase_id
+  end
+
+  def set_current_lot_id(lot) #--------------------------------------
+    # keeps track of the current lot since
+    # lot_id does not appear in all routes
+    # to buildings
+    $global_current_lot_id = lot.id
+  end
+
+  def get_current_lot_id
+    return $global_current_lot_id
+  end
+
+  def set_current_building_id(building) #----------------------------
+    # keeps track of the current lot since
+    # lot_id does not appear in all routes
+    # to buildings
+    $global_current_building_id = building.id
+  end
+
+  def get_current_building_id
+    return $global_current_building_id
+  end
+
+  def set_current_unit_id(unit) #------------------------------------
+    # keeps track of the current lot since
+    # lot_id does not appear in all routes
+    # to buildings
+    $global_current_unit_id = unit.id
+  end
+
+  def get_current_unit_id
+    return $global_current_unit_id
   end
 
 end

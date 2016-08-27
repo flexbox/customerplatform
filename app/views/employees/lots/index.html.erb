@@ -1,0 +1,18 @@
+<p>Employees::Lots::Index</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase <%= "#{@phase.phase_number}" %></h2>
+
+<% if @lots.nil? || @lots.empty? %>
+  <p>There is no lot for this phase.</p>
+<% else %>
+  <p>Lots:</p>
+  <% @lots.each do |lot| %>
+    <p>
+    lot number: <%= lot.lot_number %>
+     <%= link_to "Show", employees_project_lot_path(@project.id, lot) %>
+    </p>
+  <% end %> <!-- do -->
+<% end %> <!-- if -->
+<%= link_to "New Lot", new_employees_project_lot_path(@project.id, @phase) %>
+<%= link_to "Back", employees_project_phase_path(@project.id, @phase) %>

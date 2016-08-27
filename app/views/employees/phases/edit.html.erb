@@ -12,7 +12,7 @@
     <%= f.input :duration %>
     <%= f.input :picture, label: "Replace picture" %>
     <%= f.input :picture_cache, as: :hidden %>
-    <%= image_tag @phase.picture.url(:phase_small) %>
+    <%= image_tag @phase.picture.url(:small) %>
   </div>
 
   <div class="form-actions">

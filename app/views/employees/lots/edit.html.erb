@@ -1,0 +1,30 @@
+<p>Employees::Lots::Edit</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase <%= "#{@phase.phase_number}" %></h2>
+
+<h3>Edit Lot</h3>
+
+<%= simple_form_for(@lot, url: employees_project_lot_path) do |f| %>
+
+  <%= f.error_notification %>
+
+ <div class="form-inputs">
+    <%= f.input :lot_number %>
+    <%= f.input :description %>
+    <%= f.input :cadastral_reference %>
+    <%= f.input :lot_size %>
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', employees_project_lots_path %>
+<br>
+<br>
+<br>

@@ -1,0 +1,19 @@
+<p>Employees::Lots::Show</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase number: <%= "#{@phase.phase_number}" %></h2>
+<h3>Lot number: <%= "#{@lot.lot_number}" %></h3>
+
+<p>Description: <%= @lot.description %></p>
+<p>Size: <%= @lot.lot_size %></p>
+<p>Cadastral Reference: <%= @lot.cadastral_reference %></p>
+<% unless @lot.picture.url.nil? %>
+  <p>
+  Picture
+  <%= image_tag @lot.picture.url(:std)%>
+  </p>
+<% end %>
+
+<%= link_to "Edit", edit_employees_project_lot_path(@project.id, @lot) %>
+<%= link_to "Back", employees_project_lots_path(@project.id) %>
+

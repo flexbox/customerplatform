@@ -1,5 +1,7 @@
 class Unit < ApplicationRecord
 
+  mount_uploader :picture, PhotoUploader
+
   validates :building_id, :unit_name, :floor_number, :floor_size, :price_contracted, :sales_person, presence: true
   validates_uniqueness_of :building_id, :scope => [:unit_name]
 

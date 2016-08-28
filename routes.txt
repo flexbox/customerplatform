@@ -57,8 +57,6 @@
                                             PATCH    /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
                                             PUT      /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
                                             DELETE   /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#destroy
-           employees_project_building_units POST     /employees/projects/:project_id/buildings/:building_id/units(.:format)             employees/units#create
-        new_employees_project_building_unit GET      /employees/projects/:project_id/buildings/:building_id/units/new(.:format)         employees/units#new
    employees_project_building_storage_units POST     /employees/projects/:project_id/buildings/:building_id/storage_units(.:format)     employees/storage_units#create
 new_employees_project_building_storage_unit GET      /employees/projects/:project_id/buildings/:building_id/storage_units/new(.:format) employees/storage_units#new
                 employees_project_buildings GET      /employees/projects/:project_id/buildings(.:format)                                employees/buildings#index
@@ -135,6 +133,9 @@ edit_employees_project_unit_consulting_hour GET      /employees/projects/:projec
                                             PATCH    /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
                                             PUT      /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
                                             DELETE   /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#destroy
+                    employees_project_units GET      /employees/projects/:project_id/units(.:format)                                    employees/units#index
+                                            POST     /employees/projects/:project_id/units(.:format)                                    employees/units#create
+                 new_employees_project_unit GET      /employees/projects/:project_id/units/new(.:format)                                employees/units#new
                 edit_employees_project_unit GET      /employees/projects/:project_id/units/:id/edit(.:format)                           employees/units#edit
                      employees_project_unit GET      /employees/projects/:project_id/units/:id(.:format)                                employees/units#show
                                             PATCH    /employees/projects/:project_id/units/:id(.:format)                                employees/units#update
@@ -164,8 +165,7 @@ edit_employees_project_unit_consulting_hour GET      /employees/projects/:projec
                   customers_unit_site_visit GET      /customers/units/:unit_id/site_visits/:id(.:format)                                customers/site_visits#show
                    customers_unit_handovers GET      /customers/units/:unit_id/handovers(.:format)                                      customers/handovers#index
                edit_customers_unit_handover GET      /customers/units/:unit_id/handovers/:id/edit(.:format)                             customers/handovers#edit
-                    customers_unit_handover GET      /customers/units/:unit_id/handovers/:id(.:format)                                  customers/handovers#show
-                                            PATCH    /customers/units/:unit_id/handovers/:id(.:format)                                  customers/handovers#update
+                    customers_unit_handover PATCH    /customers/units/:unit_id/handovers/:id(.:format)                                  customers/handovers#update
                                             PUT      /customers/units/:unit_id/handovers/:id(.:format)                                  customers/handovers#update
                     customers_unit_payments GET      /customers/units/:unit_id/payments(.:format)                                       customers/payments#index
                      customers_unit_payment GET      /customers/units/:unit_id/payments/:id(.:format)                                   customers/payments#show

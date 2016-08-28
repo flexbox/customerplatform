@@ -43,7 +43,7 @@ Rails.application.routes.draw do
       resources :buildings, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
 
         # /projects/:project_id/buildings/:building_id/units/new + create
-        resources :units, only: [:new, :create]
+        # resources :units, only: [:new, :create]
         resources :storage_units, only: [:new, :create]
       end
 
@@ -51,7 +51,7 @@ Rails.application.routes.draw do
       resources :parking_units, only: [:show, :edit, :update, :destroy]
 
       # /projects/:project_id/units/:id
-      resources :units, only: [:show, :edit, :update, :destroy] do
+      resources :units, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
         resources :consulting_hours
         # resources :suppliers TODO
         #  resources :news

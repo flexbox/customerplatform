@@ -35,12 +35,12 @@ Rails.application.routes.draw do
       resources :lots, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
 
         # /projects/:project_id/lots/:lot_id/buildings/new + create + edit/update
-        resources :buildings, only: [:new, :create]
+        # resources :buildings, only: [:new, :create]
         resources :parking_units, only: [:new, :create]
       end
 
       # /projects/:project_id/buildings/:id # listing units + storage units
-      resources :buildings, only: [:show, :edit, :update, :destroy] do
+      resources :buildings, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
 
         # /projects/:project_id/buildings/:building_id/units/new + create
         resources :units, only: [:new, :create]

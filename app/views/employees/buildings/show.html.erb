@@ -1,0 +1,21 @@
+<p>employees::buildings::show</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase number: <%= "#{@phase.phase_number}" %></h2>
+<h3>Lot number: <%= "#{@lot.lot_number}" %></h3>
+<h4>Building name: <%= "#{@building.building_name}" %></h4>
+
+<p>Description: <%= @building.description %></p>
+<p>Address: <%= @building.address %></p>
+<p>Floors: <%= @building.floors %></p>
+<p>Shared space: <%= @building.shared_space %></p>
+<p>Elevators: <%= @building.elevator_amount %></p>
+<% unless @building.picture.url.nil? %>
+  <p>
+  Picture
+  <%= image_tag @building.picture.url(:std)%>
+  </p>
+<% end %>
+
+<%= link_to "Edit", edit_employees_project_building_path(@project.id, @building) %>
+<%= link_to "Back", employees_project_buildings_path(@project.id) %>

@@ -86,7 +86,7 @@ Rails.application.routes.draw do
       end
 
       resources :site_visits,   only: [:index, :show]
-      resources :handovers,     only: [:index, :show, :edit, :update] # for the remarks
+      resources :handovers,     only: [:index, :edit, :update] # for the remarks
       resources :payments,      only: [:index, :show]
       resources :documents,     only: [:index]
 

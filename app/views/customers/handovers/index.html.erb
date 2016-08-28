@@ -15,7 +15,7 @@
               <h1><%= handover.title %></h1>
               <p><%= handover.description %></p>
               <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
-                <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button" %>
+                <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button", remote: true %>
               </p>
             </div>
           </div>
@@ -29,3 +29,12 @@
     </div>
 
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="handoverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>

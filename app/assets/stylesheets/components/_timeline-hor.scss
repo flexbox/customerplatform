@@ -43,14 +43,14 @@
 
   .li.complete {
     .status {
-      border-top: 2px solid #66DC71;
+      border-top: 2px solid #00B295;
       &:before {
-        background-color: #66DC71;
+        background-color: #00B295;
         border: none;
         transition: all 200ms ease-in;
       }
       h4 {
-        color: #66DC71;
+        color: #00B295;
       }
     }
   }

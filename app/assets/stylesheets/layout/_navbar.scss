@@ -1,7 +1,7 @@
 /* Main class */
-.navbar-wagon {
+.navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: $deepspacesparkle;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -42,7 +42,7 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: white;
   font-size: 14px;
   font-weight: 500;
   // font-family: 'azo-sans-web';
@@ -114,5 +114,4 @@
 .avatar-navbar-bordered {
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: $gray-light 1px solid;
 }

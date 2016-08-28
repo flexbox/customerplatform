@@ -533,6 +533,16 @@ payment1 = Payment.create!(
   due_date: Date.new(2016,8,22),
 )
 
+payment1b = Payment.create!(
+  unit_id: unit1.id,
+  name: "first payment",
+  document_id: document1.id,
+  description: "first payment of the house",
+  amount: 50_000,
+  status: "pending",
+  due_date: Date.new(2016,10,22),
+)
+
 payment2 = Payment.create!(
   unit_id: unit2.id,
   name: "last payment",

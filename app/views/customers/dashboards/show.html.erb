@@ -1,5 +1,5 @@
 
-<div class="container-big-customer-dashboard">
+<div class="container">
   <div class="distance">
     <div class="container-small-customer-dashboard">
       <!-- First Row -->
@@ -110,14 +110,14 @@
 
 
             <div class="wrapper-white">
-              <div class="container">
+
 
                 <!-- Third row -->
                 <div class="row">
 
-                  <div class="col-xs-6 col-sm-4">
-                    <div class="list-group">
-                      <p class="list-group-item active">Consulting hours</p>
+                  <div class="col-xs-12 col-sm-4">
+                    <div class="list-group left-column">
+                      <p class="list-group-item active left-column-color">Consulting hours</p>
                       <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
                       <a href="#" class="list-group-item">Morbi leo risus</a>
                       <a href="#" class="list-group-item">Porta ac consectetur ac</a>
@@ -126,22 +126,18 @@
                     </div>
                   </div>
 
-                  <div class="col-xs-6 col-sm-4">
-                    <div class="list-group">
-                      <p class="list-group-item active">News</p>
-
+                  <div class="col-xs-12 col-sm-4">
+                    <div class="list-group middle-column">
+                      <p class="list-group-item active middle-column-color">News</p>
                       <% @news.each do |news_item| %>
                       <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item"><%= news_item.title %></a>
                       <% end %>
-
                     </div>
                   </div>
 
-
-
-                  <div class="col-xs-6 col-sm-4">
-                    <div class="list-group">
-                      <p class="list-group-item active">Information</p>
+                  <div class="col-xs-12 col-sm-4">
+                    <div class="list-group right-column">
+                      <p class="list-group-item active right-column-color">Information</p>
                       <% @informations.each do |information| %>
                       <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item"><%= information.title %></a>
                       <% end %>
@@ -150,26 +146,10 @@
 
                 </div>
                 <!-- END Third row -->
-              </div>
+
             </div>
 
-            <div class="container-photo">
-              <div class="row">
-                <div class="col-sm-4">
-                    <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
 
-                </div>
-                <div class="col-sm-4">
-                  <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>

@@ -1,0 +1,48 @@
+<p>employees::units:new</p>
+
+<h3>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h31>
+<h3>Phase: <%= "#{@phase.phase_number}" %></h3>
+<h3>Lot: <%= "#{@lot.lot_number}" %></h3>
+<h4>Building: <%= "#{@building.building_name}" %></h4>
+
+<h4>New Unit</h4>
+
+<%= simple_form_for(@unit, url: employees_project_units_path) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :unit_name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :floor_number %>
+    <%= f.input :orientation %>
+    <%= f.input :floor_size %>
+    <%= f.input :sold, as: :boolean do %>
+      <%= f.check_box :sold, {}, "true", "false" %>
+    <% end %>
+    <%= f.input :price_initial_budget %>
+    <%= f.input :price_contracted %>
+    <%= f.input :land_value %>
+    <%= f.input :construction_value %>
+    <%= f.input :registration_tax_land %>
+    <%= f.input :vat_construction %>
+    <%= f.input :sales_person %>
+
+    <%= f.input :customer_id, collection: Customer.order("last_name ASC"), label_method: :last_name, value_method: :id, label: "Customer", include_blank: true, selected: @unit.customer_id %>
+
+    <%= f.input :consulting_hours %>
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', employees_project_units_path %>
+<br>
+<br>
+<br>

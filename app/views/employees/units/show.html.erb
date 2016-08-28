@@ -1,0 +1,33 @@
+<p>employees::units::show</p>
+
+<h3>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h3>
+<h3>Phase number: <%= "#{@phase.phase_number}" %></h3>
+<h3>Lot number: <%= "#{@lot.lot_number}" %></h3>
+<h4>Building: <%= "#{@building.building_name}" %></h4>
+<h4>Unit: <%= "#{@unit.unit_name}" %></h4>
+
+<p>Description: <%= @unit.description %></p>
+<p>Address: <%= @unit.address %></p>
+<p>Floor number: <%= @unit.floor_number %></p>
+<p>Orientation: <%= @unit.orientation %></p>
+<p>Floor Size: <%= @unit.floor_size %> sqm</p>
+<p>Initial budget price: <%= @unit.price_initial_budget %></p>
+<p>Contracted price: <%= @unit.price_contracted %></p>
+<p>Land value: <%= @unit.land_value %></p>
+<p>Construction value: <%= @unit.construction_value %></p>
+<p>Registration tax land: <%= @unit.registration_tax_land %></p>
+<p>VAT construction: <%= @unit.vat_construction %></p>
+<p>Sales person: <%= @unit.sales_person %></p>
+<p>Sold?: <%= @sold %></p>
+<p>Customer: <%= @customer %></p>
+<p>Allocated Consulting Hours: <%= @unit.consulting_hours %></p>
+
+<% unless @unit.picture.url.nil? %>
+  <p>
+  Picture
+  <%= image_tag @unit.picture.url(:std)%>
+  </p>
+<% end %>
+
+<%= link_to "Edit", edit_employees_project_unit_path(@project.id, @unit) %>
+<%= link_to "Back", employees_project_units_path(@project.id) %>

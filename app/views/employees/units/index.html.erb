@@ -1,0 +1,20 @@
+<p>employees::units::index</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase <%= "#{@phase.phase_number}" %></h2>
+<h3>Lot <%= "#{@lot.lot_number}" %></h3>
+<h4>Building <%= "#{@building.building_name}" %></h4>
+
+<% if @units.nil? || @units.empty? %>
+  <p>There is no unit for this building.</p>
+<% else %>
+  <h5>Units:</h5>
+  <% @units.each do |unit| %>
+    <p>
+    Unit name: <%= unit.unit_name %>
+     <%= link_to "Show", employees_project_unit_path(@project.id, unit) %>
+    </p>
+  <% end %> <!-- do -->
+<% end %> <!-- if -->
+<%= link_to "New Unit", new_employees_project_unit_path(@project.id) %>
+<%= link_to "Back", employees_project_building_path(@project.id, @building) %>

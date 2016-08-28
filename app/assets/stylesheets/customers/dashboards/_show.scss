@@ -77,7 +77,7 @@
 }
 
 .left-column {
-  margin: 10px 10px 10px 10px;
+
 
     & .left-column-color{
     background-color: $greenrevive;
@@ -86,16 +86,15 @@
 }
 
 .middle-column {
-  margin: 10px 10px 10px 10px;
 
-    & .middle-column-color {
+  & .middle-column-color {
     background-color:$orangerevive;
     border-color: $orangerevive;
   }
 }
 
 .right-column {
-  margin: 10px 10px 10px 10px;
+
 
     & .right-column-color {
     background-color:$bluerevive;

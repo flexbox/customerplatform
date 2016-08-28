@@ -3,7 +3,7 @@ class Customers::PaymentsController < Customers::BaseController
     @payments = current_customer.units.first.payments
     @pending = pending(@payments)
     @completed = completed(@payments)
-    @future_payment = future_payments(@payments)
+    @future_payments = future_payments(@payments)
   end
 
   def show
@@ -11,6 +11,7 @@ class Customers::PaymentsController < Customers::BaseController
 
   private
 
+#method for calculating total pending-------------------------------------------
    def pending(payments)
     pending = 0
     payments.each do |payment|
@@ -21,6 +22,8 @@ class Customers::PaymentsController < Customers::BaseController
     return pending
   end
 
+#method for calculating total completed-----------------------------------------
+
     def completed(payments)
     completed = 0
     payments.each do |payment|
@@ -28,13 +31,15 @@ class Customers::PaymentsController < Customers::BaseController
       completed += payment.amount
       end
     end
-    return pending
+    return completed
   end
 
+#method for calculating total future_payments-----------------------------------------
+#
     def future_payments(payments)
     future_payments = 0
     payments.each do |payment|
-      if payment.status == "future_payment"
+      if payment.status == "future payment"
       future_payments += payment.amount
       end
     end

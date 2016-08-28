@@ -368,6 +368,7 @@ decision1 = Decision.create!(
   due_date: Date.new(2016,9,22),
   status: "pending",
   document_id: document1.id,
+  kind: "kitchen"
 )
 
 decision2 = Decision.create!(
@@ -379,6 +380,7 @@ decision2 = Decision.create!(
   due_date: Date.new(2016,9,22),
   status: "pending",
   document_id: document2.id,
+  kind: "bathroom"
 )
 
 decision3 = Decision.create!(
@@ -390,6 +392,7 @@ decision3 = Decision.create!(
   due_date: Date.new(2016,9,26),
   status: "pending",
   document_id: document3.id,
+  kind: "construction"
 )
 
 decision3 = Decision.create!(
@@ -401,6 +404,7 @@ decision3 = Decision.create!(
   due_date: Date.new(2016,9,26),
   status: "pending",
   document_id: document4.id,
+  kind: "flooring"
 )
 
 

@@ -10,12 +10,12 @@ class Customers::HandoversController < Customers::BaseController
     end
   end
 
-  def show #-------------------------------------------------------
-
-  end
-
   def edit #-------------------------------------------------------
     @handover = Handover.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to edit_customers_unit_handover_path(@unit, @handover) }
+      format.js
+    end
   end
 
   def update #-----------------------------------------------------

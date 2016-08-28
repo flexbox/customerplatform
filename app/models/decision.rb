@@ -1,6 +1,6 @@
 class Decision < ApplicationRecord
 
-  validates :unit_id, :title, :date, :due_date, presence: true
+  validates :unit_id, :title, :date, :due_date, :kind, presence: true
   validates :status,
     :inclusion  => { :in => ['pending', 'approved', 'rejected']}
 

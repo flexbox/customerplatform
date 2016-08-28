@@ -1,20 +1,40 @@
-<p>This should be customers/decisions#show</p>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title"><%#= @decision.title %></h4>
+</div>
+<div class="modal-body">
 
-<p>Unit ID: <%= @decision.unit_id %></p>
-<p>Decision ID: <%= @decision.id %></p>
-<p>Title: <%= @decision.title %></p>
-<p>Description: <%= @decision.description %></p>
-<p>Due date: <%= @decision.due_date %></p>
-<p>Status: <%= @decision.status %></p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
 
-<p>Supplier: </p>
-<p><%= @supplier.company_name %></p>
-<p>Contact: <%= "#{@supplier.first_name} #{@supplier.last_name}" %></p>
+        <h3>Description</h3>
+        <p><%= @decision.description %></p>
 
-<%= link_to "Approve", approve_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch %>
-<%= link_to "Reject", reject_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch %>
-<p></p>
-<% unless @document.nil? || @document.file.nil? || @document.file == '' %>
-  <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
-  <p>Document: <%= @document.title %>  <%= link_to "Download", pdf  %></p>
-<% end %>
+        <h3>Supplier</h3>
+        <p><%= @supplier.company_name %></p>
+        <p>Contact: <%= "#{@supplier.first_name} #{@supplier.last_name}" %></p>
+        <p>Address: <%= @supplier.address %></p>
+        <p>E-mail: <%= @supplier.email %></p>
+        <p>Phone: <%= @supplier.mobile_number %></p>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+
+        <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+        <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
+        <p>Document: <%= @document.title %>  <%= link_to "Download", pdf  %></p>
+        <% end %>
+        <p>Due date: <%= @decision.due_date %></p>
+
+      </div>
+    </div>
+
+
+</div>
+<div class="modal-footer">
+  <%= link_to "Reject", reject_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-danger" %>
+  <%= link_to "Approve", approve_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-default" %>
+</div>
+
+

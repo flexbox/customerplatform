@@ -76,6 +76,16 @@
   border-radius: 4px;
 }
 
+.top-column {
+
+
+    & .top-column-color{
+    background-color:$orangerevive;
+    border-color: $orangerevive;
+  }
+}
+
+
 .left-column {
 
 
@@ -88,8 +98,8 @@
 .middle-column {
 
   & .middle-column-color {
-    background-color:$orangerevive;
-    border-color: $orangerevive;
+    background-color:$greyrevive;
+    border-color: $greyrevive;
   }
 }
 

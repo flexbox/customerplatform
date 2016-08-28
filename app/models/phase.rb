@@ -2,7 +2,7 @@ class Phase < ApplicationRecord
 
   mount_uploader :picture, PhotoUploader
 
-  validates :project_id, :phase_number, :picture, presence: true
+  validates :project_id, :phase_number, presence: true
   validates_uniqueness_of :project_id, :scope => [:phase_number]
 
   belongs_to :project

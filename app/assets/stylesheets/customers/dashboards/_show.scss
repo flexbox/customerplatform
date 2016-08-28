@@ -76,8 +76,18 @@
   border-radius: 4px;
 }
 
+.top-column {
+
+
+    & .top-column-color{
+    background-color:$orangerevive;
+    border-color: $orangerevive;
+  }
+}
+
+
 .left-column {
-  margin: 10px 10px 10px 10px;
+
 
     & .left-column-color{
     background-color: $greenrevive;
@@ -86,16 +96,15 @@
 }
 
 .middle-column {
-  margin: 10px 10px 10px 10px;
 
-    & .middle-column-color {
-    background-color:$orangerevive;
-    border-color: $orangerevive;
+  & .middle-column-color {
+    background-color:$greyrevive;
+    border-color: $greyrevive;
   }
 }
 
 .right-column {
-  margin: 10px 10px 10px 10px;
+
 
     & .right-column-color {
     background-color:$bluerevive;

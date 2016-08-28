@@ -4,7 +4,7 @@
     <div class="col-xs-8">
       <div class="container">
 
-        <% status = ['pending','completed','future_payment'] %>
+        <% status = ['pending','completed','future payment'] %>
         <% title = ['Pending', 'Completed' , 'Future Payment'] %>
 
         <% status.each_with_index do |status, index| %>
@@ -50,12 +50,12 @@
 
 
     <div class="col-xs-4">
-      <div class="well">Balance:</div>
-
-      <%= @pending %>
-
-
-
+      <div class="well">
+      <h3>Balance:</h3>
+        <h4>Pending: € <%= @pending %></h4>
+        <h4>Completed: € <%= @completed %></h4>
+        <h4>Future Payments: € <%= @future_payments %></h4>
+        </div>
     </div>
 
   </div>

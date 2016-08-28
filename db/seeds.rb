@@ -182,7 +182,7 @@ phase1 = Phase.create!(
   phase_number: 1,
   description: "first phase",
   duration: 2,
-  picture: "phase.jpg"
+  picture: "http://static.wixstatic.com/media/a47c3a36b14c3d7a2b7757a6be10e0c6.wix_mp_512"
 )
 
 phase2 = Phase.create!(
@@ -190,7 +190,7 @@ phase2 = Phase.create!(
   phase_number: 2,
   description: "second phase",
   duration: 1,
-  picture: "phase.jpg"
+  picture: "http://static.wixstatic.com/media/a47c3a36b14c3d7a2b7757a6be10e0c6.wix_mp_512"
 )
 
 
@@ -552,6 +552,28 @@ payment2 = Payment.create!(
   status: "pending",
   due_date: Date.new(2016,8,22),
 )
+
+payment3 = Payment.create!(
+  unit_id: unit1.id,
+  name: "last payment",
+  document_id: document2.id,
+  description: "last payment of the house",
+  amount: 60_000,
+  status: "completed",
+  due_date: Date.new(2016,8,22),
+)
+
+payment4 = Payment.create!(
+  unit_id: unit1.id,
+  name: "last payment",
+  document_id: document2.id,
+  description: "last payment of the house",
+  amount: 60_000,
+  status: "future payment",
+  due_date: Date.new(2016,8,22),
+)
+
+
 
 
 #seed Site Visits---------------------------------------------------------------

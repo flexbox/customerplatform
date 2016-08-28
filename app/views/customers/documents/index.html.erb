@@ -1,3 +1,4 @@
+<% icons = { manual: "manual.png", official: "official.png", invoice: "invoice.png"} %>
 <!-- first part of documents official -->
 
 <div class="container">
@@ -15,7 +16,7 @@
                 <div class="col-md-3">
 
                 <div class="thumbnail">
-                  <img class="img-rounded" src="http://unsplash.it/100/100" >
+                  <%= image_tag( icons[unique.downcase.to_sym], class: "img-rounded" ) %>
                   <div class="caption text-center">
                     <h3><%= document.title %></h3>
                     <p><%= document.description %></p>
@@ -31,20 +32,23 @@
   </div>
 </div>
 
-       <div class="container-photo">
-              <div class="row">
-                <div class="col-sm-4">
-                    <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
 
-                </div>
-                <div class="col-sm-4">
-                  <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+<div class="container-photo">
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
+      </div>
+    </div>
+  </div>
+</div>

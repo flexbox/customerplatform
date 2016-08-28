@@ -43,44 +43,44 @@ class Employees::BaseController < ApplicationController
     # keeps track of the current phase since
     # phase_id does not appear in all routes
     # to lots
-    $global_current_phase_id = phase.id
+    session[:current_phase_id] = phase.id
   end
 
   def get_current_phase_id
-    return $global_current_phase_id
+    return session[:current_phase_id]
   end
 
   def set_current_lot_id(lot) #--------------------------------------
     # keeps track of the current lot since
     # lot_id does not appear in all routes
     # to buildings
-    $global_current_lot_id = lot.id
+    session[:current_lot_id] = lot.id
   end
 
   def get_current_lot_id
-    return $global_current_lot_id
+    return session[:current_lot_id]
   end
 
   def set_current_building_id(building) #----------------------------
     # keeps track of the current lot since
     # lot_id does not appear in all routes
     # to buildings
-    $global_current_building_id = building.id
+    session[:current_building_id] = building.id
   end
 
   def get_current_building_id
-    return $global_current_building_id
+    return session[:current_building_id]
   end
 
   def set_current_unit_id(unit) #------------------------------------
     # keeps track of the current lot since
     # lot_id does not appear in all routes
     # to buildings
-    $global_current_unit_id = unit.id
+    session[:current_unit_id] = unit.id
   end
 
   def get_current_unit_id
-    return $global_current_unit_id
+    return session[:current_unit_id]
   end
 
 end

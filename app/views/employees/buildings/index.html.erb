@@ -1,0 +1,19 @@
+<p>employees::buildings::index</p>
+
+<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<h2>Phase <%= "#{@phase.phase_number}" %></h2>
+<h3>Lot <%= "#{@lot.lot_number}" %></h3>
+
+<% if @buildings.nil? || @buildings.empty? %>
+  <p>There is no building for this lot.</p>
+<% else %>
+  <h4>Buildings:</h4>
+  <% @buildings.each do |building| %>
+    <p>
+    building name: <%= building.building_name %>
+     <%= link_to "Show", employees_project_building_path(@project.id, building) %>
+    </p>
+  <% end %> <!-- do -->
+<% end %> <!-- if -->
+<%= link_to "New building", new_employees_project_building_path(@project.id) %>
+<%= link_to "Back", employees_project_lot_path(@project.id, @lot) %>

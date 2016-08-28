@@ -50,6 +50,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
   }
 
 
+
   a.list-group-item {
     color: $list-font-color;
 
@@ -62,9 +63,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
     &:focus {
       background-color: $list-item-background-color;
     }
-    &.active,
-    &.active:hover,
-    &.active:focus {
+    &.active,{
       background-color: $list-primary;
       border-color: $list-primary;
     }
@@ -74,6 +73,10 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
       color: $list-background-color;
     }
   }
+
+
+
+
   .list-group-item-primary {
     color: darken($list-primary, 10%);
     border-color: $list-primary-hover transparent transparent transparent;
@@ -96,6 +99,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
       }
     }
   }
+
   .list-group-item-success {
     color: darken($list-success, 10%);
     border-color: $list-success-hover transparent transparent transparent;
@@ -118,6 +122,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
       }
     }
   }
+
   .list-group-item-warning {
     color: darken($list-warning, 10%);
     border-color: $list-warning-hover transparent transparent transparent;
@@ -140,6 +145,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
       }
     }
   }
+
   .list-group-item-info {
     color: darken($list-info, 10%);
     border-color: $list-info-hover transparent transparent transparent;
@@ -162,6 +168,7 @@ $list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !defa
       }
     }
   }
+
   .list-group-item-danger {
     color: darken($list-danger, 10%);
     border-color: $list-danger-hover transparent transparent transparent;

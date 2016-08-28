@@ -38,3 +38,38 @@
   margin-top: 200px;
   width: 100%;
 }
+
+.container-big-customer-dashboard {
+  margin: 0px 200px;
+}
+
+.container-small-customer-dashboard {
+}
+
+.container-photo {
+  margin: 20px 0px;
+}
+
+.wrapper-white {
+  background-color: $deepspacesparkle;
+  padding-top: 80px;
+  padding-bottom: 70px;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+.card-carousel {
+  overflow: hidden;
+
+}
+
+.card-base-customer-dashboard {
+  height: 400px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  background-size: cover !important;
+  padding: 0px;
+  margin: 0px;
+}

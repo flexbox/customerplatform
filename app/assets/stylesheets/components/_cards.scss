@@ -9,11 +9,12 @@
 
 // THIS IS THE LE WAGON CARD STANDARD CLASS, WE SHOULD DECIDE TO KEEP IT OR REMOVE IT
 .card-base {
-  height: 175px;
+  height: 400px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  background-size: cover !important;
 }
 
 .card-dashboard {

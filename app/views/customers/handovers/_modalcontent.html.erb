@@ -4,10 +4,10 @@
 </div>
 <div class="modal-body">
 
-  <p>Handover for unit <strong><%= @unit.unit_name %></strong></p>
-  <p>Title: <%= @handover.title %></p>
-  <p>Description: <%= @handover.description %></p>
-  <p>Date: <%= @handover.date %></p>
+  <h4>Description</h4>
+    <div class="modal-para"><p><%= @handover.description %></p></div>
+
+
 
   <%= simple_form_for(@handover, url: customers_unit_handover_path) do |f| %>
     <%= f.error_notification %>

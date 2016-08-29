@@ -23,7 +23,7 @@
 
         <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
         <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
-        <p>Document: <%= @document.title %>  <%= link_to "Download", pdf  %></p>
+        <p>Document: <%= @document.title %>  <%= link_to "Download", pdf, target: "_blank"  %></p>
         <% end %>
         <p>Due date: <%= @decision.due_date %></p>
 

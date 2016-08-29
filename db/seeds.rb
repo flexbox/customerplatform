@@ -629,7 +629,51 @@ Webcam.create!(
 
 
 
+#seed Helpdesk Tickets ---------------------------------------------------------
+
+helpdesk_ticket1 = HelpdeskTicket.create!(
+  title: "Kitchen decision",
+  description: "Please call me to evaluate options",
+  status: "open",
+  unit_id: unit1.id,
+  employee_id: employee1.id,
+  )
+
+helpdesk_ticket2 = HelpdeskTicket.create!(
+  title: "Payment information",
+  description: "Made payment last week. Still no confirmation.",
+  status: "open",
+  unit_id: unit1.id,
+  employee_id: employee1.id,
+  )
+
+helpdesk_ticket3 = HelpdeskTicket.create!(
+  title: "Bathroom decision",
+  description: "Please call me to evaluate options",
+  status: "open",
+  unit_id: unit2.id,
+  employee_id: employee2.id,
+  )
+
+helpdesk_ticket4 = HelpdeskTicket.create!(
+  title: "Decision reevaluation",
+  description: "I want the kitchen in green not in blue. Please change offer accordingly.",
+  status: "open",
+  unit_id: unit2.id,
+  employee_id: employee2.id,
+  )
 
 
+#seed Helpdesk Ticket Comments -------------------------------------------------
 
+# helpdesk_comment1 = HelpdeskComment.create!(
+#   comment: "Called customer, not available",
+#   helpdesk_ticket_id: helpdesk_ticket1.id,
+#   employee_id: employee1.id,
+#   )
 
+# helpdesk_comment2 = HelpdeskComment.create!(
+#   comment: "Asked bookkeeping to check",
+#   helpdesk_ticket_id: helpdesk_ticket1.id,
+#   employee_id: employee1.id,
+#   )

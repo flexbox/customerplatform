@@ -8,25 +8,32 @@
       <div class="col-xs-12 col-sm-8">
 
         <h3>Description</h3>
-        <p><%= @decision.description %></p>
+        <div class="modal-para">
+          <p><%= @decision.description %></p>
+        </div>
 
         <h3>Supplier</h3>
-        <p><%= @supplier.company_name %></p>
-        <p>Contact: <%= "#{@supplier.first_name} #{@supplier.last_name}" %></p>
-        <p>Address: <%= @supplier.address %></p>
-        <p>E-mail: <%= @supplier.email %></p>
-        <p>Phone: <%= @supplier.mobile_number %></p>
+        <div class="modal-para">
+          <h4><%= @supplier.company_name %></h4>
+          <p><strong>Contact:</strong> <%= "#{@supplier.first_name} #{@supplier.last_name}" %></p>
+          <p><strong>Address:</strong> <%= @supplier.address %></p>
+          <p><strong>E-mail:</strong> <%= @supplier.email %></p>
+          <p><strong>Phone:</strong> <%= @supplier.mobile_number %></p>
+        </div>
 
       </div>
 
       <div class="col-xs-12 col-sm-4">
 
         <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
-        <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
-        <p>Document: <%= @document.title %>  <%= link_to "Download", pdf, target: "_blank"  %></p>
+          <div class="thumbnail thumb-modal">
+            <%= image_tag( 'pdf.png', class: "img-rounded" ) %>
+            <div class="caption text-center">
+              <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
+              <p><%= link_to "Download", pdf, target: "_blank", class: "btn btn-normal", role: "button" %> </p>
+            </div>
+          </div>
         <% end %>
-        <p>Due date: <%= @decision.due_date %></p>
-
       </div>
     </div>
 
@@ -36,5 +43,7 @@
   <%= link_to "Reject", reject_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-danger" %>
   <%= link_to "Approve", approve_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-default" %>
 </div>
+
+
 
 

@@ -15,7 +15,7 @@
             <div class="thumbnail">
               <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
               <div class="caption text-center">
-                <h3><%= decision.title %></h3>
+                <h4><%= decision.title %></h4>
                 <span class="badge badge-primary card-show"><%= decision.status %></span>
                 <p><strong>Due: <%= decision.due_date.to_formatted_s(:rfc822) %></strong></p>
                 <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button"  %> </p>
@@ -38,7 +38,7 @@
             <div class="thumbnail">
               <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
               <div class="caption text-center">
-                <h3><%= decision.title %></h3>
+                <h4><%= decision.title %></h4>
                 <span class="badge badge-success card-show"><%= decision.status %></span>
                 <p><strong>Approved: <%= decision.updated_at.to_formatted_s(:rfc822) %></strong></p>
                 <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button" %> </p>
@@ -59,7 +59,7 @@
               <div class="thumbnail">
                 <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
                 <div class="caption text-center">
-                  <h3><%= decision.title %></h3>
+                  <h4><%= decision.title %></h4>
                   <span class="badge badge-danger card-show"><%= decision.status %></span>
                   <p><strong>Rejected: <%= decision.updated_at.to_formatted_s(:rfc822) %></strong></p>
                   <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button" %></p>

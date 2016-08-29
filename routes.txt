@@ -47,8 +47,6 @@
                                             PATCH    /employees/projects/:project_id/news/:id(.:format)                                 employees/news#update
                                             PUT      /employees/projects/:project_id/news/:id(.:format)                                 employees/news#update
                                             DELETE   /employees/projects/:project_id/news/:id(.:format)                                 employees/news#destroy
-        employees_project_lot_parking_units POST     /employees/projects/:project_id/lots/:lot_id/parking_units(.:format)               employees/parking_units#create
-     new_employees_project_lot_parking_unit GET      /employees/projects/:project_id/lots/:lot_id/parking_units/new(.:format)           employees/parking_units#new
                      employees_project_lots GET      /employees/projects/:project_id/lots(.:format)                                     employees/lots#index
                                             POST     /employees/projects/:project_id/lots(.:format)                                     employees/lots#create
                   new_employees_project_lot GET      /employees/projects/:project_id/lots/new(.:format)                                 employees/lots#new
@@ -72,6 +70,9 @@ new_employees_project_building_storage_unit GET      /employees/projects/:projec
                                             PATCH    /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#update
                                             PUT      /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#update
                                             DELETE   /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#destroy
+            employees_project_parking_units GET      /employees/projects/:project_id/parking_units(.:format)                            employees/parking_units#index
+                                            POST     /employees/projects/:project_id/parking_units(.:format)                            employees/parking_units#create
+         new_employees_project_parking_unit GET      /employees/projects/:project_id/parking_units/new(.:format)                        employees/parking_units#new
         edit_employees_project_parking_unit GET      /employees/projects/:project_id/parking_units/:id/edit(.:format)                   employees/parking_units#edit
              employees_project_parking_unit GET      /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#show
                                             PATCH    /employees/projects/:project_id/parking_units/:id(.:format)                        employees/parking_units#update

@@ -31,6 +31,8 @@ Supplier.destroy_all
 
 Document.destroy_all
 
+Webcam.destroy_all
+
 
 #seed Customers ----------------------------------------------------------------
 
@@ -149,7 +151,7 @@ supplier2 = Supplier.create!(
 
 project1 = Project.create!(
   commercial_name: "Den Indruk",
-  internal_name: "Brugge1",
+  internal_name: "BDI",
   description: "new project Brugge 2015",
   plotsize: 5000,
   longitude: 3.224200,
@@ -157,18 +159,9 @@ project1 = Project.create!(
 )
 
 project2 = Project.create!(
-  commercial_name: "Kadox",
-  internal_name: "Ghent1",
-  description: "new project Ghent 2008",
-  plotsize: 4000,
-  longitude: 3.696797,
-  latitude: 51.072414,
-)
-
-project3 = Project.create!(
-  commercial_name: "The O House",
-  internal_name: "Ghent2",
-  description: "new project Ghent 2008",
+  commercial_name: "Castelijm",
+  internal_name: "KHE",
+  description: "new project Kapellen",
   plotsize: 4000,
   longitude: 3.696797,
   latitude: 51.072414,
@@ -595,4 +588,48 @@ site_visit2 = SiteVisit.create!(
   description: "We welcome you to have a look at your parking lot",
   date: Date.new(2016,10,21),
   )
+
+#seed Webcams ------------------------------------------------------------------
+
+Webcam.create!(
+  project_id: project1.id,
+  title: "View on houses",
+  url: "https://c-site.eu/dashboard/public/images/DenIndruk/25/",
+  )
+
+Webcam.create!(
+  project_id: project1.id,
+  title: "View on apartments",
+  url: "https://c-site.eu/dashboard/public/images/DenIndruk/26/",
+  )
+
+Webcam.create!(
+  project_id: project1.id,
+  title: "View on apartments and central square",
+  url: "https://c-site.eu/dashboard/public/images/DenIndruk/27/",
+  )
+
+Webcam.create!(
+  project_id: project2.id,
+  title: "View on apartments",
+  url: "https://c-site.eu/dashboard/public/images/Castelijm/28/",
+  )
+
+Webcam.create!(
+  project_id: project2.id,
+  title: "View on houses and central square",
+  url: "https://c-site.eu/dashboard/public/images/Castelijm/29/",
+  )
+
+Webcam.create!(
+  project_id: project2.id,
+  title: "View on houses and street",
+  url: "https://c-site.eu/dashboard/public/images/Castelijm/30/",
+  )
+
+
+
+
+
+
 

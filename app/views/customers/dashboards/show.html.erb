@@ -10,13 +10,13 @@
            <p class="line large"></p>
             <div class="well" style="height: 250px;">
 
-              <p class="list-group-item"><strong>TIMELINE</strong></p>
+              <p class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i><strong> TIMELINE</strong></p>
               <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
               <% @timeline.each do |payment| %>
                 <% if payment.status == "future payment" %>
                   <li class="li">
                     <div class="timestamp">
-                      <span class="author">ID: <%= payment.id %></span>
+
                       <span class="date"><%= payment.due_date %></span>
                     </div>
                     <div class="status">
@@ -28,7 +28,7 @@
 
                   <li class="li complete">
                     <div class="timestamp">
-                      <span class="author">ID: <%= payment.id %></span>
+
                       <span class="date"><%= payment.due_date %></span>
                     </div>
                     <div class="status">
@@ -78,7 +78,7 @@
 
                  <div class="list-group">
                       <p class="line top"></p>
-                      <p class="list-group-item"><strong>IMPORTANT</strong></p>
+                      <p class="list-group-item"><i class="fa fa-exclamation" aria-hidden="true"></i><strong> IMPORTANT</strong></p>
                       <div class="scrollable-panel">
                       <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
                       <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
@@ -113,7 +113,7 @@
                   <div class="col-xs-12 col-sm-4">
                     <div class="list-group">
                       <p class="line left"></p>
-                      <p class="list-group-item"><strong>CONSULTING HOURS</strong></p>
+                      <p class="list-group-item"><i class="fa fa-hourglass-o" aria-hidden="true"></i><strong> CONSULTING HOURS</strong></p>
                       <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
                       <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
                       <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
@@ -124,7 +124,7 @@
                   <div class="col-xs-12 col-sm-4">
                     <div class="list-group">
                       <p class="line middle"></p>
-                      <p class="list-group-item"><strong>NEWS</strong></p>
+                      <p class="list-group-item"><i class="fa fa-newspaper-o" aria-hidden="true"></i><strong> NEWS</strong></p>
                       <% @news.each do |news_item| %>
                       <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item padding-item"><%= news_item.title %></a>
                       <% end %>
@@ -134,7 +134,7 @@
                   <div class="col-xs-12 col-sm-4">
                     <div class="list-group">
                       <p class="line right"></p>
-                      <p class="list-group-item"><strong>INFORMATION</strong></p>
+                      <p class="list-group-item"><i class="fa fa-info" aria-hidden="true"></i><strong> INFORMATION</strong></p>
                       <% @informations.each do |information| %>
                       <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item padding-item"><%= information.title %></a>
                       <% end %>

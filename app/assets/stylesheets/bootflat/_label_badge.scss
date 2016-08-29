@@ -19,9 +19,14 @@ $label-default-font-color:      $darkgray-dark !default;
    * labels and badges
    * --------------------------------------------------
    */
-  .label,
-  .badge {
+   .label,
+   .badge {
     background-color: $label-normal;
+  }
+
+  .card-show {
+    padding: 10px;
+    margin-bottom: 10px;
   }
 
   .label-default,

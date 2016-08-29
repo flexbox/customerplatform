@@ -32,6 +32,30 @@
 
 .backgroundcolorwrapper {
   height: 100vh;
+  animation: colorchange 30s; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 30s; /* Chrome and Safari */
+  animation-iteration-count:infinite;
+
+  @keyframes colorchange
+    {
+      0%   {background: #CFDE00;}
+      20%  {background: #ECC85C;}
+      40%  {background: #F6A9CB;}
+      65%  {background: #BBADCD;}
+      80%  {background: #00B295;}
+      100% {background: #CFDE00;}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: #CFDE00;}
+      20%  {background: #ECC85C;}
+      40%  {background: #F6A9CB;}
+      65%  {background: #BBADCD;}
+      80%  {background: #00B295;}
+      100% {background: #CFDE00;}
+    }
 }
 
 .scrollable-panel {

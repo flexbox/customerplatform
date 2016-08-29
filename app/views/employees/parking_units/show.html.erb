@@ -1,0 +1,19 @@
+<p>employees::parking_units::show</p>
+
+<p>Project: <%= @project.commercial_name %></p>
+<p>Phase: <%= @phase.phase_number %></p>
+<p>Lot: <%= @lot.lot_number %></p>
+
+<p>Parking name: <%= @pu.parking_name %></p>
+<p>
+  Attached to unit:
+  <% if @pu.unit_id.nil? %>
+     n/a
+  <% else %>
+     <% u = Unit.find(@pu.unit_id) %>
+     <%= u.unit_name %>
+  <% end %>
+</p>
+
+<%= link_to "Edit", edit_employees_project_parking_unit_path(@project.id) %>
+<%= link_to "Back", employees_project_parking_units_path(@project.id) %>

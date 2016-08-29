@@ -94,6 +94,8 @@ Rails.application.routes.draw do
 
       resources :parking_units, only: [:show, :index]
       resources :storage_units, only: [:show, :index]
+
+      resources :helpdesk_tickets, only: [:show, :index]
       # resources :suppliers TODO
     end
   end

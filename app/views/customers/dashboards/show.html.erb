@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="distance">
     <div class="container-small-customer-dashboard">
@@ -6,11 +7,13 @@
         <div class="row">
           <!-- Timeline col -->
           <div class="col-xs-12">
+           <p class="line large"></p>
             <div class="well" style="height: 250px;">
-              <ul class="timeline-hor" id="timeline-dashboard">
+
+              <p class="list-group-item"><strong>TIMELINE</strong></p>
+              <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
               <% @timeline.each do |payment| %>
                 <% if payment.status == "future payment" %>
-
                   <li class="li">
                     <div class="timestamp">
                       <span class="author">ID: <%= payment.id %></span>
@@ -74,25 +77,27 @@
 
                 <!-- Important info col -->
                 <div class="col-xs-12 col-sm-4">
-                  <div class="list-group top-column">
-                    <div class="scrollable-panel">
-                    <p class="list-group-item top-column-color">Important notifications</p>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+
+                 <div class="list-group">
+                      <p class="line top"></p>
+                      <p class="list-group-item"><strong>IMPORTANT</strong></p>
+                      <div class="scrollable-panel">
+                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
                     </div>
                   </div>
                 </div>
@@ -105,37 +110,40 @@
 
 
                 <!-- Third row -->
+                <div class="third-row-padding">
                 <div class="row">
-
                   <div class="col-xs-12 col-sm-4">
-                    <div class="list-group left-column">
-                      <p class="list-group-item left-column-color">Consulting hours</p>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
+                    <div class="list-group">
+                      <p class="line left"></p>
+                      <p class="list-group-item"><strong>CONSULTING HOURS</strong></p>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
                     </div>
                   </div>
 
                   <div class="col-xs-12 col-sm-4">
-                    <div class="list-group middle-column">
-                      <p class="list-group-item middle-column-color">News</p>
+                    <div class="list-group">
+                      <p class="line middle"></p>
+                      <p class="list-group-item"><strong>NEWS</strong></p>
                       <% @news.each do |news_item| %>
-                      <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item"><%= news_item.title %></a>
+                      <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item padding-item"><%= news_item.title %></a>
                       <% end %>
                     </div>
                   </div>
 
                   <div class="col-xs-12 col-sm-4">
-                    <div class="list-group right-column">
-                      <p class="list-group-item right-column-color">Information</p>
+                    <div class="list-group">
+                      <p class="line right"></p>
+                      <p class="list-group-item"><strong>INFORMATION</strong></p>
                       <% @informations.each do |information| %>
-                      <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item"><%= information.title %></a>
+                      <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item padding-item"><%= information.title %></a>
                       <% end %>
                     </div>
                   </div>
 
+                </div>
                 </div>
                 <!-- END Third row -->
 
@@ -146,3 +154,4 @@
         </div>
 
        </div>
+

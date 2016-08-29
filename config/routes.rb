@@ -61,6 +61,7 @@ Rails.application.routes.draw do
         resources :informations
         resources :site_visits
         resources :payments
+        resources :pictures
       end
     end
   end
@@ -89,6 +90,7 @@ Rails.application.routes.draw do
       resources :handovers,     only: [:index, :edit, :update] # for the remarks
       resources :payments,      only: [:index, :show]
       resources :documents,     only: [:index]
+      resources :pictures,      only: [:index, :show]
 
       resources :informations, only: [:index, :show]
 

@@ -1,159 +1,185 @@
 
 <div class="container">
+
+
+
   <div class="distance">
     <div class="container-small-customer-dashboard">
       <!-- First Row -->
 
-        <div class="row">
-          <!-- Timeline col -->
-          <div class="col-xs-12">
-           <p class="line large"></p>
-            <div class="well" style="height: 250px;">
+      <div class="row">
+        <!-- Timeline col -->
+        <div class="col-sm-8">
+         <p class="line large"></p>
+         <div class="well" style="height: 250px;">
 
-              <p class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i><strong> TIMELINE</strong></p>
-              <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
-              <% @timeline.each do |payment| %>
-                <% if payment.status == "future payment" %>
-                  <li class="li">
-                    <div class="timestamp">
+          <p class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i><strong> TIMELINE</strong></p>
+          <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
+            <% @timeline.each do |payment| %>
+            <% if payment.status == "future payment" %>
+            <li class="li">
+              <div class="timestamp">
 
-                      <span class="date"><%= payment.due_date %></span>
-                    </div>
-                    <div class="status">
-                      <h4> <%= payment.status %> </h4>
-                    </div>
-                  </li>
-
-                <% else %>
-
-                  <li class="li complete">
-                    <div class="timestamp">
-
-                      <span class="date"><%= payment.due_date %></span>
-                    </div>
-                    <div class="status">
-                      <h4> <%= payment.status %> </h4>
-                    </div>
-                  </li>
-
-                <% end %>
-              <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- END Timeline col -->
-              <!-- END First Row -->
-
-              <!-- Second Row -->
-              <div class="row">
-
-                <!-- Webcam col -->
-                <div class="col-xs-12 col-sm-8">
-
-                  <div class="well card-carousel" style="background-size: cover;">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                      <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="<%= prev_num = 0 %>" class="active"></li>
-                        <% (@webcams.size-1).times do %>
-                        <li data-target="#carousel-example-generic" data-slide-to="<%= prev_num += 1 %>"></li>
-                        <% end %>
-                      </ol>
-                      <div class="carousel-inner">
-                        <div class="item active img-responsive"><img src="<%= @webcams.first.url %>"></div>
-                        <% @webcams.drop(1).each do |webcam| %>
-                          <div class="item img-responsive"><img src="<%= webcam.url %>"></div>
-                        <% end %>
-                      </div>
-                      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                      </a>
-                      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Important info col -->
-                <div class="col-xs-12 col-sm-4">
-
-                 <div class="list-group">
-                      <p class="line top"></p>
-                      <p class="list-group-item"><i class="fa fa-exclamation" aria-hidden="true"></i><strong> IMPORTANT</strong></p>
-                      <div class="scrollable-panel">
-                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
-                    </div>
-                  </div>
-                </div>
+                <span class="date"><%= payment.due_date %></span>
               </div>
+              <div class="status">
+                <h4> <%= payment.status %> </h4>
+              </div>
+            </li>
 
-              <!-- END Second Row -->
+            <% else %>
 
+            <li class="li complete">
+              <div class="timestamp">
 
+                <span class="date"><%= payment.due_date %></span>
+              </div>
+              <div class="status">
+                <h4> <%= payment.status %> </h4>
+              </div>
+            </li>
 
-
-
-                <!-- Third row -->
-                <div class="third-row-padding">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-4">
-                    <div class="list-group">
-                      <p class="line left"></p>
-                      <p class="list-group-item"><i class="fa fa-hourglass-o" aria-hidden="true"></i><strong> CONSULTING HOURS</strong></p>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
-                      <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-4">
-                    <div class="list-group">
-                      <p class="line middle"></p>
-                      <p class="list-group-item"><i class="fa fa-newspaper-o" aria-hidden="true"></i><strong> NEWS</strong></p>
-                      <% @news.each do |news_item| %>
-                      <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item padding-item"><%= news_item.title %></a>
-                      <% end %>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-4">
-                    <div class="list-group">
-                      <p class="line right"></p>
-                      <p class="list-group-item"><i class="fa fa-info" aria-hidden="true"></i><strong> INFORMATION</strong></p>
-                      <% @informations.each do |information| %>
-                      <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item padding-item"><%= information.title %></a>
-                      <% end %>
-                    </div>
-                  </div>
-
-                </div>
-                </div>
-                <!-- END Third row -->
-
-
-<%= link_to 'Hälp', customers_unit_helpdesk_tickets_path(@unit) %>
-
-
-          </div>
-
+            <% end %>
+            <% end %>
+          </ul>
         </div>
+      </div>
 
-       </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default" style="height: 258px;">
+          <p class="line middle"></p>
+          <p class="list-group-item"><strong> ABOUT</strong></p>
+          <div class="panel-body text-center">
+            <p><strong>Name unit: </strong><%= @unit.unit_name %></p>
+            <p><strong>Project: </strong><%= @project.commercial_name %></p>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Your Revive contact: <%= @employee.first_name%> <%= @employee.last_name %></li>
+            <li class="list-group-item"><i class="fa fa-mobile" aria-hidden="true"></i>  Mobile number: <%= @employee.mobile_number %></li>
+            <li class="list-group-item last-fucking-item"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <%= @employee.email %></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- END Timeline col -->
+    <!-- END First Row -->
+
+    <!-- Second Row -->
+    <div class="row">
+
+      <!-- Webcam col -->
+
+
+      <div class="col-xs-12 col-sm-4">
+
+       <div class="list-group">
+        <p class="line top"></p>
+        <p class="list-group-item"><i class="fa fa-exclamation" aria-hidden="true"></i><strong> IMPORTANT</strong></p>
+        <div class="scrollable-panel">
+          <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Dapibus ac facilisis in</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+
+      <div class="well card-carousel" style="background-size: cover;">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="<%= prev_num = 0 %>" class="active"></li>
+            <% (@webcams.size-1).times do %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= prev_num += 1 %>"></li>
+            <% end %>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active img-responsive"><img src="<%= @webcams.first.url %>"></div>
+            <% @webcams.drop(1).each do |webcam| %>
+            <div class="item img-responsive"><img src="<%= webcam.url %>"></div>
+            <% end %>
+          </div>
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Important info col -->
+
+  </div>
+
+  <!-- END Second Row -->
+
+
+
+
+
+  <!-- Third row -->
+  <div class="third-row-padding">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="list-group">
+          <p class="line left"></p>
+          <p class="list-group-item"><i class="fa fa-hourglass-o" aria-hidden="true"></i><strong> CONSULTING HOURS</strong></p>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item padding-item">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item padding-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item padding-item">Morbi leo risus</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="list-group">
+          <p class="line middle"></p>
+          <p class="list-group-item"><i class="fa fa-newspaper-o" aria-hidden="true"></i><strong> NEWS</strong></p>
+          <% @news.each do |news_item| %>
+          <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item padding-item"><%= news_item.title %></a>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="list-group">
+          <p class="line right"></p>
+          <p class="list-group-item"><i class="fa fa-info" aria-hidden="true"></i><strong> INFORMATION</strong></p>
+          <% @informations.each do |information| %>
+          <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item padding-item"><%= information.title %></a>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- END Third row -->
+
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
 

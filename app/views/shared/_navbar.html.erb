@@ -9,25 +9,23 @@
 
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to t(".dashboard", default: "Dashboard "), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link active" %>
 
-    <%= link_to t(".dashboard", default: "Dashboard "), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
-
-  <!-- News -->
+    <!-- News -->
     <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
-  <!-- Decisions -->
+    <!-- Decisions -->
     <%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
-  <!-- Site Visits -->
-    <%= link_to t(".site visits", default: "Site Visits"), customers_unit_site_visits_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
+    <!-- Site Visits -->
+    <%= link_to t(".site visits", default: "Events"), customers_unit_site_visits_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
-  <!-- Acceptance -->
-    <%= link_to t(".acceptance", default: "Handover"), customers_unit_handovers_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
-  <!-- Payments -->
+
+    <!-- Payments -->
     <%= link_to t(".payments", default: "Payments"), customers_unit_payments_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
 
-  <!-- Documents -->
+    <!-- Documents -->
     <%= link_to t(".documents", default: "Documents"), customers_unit_documents_path(@unit), class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
@@ -35,8 +33,10 @@
   <!-- Profile picture and dropdown -->
   <div class="avatar-navbar-padding">
 
-    <div class="dropdown">
+    <div class="navbar-wagon-right">
+      <div class="name-navbar">  <%= current_customer.first_name.capitalize %> </div>
 
+      <div class="dropdown">
         <%= cl_image_tag current_customer.picture, class: "avatar-navbar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
@@ -47,13 +47,13 @@
         </li> -->
         <li>
           <%= link_to destroy_customer_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
           <% end %>
         </li>
-        </ul>
+      </ul>
 
     </div>
-
+</div>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

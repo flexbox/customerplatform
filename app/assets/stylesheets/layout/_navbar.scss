@@ -60,7 +60,13 @@
   color: white;
   font-size: 14px;
   font-weight: 500;
+  opacity: 0.5;
   // font-family: 'azo-sans-web';
+}
+
+.active {
+  opacity: 1;
+
 }
 .navbar-wagon-link:hover {
   color: $tealrevive;
@@ -137,3 +143,14 @@
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1em;
 }
+
+.name-navbar {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 0 1 auto;
+  cursor: pointer;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+

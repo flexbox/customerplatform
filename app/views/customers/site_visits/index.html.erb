@@ -1,53 +1,86 @@
+<div class="container-left">
 
-<div class="container">
+  <div class="container">
 
-  <div class="documents-space">
 
-    <div class="document-title">
+  <h3>Site Visits</h3>
 
-        <div class="row">
-          <% @sitevisits.each do |visit| %>
+    <div class="row">
+      <% @sitevisits.each do |visit| %>
 
-                <div class="col-md-3">
+      <div class="col-md-2">
 
-                  <div class="thumbnail">
-                    <%= image_tag( "sitevisit.png", class: "img-rounded" ) %>
-                    <div class="caption text-center">
-                      <h3><%= visit.title %></h3>
-                      <p><%= visit.description %></p>
-                      <p><strong><%= visit.date.to_formatted_s(:rfc822)%></strong></p>
-                      <a href="#" class="btn btn-normal" role="button">Details</a>
-                    </div>
-                  </div>
-
-                </div>
-
-            <% end %>
-
+        <div class="thumbnail">
+          <%= image_tag( "sitevisit.png", class: "img-rounded" ) %>
+          <div class="caption text-center">
+            <h3><%= visit.title %></h3>
+            <p><%= visit.description %></p>
+            <p><strong><%= visit.date.to_formatted_s(:rfc822)%></strong></p>
+            <a href="#" class="btn btn-normal" role="button">Details</a>
+          </div>
         </div>
+
+      </div>
+
+      <% end %>
 
     </div>
 
+      <h3>Handover</h3>
+
+
+    <div class="row">
+      <% @handovers.each do |handover| %>
+
+      <div class="col-md-2">
+
+        <div class="thumbnail">
+          <img class="img-rounded" src="http://unsplash.it/400/400">
+          <div class="caption text-center">
+            <h3><%= handover.title %></h3>
+            <p><%= handover.description %></p>
+            <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
+            <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button", remote: true %>
+          </div>
+        </div>
+
+      </div>
+
+      <% end %>
+
+    </div>
+
+
+
+
+
   </div>
+</div>
 
 
 
 
-  <div id="map" style="width: 100%; height: 800px; "></div>
 
-  <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-  $(document).on('ready', function() {
-  var handler = Gmaps.build('Google');
-  handler.buildMap({ internal: { id: 'map' } }, function() {
-  markers = handler.addMarkers(<%= raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  if (markers.length == 0) {
-  handler.getMap().setZoom(2);
+<div id="map" class="map-position" ; "></div>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).on('ready', function() {
+var handler = Gmaps.build('Google');
+
+handler.buildMap({ provider: { scrollwheel: false, zoomControl: false }, internal:{ id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+
+if (markers.length == 0) {
+
+handler.getMap().setZoom(2);
 } else if (markers.length == 1) {
+
 handler.getMap().setZoom(14);
 }
+
 });
 });
 <% end %>
@@ -55,7 +88,15 @@ handler.getMap().setZoom(14);
 
 
 
+    <!-- Modal -->
+<div class="modal fade" id="handoverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
+    </div>
+  </div>
 </div>
+
+
 
 

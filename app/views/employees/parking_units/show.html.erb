@@ -1,8 +1,13 @@
-<p>employees::parking_units::show</p>
-
-<p>Project: <%= @project.commercial_name %></p>
-<p>Phase: <%= @phase.phase_number %></p>
-<p>Lot: <%= @lot.lot_number %></p>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> > >
+    Parking Units > @pu.parking_name > Show
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <p>Parking name: <%= @pu.parking_name %></p>
 <p>

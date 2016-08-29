@@ -1,9 +1,14 @@
-<p>employees::storage_units::index</p>
-
-<p>Project: <%= @project.commercial_name %></p>
-<p>Phase: <%= @phase.phase_number %></p>
-<p>Lot: <%= @lot.lot_number %></p>
-<p>Building: <%= @building.building_name %></p>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> >
+    Buildings <%= @building.building_name %> >
+    Storage Units > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <% if @sus.nil? || @sus.empty? %>
   <p>There is no storage unit in this building.</p>

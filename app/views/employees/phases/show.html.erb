@@ -1,6 +1,11 @@
-<p>Employee::Phase::Show</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> > Show
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <p>Phase number: <%= @phase.phase_number %></p>
 <p>Description: <%= @phase.description %></p>

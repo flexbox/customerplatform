@@ -1,8 +1,13 @@
-<p>Employee::Phase::New</p>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases > New
+    <hr>
+  </p>
+  <hr>
+</div>
 
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
 
-<h1>New Phase</h1>
 
 <%= simple_form_for(@phase, url: employees_project_phases_path ) do |f| %>
 

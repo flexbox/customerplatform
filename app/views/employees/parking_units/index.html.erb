@@ -1,8 +1,13 @@
-<p>employees::parking_units::index</p>
-
-<p>Project: <%= @project.commercial_name %></p>
-<p>Phase: <%= @phase.phase_number %></p>
-<p>Lot: <%= @lot.lot_number %></p>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> > >
+    Parking Units > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <% if @parking_units.nil? || @parking_units.empty? %>
   <p>There is no parking unit in this lot.</p>

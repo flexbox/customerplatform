@@ -1,11 +1,14 @@
-<p>employees::storage_units::new</p>
-
-<h3>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h3>
-<h3>Phase: <%= @phase.phase_number %></h3>
-<h3>Lot: <%= @lot.lot_number %></h3>
-<h3>Building: <%= @building.building_name %></h3>
-
-<h4>New Storage Unit</h4>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> >
+    Buildings <%= @building.building_name %> >
+    Storage Units > New
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <%= simple_form_for(@su, url: employees_project_storage_units_path) do |f| %>
 

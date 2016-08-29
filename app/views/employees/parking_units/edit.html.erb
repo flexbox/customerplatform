@@ -1,10 +1,13 @@
-<p>employees::parking_units::edit</p>
-
-<h3>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h3>
-<h3>Phase: <%= "#{@phase.phase_number}" %></h3>
-<h3>Lot: <%= "#{@lot.lot_number}" %></h3>
-
-<h4>Edit Parking Unit</h4>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> > >
+    Parking Units > @pu.parking_name > Edit
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <%= simple_form_for(@pu, url: employees_project_parking_unit_path) do |f| %>
 

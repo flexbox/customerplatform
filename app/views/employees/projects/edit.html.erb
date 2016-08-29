@@ -1,4 +1,7 @@
-<h1>Project : <%= @project.commercial_name %></h1>
+<div>
+  <p>Employees > Projects <%= @project.commercial_name %> > Edit</p>
+  <hr>
+</div>
 
 <%= simple_form_for(@project, url: employees_project_path(@project) ) do |f| %>
 

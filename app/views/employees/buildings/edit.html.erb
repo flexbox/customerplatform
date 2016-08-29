@@ -1,10 +1,14 @@
-<p>employees::buildings::edit</p>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> >
+    Buildings <%= @building.building_name %> > Edit
+    <hr>
+  </p>
+  <hr>
+</div>
 
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
-<h2>Phase: <%= "#{@phase.phase_number}" %></h2>
-<h3>Lot: <%= "#{@lot.lot_number}" %></h3>
-
-<h4>Edit Building</h4>
 
 <%= simple_form_for(@building, url: employees_project_building_path) do |f| %>
 

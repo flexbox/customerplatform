@@ -1,9 +1,14 @@
-<p>employees::units::index</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
-<h2>Phase <%= "#{@phase.phase_number}" %></h2>
-<h3>Lot <%= "#{@lot.lot_number}" %></h3>
-<h4>Building <%= "#{@building.building_name}" %></h4>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> >
+    Buildings <%= @building.building_name %> >
+    Units > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <% if @units.nil? || @units.empty? %>
   <p>There is no unit for this building.</p>

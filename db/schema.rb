@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829104824) do
+ActiveRecord::Schema.define(version: 20160829195304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -259,6 +259,16 @@ ActiveRecord::Schema.define(version: 20160829104824) do
     t.index ["project_id"], name: "index_phases_on_project_id", using: :btree
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "file"
+    t.integer  "unit_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["unit_id"], name: "index_pictures_on_unit_id", using: :btree
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "commercial_name"
     t.string   "internal_name"
@@ -364,6 +374,7 @@ ActiveRecord::Schema.define(version: 20160829104824) do
   add_foreign_key "parking_units", "lots"
   add_foreign_key "payments", "units"
   add_foreign_key "phases", "projects"
+  add_foreign_key "pictures", "units"
   add_foreign_key "site_visits", "units"
   add_foreign_key "storage_units", "buildings"
   add_foreign_key "supplier_projects", "projects"

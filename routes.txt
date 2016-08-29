@@ -55,8 +55,6 @@
                                             PATCH    /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
                                             PUT      /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#update
                                             DELETE   /employees/projects/:project_id/lots/:id(.:format)                                 employees/lots#destroy
-   employees_project_building_storage_units POST     /employees/projects/:project_id/buildings/:building_id/storage_units(.:format)     employees/storage_units#create
-new_employees_project_building_storage_unit GET      /employees/projects/:project_id/buildings/:building_id/storage_units/new(.:format) employees/storage_units#new
                 employees_project_buildings GET      /employees/projects/:project_id/buildings(.:format)                                employees/buildings#index
                                             POST     /employees/projects/:project_id/buildings(.:format)                                employees/buildings#create
              new_employees_project_building GET      /employees/projects/:project_id/buildings/new(.:format)                            employees/buildings#new
@@ -65,6 +63,9 @@ new_employees_project_building_storage_unit GET      /employees/projects/:projec
                                             PATCH    /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#update
                                             PUT      /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#update
                                             DELETE   /employees/projects/:project_id/buildings/:id(.:format)                            employees/buildings#destroy
+            employees_project_storage_units GET      /employees/projects/:project_id/storage_units(.:format)                            employees/storage_units#index
+                                            POST     /employees/projects/:project_id/storage_units(.:format)                            employees/storage_units#create
+         new_employees_project_storage_unit GET      /employees/projects/:project_id/storage_units/new(.:format)                        employees/storage_units#new
         edit_employees_project_storage_unit GET      /employees/projects/:project_id/storage_units/:id/edit(.:format)                   employees/storage_units#edit
              employees_project_storage_unit GET      /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#show
                                             PATCH    /employees/projects/:project_id/storage_units/:id(.:format)                        employees/storage_units#update

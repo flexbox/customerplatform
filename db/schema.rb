@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829084035) do
+ActiveRecord::Schema.define(version: 20160829104824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,28 @@ ActiveRecord::Schema.define(version: 20160829084035) do
     t.text     "customer_remarks"
     t.text     "employee_remarks"
     t.index ["unit_id"], name: "index_handovers_on_unit_id", using: :btree
+  end
+
+  create_table "helpdesk_comments", force: :cascade do |t|
+    t.integer  "helpdesk_ticket_id"
+    t.integer  "employee_id"
+    t.string   "comment"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["employee_id"], name: "index_helpdesk_comments_on_employee_id", using: :btree
+    t.index ["helpdesk_ticket_id"], name: "index_helpdesk_comments_on_helpdesk_ticket_id", using: :btree
+  end
+
+  create_table "helpdesk_tickets", force: :cascade do |t|
+    t.integer  "unit_id"
+    t.integer  "employee_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "status",      default: "open"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["employee_id"], name: "index_helpdesk_tickets_on_employee_id", using: :btree
+    t.index ["unit_id"], name: "index_helpdesk_tickets_on_unit_id", using: :btree
   end
 
   create_table "information", force: :cascade do |t|
@@ -332,6 +354,10 @@ ActiveRecord::Schema.define(version: 20160829084035) do
   add_foreign_key "employee_projects", "employees"
   add_foreign_key "employee_projects", "projects"
   add_foreign_key "handovers", "units"
+  add_foreign_key "helpdesk_comments", "employees"
+  add_foreign_key "helpdesk_comments", "helpdesk_tickets"
+  add_foreign_key "helpdesk_tickets", "employees"
+  add_foreign_key "helpdesk_tickets", "units"
   add_foreign_key "information", "units"
   add_foreign_key "lots", "phases"
   add_foreign_key "news", "phases"

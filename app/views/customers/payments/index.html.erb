@@ -32,8 +32,8 @@
                         <p>Due: <%= payment.due_date.to_formatted_s(:rfc822) %></p>
                         <% @document = Document.find(payment.document_id) %>
                         <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
-                          <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
-                          <%= link_to pdf do %>
+                          <% pdf = cl_image_path(@document.file, resource_type: "raw", target: "_blank") %>
+                          <%= link_to pdf, target: "_blank" do %>
                             <button class="btn btn-normal">
                             Download invoice
                             </button>

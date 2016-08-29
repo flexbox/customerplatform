@@ -16,5 +16,6 @@ class Unit < ApplicationRecord
                                              # -> no 's' at the end
   has_many :site_visits, dependent: :destroy
   has_many :payments, dependent: :destroy
+  has_many :helpdesk_tickets, dependent: :destroy
 
 end

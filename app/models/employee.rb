@@ -30,5 +30,7 @@ class Employee < ApplicationRecord
 
   has_many :consulting_hours, dependent: :destroy
   has_many :customers, through: :consulting_hours
+  has_many :helpdesk_comments
+  has_many :helpdesk_tickets
 
 end

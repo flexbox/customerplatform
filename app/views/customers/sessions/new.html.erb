@@ -1,7 +1,7 @@
 <!-- Title for page -->
 <% content_for :title, "Log in" %>
 
-<% @revivecolors = ["#FF9E19", "#BCEDFF", "#DFE835", "#C5C2C0"] %>
+<% @revivecolors = ["#CFDE00", "#ECC85C", "#F6A9CB", "#BBADCD", "#00B295", "#00AEEF", "#FF9E16"] %>
 
 <div class="backgroundcolorwrapper" style="background-color: <%= @revivecolors.sample %> ;">
 
@@ -9,38 +9,49 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-10 col-xs-offset-1 col-xs-offset-right-1 col-sm-4 col-sm-offset-0 col-sm-offset-right-0">
           <div class="card-transp">
-            <%= image_tag 'logo-revive.svg'%>
+            <%= image_tag 'logo-revive.svg', class: "logo-margin" %>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="form-inputs">
                 <%= f.input :email, required: false, autofocus: true %>
                 <%= f.input :password, required: false %>
-                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                <div class="padding-left-16">
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
               </div>
               <div class="form-actions">
                 <%= f.button :submit, "Log in" %>
               </div>
             <% end %>
-            <%= render "customers/shared/links" %>
+            <div class="margin-top-links">
+              <%= render "customers/shared/links" %>
+            </div>
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-8">
-          <div class="card-transp">
-            <div>
-              <%= image_tag 'logo-tgl.svg', width: '200' %>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem sed autem consectetur deleniti esse, iure omnis est inventore assumenda, distinctio dignissimos. Eaque delectus adipisci eveniet, assumenda ab voluptatum illum numquam!
-            </p>
+        <div class="col-xs-10 col-xs-offset-1 col-xs-offset-right-1 col-sm-8 col-sm-offset-0 col-sm-offset-right-0">
+          <div class="card-transp" style="display: flex;">
+              <div>
+                <%= image_tag 'logo-tgl.svg', id: "homepagelogo" %>
+              </div>
+              <div>
+                <p>
+                  Dear Customer,</br></br> welcome to your personal <strong>Re-Vive Connect</strong> website.
+                  Our goal is to closely accompany you on your journey to a new home.
+                  Living the Good Life means not having to worry about the progress of your Re-Vive project.
+                </p>
+                <p>
+                  We invite you to check this webpage regularly for updates on your ongoing project, important notifications, planning site visits and making decisions on customization or getting in touch with one of our staffmembers.
+                </p>
+              </div>
+
           </div>
         </div>
 
       </div>
     </div>
   </div>
-
 </div>
 
 

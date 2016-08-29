@@ -6,9 +6,9 @@
   <div class="documents-space">
     <div class="document-title">
       <% @kindU.each do |unique| %>
-        <div class="row">
+
           <h3><%= unique %></h3>
-        </div>
+
         <div class="row">
           <% @documents.each do |document| %>
             <% if document.kind == unique %>
@@ -35,20 +35,3 @@
 
 
 
-<div class="container-photo">
-  <div class="row">
-    <div class="col-sm-4">
-        <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-      </div>
-
-    </div>
-    <div class="col-sm-4">
-      <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card-base-customer-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/400/400');">
-      </div>
-    </div>
-  </div>
-</div>

@@ -1,0 +1,13 @@
+<p>employees::storage_units::show</p>
+
+<h3>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h3>
+<h3>Phase: <%= @phase.phase_number %></h3>
+<h3>Lot: <%= @lot.lot_number %></h3>
+<h3>Building: <%= @building.building_name %></h3>
+
+<p>Storage unit name: <%= @su.storage_name %></p>
+<p>Storage unit size: <%= @su.storage_size %></p>
+<p>Attached to unit: <%= @unit %></p>
+
+<%= link_to "Edit", edit_employees_project_storage_unit_path(@project.id) %>
+<%= link_to "Back", employees_project_storage_units_path(@project.id) %>

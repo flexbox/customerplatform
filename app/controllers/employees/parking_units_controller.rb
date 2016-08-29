@@ -47,6 +47,18 @@ private ##################################################################
     @project = current_employee.projects.find(params[:project_id])
     @phase = @project.phases.find(get_current_phase_id)
     @lot = @phase.lots.find(get_current_lot_id)
+    # We can only select units attached to the same lot
+    @unitscollection = get_units
+  end
+
+  def get_units
+    units = []
+    @lot.buildings.each do |building|
+      building.units.each do |unit|
+        units << unit
+      end
+    end
+    return units
   end
 
   def params_pu

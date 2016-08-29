@@ -1,0 +1,19 @@
+<p>employees::storage_units::index</p>
+
+<p>Project: <%= @project.commercial_name %></p>
+<p>Phase: <%= @phase.phase_number %></p>
+<p>Lot: <%= @lot.lot_number %></p>
+<p>Building: <%= @building.building_name %></p>
+
+<% if @sus.nil? || @sus.empty? %>
+  <p>There is no storage unit in this building.</p>
+<% else %>
+  <% @sus.each do |su| %>
+    <p>
+      Storage name: <%= su.storage_name%>
+      <%= link_to "Show", employees_project_storage_unit_path(@project.id, su) %>
+    </p>
+  <% end %>
+<% end %>
+<%= link_to "New Storage unit", new_employees_project_storage_unit_path(@project.id) %>
+<%= link_to "Back", employees_project_lot_path(@project.id, @lot) %>

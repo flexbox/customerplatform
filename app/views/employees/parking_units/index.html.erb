@@ -12,15 +12,6 @@
       Parking name: <%= pu.parking_name %>
       <%= link_to "Show", employees_project_parking_unit_path(@project.id, pu) %>
     </p>
-    <p>
-      Attached to unit:
-      <% if pu.unit_id.nil? %>
-         n/a
-      <% else %>
-         <% u = Unit.find(pu.unit_id) %>
-         <%= u.unit_name %>
-      <% end %>
-    </p>
   <% end %>
 <% end %>
 <%= link_to "New parking unit", new_employees_project_parking_unit_path(@project.id) %>

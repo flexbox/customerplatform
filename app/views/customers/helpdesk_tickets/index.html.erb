@@ -20,6 +20,24 @@
 
           </div>
       <% end %>
+
+
+          <div class="col-xs-12 col-sm-4">
+
+            <div class="thumbnail">
+              <div class="caption text-center">
+                <p>
+                  <%= link_to "New Question", new_customers_unit_helpdesk_ticket_path(@unit, @helpdesk_ticket), remote:true, class: "btn btn-normal", role: "button"  %>
+                </p>
+
+
+              </div>
+            </div>
+
+          </div>
+
+
+
     </div>
   <% end %>
 
@@ -50,7 +68,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="decisionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="helpdeskticketModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 

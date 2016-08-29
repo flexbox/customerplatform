@@ -10,3 +10,17 @@
   }
 }
 
+.map-position {
+   position:absolute;
+   right:0px;
+   top  :70px;
+   width: 66%;
+   height: calc(100vh - 70px);
+}
+
+.containter-left {
+  position:absolute;
+  left: 10px;
+  top: 70px;
+  width: 100px;
+}

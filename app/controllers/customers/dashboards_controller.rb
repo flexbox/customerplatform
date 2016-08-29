@@ -5,5 +5,6 @@ class Customers::DashboardsController < Customers::BaseController
     @news = @unit.building.lot.phase.news
     @informations = @unit.information.all
     @timeline = @unit.payments.sort_by(&:id)
+    @webcams = @unit.building.lot.phase.project.webcams
   end
 end

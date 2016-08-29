@@ -8,42 +8,33 @@
           <div class="col-xs-12">
             <div class="well" style="height: 250px;">
               <ul class="timeline-hor" id="timeline-dashboard">
-                <li class="li complete">
-                  <div class="timestamp">
-                    <span class="author">Abhi Sharma</span>
-                    <span class="date">11/15/2014</span>
-                  </div>
-                  <div class="status">
-                    <h4> Shift Created </h4>
-                  </div>
-                </li>
-                <li class="li complete">
-                  <div class="timestamp">
-                    <span class="author">PAM Admin</span>
-                    <span class="date">11/15/2014</span>
-                  </div>
-                  <div class="status">
-                      <h4> Email Sent </h4>
-                  </div>
-                </li>
-                <li class="li complete">
-                  <div class="timestamp">
-                    <span class="author">Aaron Rodgers</span>
-                    <span class="date">11/15/2014</span>
-                  </div>
-                  <div class="status">
-                    <h4> SIC Approval </h4>
-                  </div>
-                </li>
-                <li class="li">
-                  <div class="timestamp">
-                    <span class="author">PAM Admin</span>
-                    <span class="date">TBD</span>
-                  </div>
-                  <div class="status">
-                    <h4> Shift Completed </h4>
-                  </div>
-                </li>
+              <% @timeline.each do |payment| %>
+                <% if payment.status == "future payment" %>
+
+                  <li class="li">
+                    <div class="timestamp">
+                      <span class="author">ID: <%= payment.id %></span>
+                      <span class="date"><%= payment.due_date %></span>
+                    </div>
+                    <div class="status">
+                      <h4> <%= payment.status %> </h4>
+                    </div>
+                  </li>
+
+                <% else %>
+
+                  <li class="li complete">
+                    <div class="timestamp">
+                      <span class="author">ID: <%= payment.id %></span>
+                      <span class="date"><%= payment.due_date %></span>
+                    </div>
+                    <div class="status">
+                      <h4> <%= payment.status %> </h4>
+                    </div>
+                  </li>
+
+                <% end %>
+              <% end %>
               </ul>
             </div>
           </div>

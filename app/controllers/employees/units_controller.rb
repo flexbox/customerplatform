@@ -16,6 +16,7 @@ class Employees::UnitsController < Employees::BaseController
       @customer = "#{cust.first_name} #{cust.last_name}"
     end
     @sold = @unit.sold ? "Yes" : "No"
+    @storage_units = @building.storage_units.where("unit_id = ?", @unit.id)
   end
 
   def new #----------------------------------------------------------

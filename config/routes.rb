@@ -44,10 +44,10 @@ Rails.application.routes.draw do
 
         # /projects/:project_id/buildings/:building_id/units/new + create
         # resources :units, only: [:new, :create]
-        resources :storage_units, only: [:new, :create]
+        # resources :storage_units, only: [:new, :create]
       end
 
-      resources :storage_units, only: [:show, :edit, :update, :destroy]
+      resources :storage_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       resources :parking_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
       # /projects/:project_id/units/:id

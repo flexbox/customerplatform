@@ -29,5 +29,14 @@
   </p>
 <% end %>
 
+<p>Storage Unit(s)</p>
+<% if @storage_units.nil? || @storage_units.empty? %>
+  <p>No storage unit</p>
+<% else %>
+  <% @storage_units.each do |su| %>
+    <p><%= su.storage_name %></p>
+  <% end %>
+<% end %>
+
 <%= link_to "Edit", edit_employees_project_unit_path(@project.id, @unit) %>
 <%= link_to "Back", employees_project_units_path(@project.id) %>

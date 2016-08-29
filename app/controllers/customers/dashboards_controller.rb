@@ -6,5 +6,9 @@ class Customers::DashboardsController < Customers::BaseController
     @informations = @unit.information.all
     @timeline = @unit.payments.sort_by(&:id)
     @webcams = @unit.building.lot.phase.project.webcams
+    @project = @unit.building.lot.phase.project
+
+    @employee_id = @project.employee_projects.first.employee_id
+    @employee = Employee.find(@employee_id)
   end
 end

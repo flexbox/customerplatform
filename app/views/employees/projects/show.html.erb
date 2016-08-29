@@ -1,18 +1,15 @@
-<p>Employee::Project::Show</p>
+<div>
+  <p>Employees > Projects <%= @project.commercial_name %> > Show</p>
+  <hr>
+</div>
 
-<% if @project.nil? %>
-  <p>You have no projects.</p>
-<% else %>
-  <p>Commercial name: <%= @project.commercial_name %></p>
-  <p>Internal name: <%= @project.internal_name %></p>
-  <p>Description: <%= @project.description %></p>
-  <p>Plotsize: <%= @project.plotsize %> sqm</p>
-  <p>Longitude: <%= @project.longitude %></p>
-  <p>Latitude: <%= @project.latitude %></p>
-  <p>
-    <%= link_to "Phases", employees_project_phases_path(@project) %>
-  </p>
-<% end %>
+<p>Commercial name: <%= @project.commercial_name %></p>
+<p>Internal name: <%= @project.internal_name %></p>
+<p>Description: <%= @project.description %></p>
+<p>Plotsize: <%= @project.plotsize %> sqm</p>
+<p>Longitude: <%= @project.longitude %></p>
+<p>Latitude: <%= @project.latitude %></p>
 
+<p> <%= link_to "Phases", employees_project_phases_path(@project) %> </p>
 <%= link_to "Edit", edit_employees_project_path(@project) %>
 <%= link_to "Back", employees_projects_path %>

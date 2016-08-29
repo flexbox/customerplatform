@@ -1,8 +1,12 @@
-<p>Employees::Lots::Show</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
-<h2>Phase number: <%= "#{@phase.phase_number}" %></h2>
-<h3>Lot number: <%= "#{@lot.lot_number}" %></h3>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> > Show
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <p>Description: <%= @lot.description %></p>
 <p>Size: <%= @lot.lot_size %></p>

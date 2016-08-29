@@ -1,6 +1,11 @@
-<p>Employees::Phases::Index</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <% if @phases.nil? || @phases.empty? %>
   <p>There is no phase for this project.</p>

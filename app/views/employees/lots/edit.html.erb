@@ -1,9 +1,12 @@
-<p>Employees::Lots::Edit</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
-<h2>Phase <%= "#{@phase.phase_number}" %></h2>
-
-<h3>Edit Lot</h3>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots <%= @lot.lot_number %> > Edit
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <%= simple_form_for(@lot, url: employees_project_lot_path) do |f| %>
 

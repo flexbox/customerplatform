@@ -1,7 +1,12 @@
-<p>Employees::Lots::Index</p>
-
-<h1>Project: <%= "#{@project.commercial_name} (#{@project.internal_name})" %></h1>
-<h2>Phase <%= "#{@phase.phase_number}" %></h2>
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    Lots > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
 <% if @lots.nil? || @lots.empty? %>
   <p>There is no lot for this phase.</p>

@@ -1,0 +1,27 @@
+<div>
+  <p>
+    Employees > Customer >
+    Consulting Hours > Index
+    <hr>
+  </p>
+  <hr>
+</div>
+<p>Consulting Hours</p>
+<% if @chs.nil? || @chs.empty? %>
+  <p>Used: 0/<%= @consulting_quota %></p>
+<% else %>
+  <% @chs.each do |ch| %>
+    <p>
+      <%= ch.date %>,
+      <%= ch.description %>,
+      <%= ch.elapsed_time %> hours
+      <%= link_to "Edit", edit_employees_customer_consulting_hour_path(ch.customer_id, ch) %>
+    </p>
+  <% end %>
+  <p>Used: <%= @used_hours%> / <%= @consulting_quota %></p>
+<% end%>
+
+<%= link_to "Add Consulting Hours", new_employees_customer_consulting_hour_path(@customer.id) %>
+<br>
+<br>
+<br>

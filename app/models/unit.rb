@@ -1,5 +1,9 @@
 class Unit < ApplicationRecord
 
+  DEFAULT_CONSULTING_HOURS = 15
+
+  after_initialize :set_defaults
+
   mount_uploader :picture, PhotoUploader
 
   validates :building_id, :unit_name, :floor_number, :floor_size, :price_contracted, :sales_person, presence: true
@@ -17,5 +21,12 @@ class Unit < ApplicationRecord
   has_many :site_visits, dependent: :destroy
   has_many :payments, dependent: :destroy
   has_many :helpdesk_tickets, dependent: :destroy
+
+  private #############################################
+
+  def set_defaults
+    self.consulting_hours = DEFAULT_CONSULTING_HOURS
+  end
+
 
 end

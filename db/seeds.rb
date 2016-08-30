@@ -558,7 +558,7 @@ news2 = News.create!(
 
 payment1 = Payment.create!(
   unit_id: unit1.id,
-  name: "first payment",
+  title: "first payment",
   document_id: document1.id,
   description: "first payment of the house",
   amount: 50_000,
@@ -568,7 +568,7 @@ payment1 = Payment.create!(
 
 payment1b = Payment.create!(
   unit_id: unit1.id,
-  name: "first payment",
+  title: "first payment",
   document_id: document1.id,
   description: "first payment of the house",
   amount: 50_000,
@@ -578,7 +578,7 @@ payment1b = Payment.create!(
 
 payment2 = Payment.create!(
   unit_id: unit2.id,
-  name: "last payment",
+  title: "last payment",
   document_id: document2.id,
   description: "last payment of the house",
   amount: 60_000,
@@ -588,7 +588,7 @@ payment2 = Payment.create!(
 
 payment3 = Payment.create!(
   unit_id: unit1.id,
-  name: "last payment",
+  title: "last payment",
   document_id: document2.id,
   description: "last payment of the house",
   amount: 60_000,
@@ -598,7 +598,7 @@ payment3 = Payment.create!(
 
 payment4 = Payment.create!(
   unit_id: unit1.id,
-  name: "last payment",
+  title: "last payment",
   document_id: document2.id,
   description: "last payment of the house",
   amount: 60_000,

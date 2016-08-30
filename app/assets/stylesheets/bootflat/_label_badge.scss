@@ -65,6 +65,13 @@ $label-default-font-color:      $darkgray-dark !default;
     border-color: $label-info;
     background-color: $label-info;
   }
+
+  .label-hours,
+  .badge-hours {
+    border-color: $greenrevive;
+    background-color: $greenrevive;
+  }
+
 }
 
 

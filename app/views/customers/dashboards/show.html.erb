@@ -130,7 +130,7 @@
       <div class="col-xs-12 col-sm-4">
         <div class="list-group">
           <p class="line left"></p>
-          <p class="list-group-item"><i class="fa fa-hourglass-o" aria-hidden="true"></i><strong> CONSULTING HOURS</strong><span class="badge badge-primary text-right"> <%= @max_consulting - @elapsedhours %>/<%= @max_consulting %> left</span></p>
+          <p class="list-group-item"><i class="fa fa-hourglass-o" aria-hidden="true"></i><strong> CONSULTING HOURS</strong><span class="badge badge-hours text-right"> <%= @max_consulting - @elapsedhours %>/<%= @max_consulting %> left</span></p>
           <% @consultinghours.each do |consultation| %>
             <a class="list-group-item padding-item"><%= consultation.description %> <span class="badge badge-warning text-right"><%= consultation.elapsed_time%>h</span></a>
           <% end %>

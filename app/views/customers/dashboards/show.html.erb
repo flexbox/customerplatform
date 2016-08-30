@@ -1,4 +1,4 @@
-<%= link_to 'Pictures', customers_unit_pictures_path(@unit) %>
+
 
 
 
@@ -12,7 +12,7 @@
         <!-- Timeline col -->
         <div class="col-sm-8">
          <p class="line large"></p>
-         <div class="well" style="height: 250px;">
+         <div class="well" style="height: 254px;">
 
           <p class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i><strong> TIMELINE</strong></p>
           <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
@@ -51,13 +51,15 @@
           <p class="line middle"></p>
           <p class="list-group-item"><strong> ABOUT</strong></p>
           <div class="panel-body text-center">
-            <p><strong>Name unit: </strong><%= @unit.unit_name %></p>
-            <p><strong>Project: </strong><%= @project.commercial_name %></p>
+            <p>Your Revive contact: <%= @employee.first_name%> <%= @employee.last_name %></p>
+            <p><strong>Name unit: </strong><%= @unit.unit_name %>   <strong>    Project: </strong><%= @project.commercial_name %></p>
+
           </div>
           <ul class="list-group">
-            <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Your Revive contact: <%= @employee.first_name%> <%= @employee.last_name %></li>
             <li class="list-group-item"><i class="fa fa-mobile" aria-hidden="true"></i>  Mobile number: <%= @employee.mobile_number %></li>
             <li class="list-group-item last-fucking-item"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <%= @employee.email %></li>
+            <li class="list-group-item last-fucking-item last-color about-last-item"><i class="fa fa-camera" aria-hidden="true"></i> <%= link_to 'Pictures', customers_unit_pictures_path(@unit)%></li>
+
           </ul>
         </div>
       </div>

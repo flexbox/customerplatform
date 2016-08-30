@@ -1,0 +1,15 @@
+<div>
+  <p>Employees > Customers > Index</p>
+  <hr>
+</div>
+
+<% if @customers.nil? || @customers.empty? %>
+  You do not have any customer.
+<% else %>
+  <% @customers.each do |customer| %>
+    <p>
+      <%= "#{customer.first_name} #{customer.last_name}" %>
+      <%= link_to "Show", employees_customer_path(customer) %>
+    </p>
+  <% end %>
+<% end %>

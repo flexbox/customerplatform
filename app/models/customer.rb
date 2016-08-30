@@ -4,6 +4,8 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :invitable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :picture, PhotoUploader
+
   validates :first_name, :last_name, :address, :mobile_number, :email, :signing_date, presence: true
   validates :mobile_number, uniqueness: true
   validates :email, uniqueness: { case_sensitive: false }

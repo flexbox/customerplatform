@@ -5,5 +5,10 @@ class Customers::NewsController < Customers::BaseController
   end
 
   def show
+    @news = News.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to customers_unit_news_path(@unit, @news) }
+      format.js
+    end
   end
 end

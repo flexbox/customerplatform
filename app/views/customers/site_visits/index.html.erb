@@ -1,94 +1,110 @@
-<div class="container-left">
 
-  <div class="container">
+<div class="container-sitevisits">
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+ <h3>Site Visits</h3>
 
 
-  <h3>Site Visits</h3>
+     <% @sitevisits.each do |visit| %>
 
-    <div class="row">
-      <% @sitevisits.each do |visit| %>
+     <div class="col-md-6">
 
-      <div class="col-md-2">
 
-        <div class="thumbnail">
-          <%= image_tag( "sitevisit.png", class: "img-rounded" ) %>
-          <div class="caption text-center">
-            <h3><%= visit.title %></h3>
-            <p><%= visit.description %></p>
-            <p><strong><%= visit.date.to_formatted_s(:rfc822)%></strong></p>
-            <a href="#" class="btn btn-normal" role="button">Details</a>
-          </div>
+      <div class="thumbnail">
+        <%= image_tag( "sitevisit.png", class: "img-rounded" ) %>
+        <div class="caption text-center">
+          <h3><%= visit.title %></h3>
+          <p><%= visit.description %></p>
+          <p><strong><%= visit.date.to_formatted_s(:rfc822)%></strong></p>
+          <a href="#" class="btn btn-normal" role="button">Details</a>
         </div>
-
       </div>
-
-      <% end %>
 
     </div>
 
-      <h3>Handover</h3>
-
-
-    <div class="row">
-      <% @handovers.each do |handover| %>
-
-      <div class="col-md-2">
-
-        <div class="thumbnail">
-          <%= image_tag( "handover_two.png", class: "img-rounded" ) %>
-          <div class="caption text-center">
-            <h3><%= handover.title %></h3>
-            <p><%= handover.description %></p>
-            <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
-            <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button", remote: true %>
-          </div>
-        </div>
-
-      </div>
-
-      <% end %>
+    <% end %>
 
     </div>
 
 
 
+    <div class="col-md-6">
 
+ <h3>Handover</h3>
+
+    <% @handovers.each do |handover| %>
+
+    <div class="col-md-6">
+
+      <div class="thumbnail">
+        <%= image_tag( "handover_two.png", class: "img-rounded" ) %>
+        <div class="caption text-center">
+          <h3><%= handover.title %></h3>
+          <p><%= handover.description %></p>
+          <p><strong><%= handover.date.to_formatted_s(:rfc822)%></strong></p>
+          <%= link_to "Details", edit_customers_unit_handover_path(@unit.id, handover), class: "btn btn-normal", role: "button", remote: true %>
+        </div>
+      </div>
+
+    </div>
+
+    <% end %>
 
   </div>
+
+</div>
+
+</div>
 </div>
 
 
 
-
-
 <div id="map" class="map-position" ; "></div>
+
+
 
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
 $(document).on('ready', function() {
 var handler = Gmaps.build('Google');
 
-handler.buildMap({ provider: { scrollwheel: false, zoomControl: false }, internal:{ id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
 
-if (markers.length == 0) {
+handler.buildMap( {provider: { scrollwheel: false, zoomControl: false, styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a0d6d1"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#dedede"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#dedede"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f1f1f1"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}] }, internal:{ id: 'map' }},
 
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
+function()
+  {
 
-handler.getMap().setZoom(14);
-}
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
 
-});
+
+
+    if (markers.length == 0) {
+
+
+    handler.getMap().setZoom(2);
+
+
+      } else if (markers.length == 1) {
+
+    handler.getMap().setZoom(14);
+  }
+
+  });
 });
 <% end %>
 <% end %>
 
 
 
-    <!-- Modal -->
+
+
+<!-- Modal -->
 <div class="modal fade" id="handoverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

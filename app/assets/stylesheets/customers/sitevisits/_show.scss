@@ -11,16 +11,11 @@
 }
 
 .map-position {
-   position:absolute;
-   right:0px;
-   top  :70px;
-   width: 66%;
-   height: calc(120vh - 70px);
+   width: 100%;
+   height: 600px;
 }
 
-.container-left {
-  position:absolute;
-  left: 20px;
-  top: 70px;
-  max-width: 34%;
+.container-sitevisits {
+  padding: 0px 0px 50px 0px;
+
 }

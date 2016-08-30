@@ -468,11 +468,28 @@ handover3 = Handover.create!(
 
 information1 = Information.create!(
   unit_id: unit1.id,
-  title: "Information about first floor",
+  title: "Changes to exterior bricks",
   document_id: document1.id,
-  description: "Welcome to your new house",
+  description: "Due production errors and to keep on track with our schedule, our architect decided to switch to the brick 'Backed glazed' ",
   read: false,
   date: Date.new(2016,8,29),
+)
+
+information1b = Information.create!(
+  unit_id: unit1.id,
+  title: "Free 'Strook' bench!",
+  description: "We're happy to announce that we will provide a free Strook bench to all our customers.",
+  read: false,
+  date: Date.new(2016,8,30),
+)
+
+information1c = Information.create!(
+  unit_id: unit1.id,
+  title: "Installing letterboxes next week",
+  document_id: document1.id,
+  description: "We will be installing letterboxes in your front yard next week, please make sure to allow for easy access.",
+  read: false,
+  date: Date.new(2016,8,31),
 )
 
 information2 = Information.create!(

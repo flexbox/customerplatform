@@ -20,25 +20,6 @@ class Customers::SiteVisitsController < Customers::BaseController
 
 
 
-  def edit #-------------------------------------------------------
-    @handover = Handover.find(params[:id])
-    respond_to do |format|
-      format.html { redirect_to edit_customers_unit_handover_path(@unit, @handover) }
-      format.js
-    end
-  end
-
-  def update #-----------------------------------------------------
-    @handover = Handover.find(params[:id])
-    if @handover.update(params_handover)
-      flash[:notice] = 'Remarks Saved'
-      redirect_to customers_unit_handovers_path and return
-    else
-      flash[:alert] = 'Error saving'
-      redirect_back(fallback_location: root_path) and return
-    end
-  end
-
 private ##################################################################
 
   def params_handover

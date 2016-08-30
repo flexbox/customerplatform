@@ -162,7 +162,14 @@
           <p class="line right"></p>
           <p class="list-group-item"><i class="fa fa-info" aria-hidden="true"></i><strong> INFORMATION</strong></p>
           <% @informations.each do |information| %>
-          <a href='<%#= link_to  customers_unit_information_path(@unit)%>' class="list-group-item padding-item"><%= information.title %></a>
+            <%= link_to  customers_unit_information_path(@unit, information), class: "list-group-item padding-item", remote: true do %>
+              <%= information.title %>
+              <% if information.read %>
+                <span class="badge badge-success text-right">accepted</span>
+              <% else %>
+                <span class="badge badge-warning text-right">unread</span>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -182,4 +189,11 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="informationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title"><%= @information.title %></h4>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+
+        <h3>Description</h3>
+        <div class="modal-para">
+          <p><%= @information.description %></p>
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+
+        <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+          <div class="thumbnail thumb-modal">
+            <%= image_tag( 'pdf.png', class: "img-rounded" ) %>
+            <div class="caption text-center">
+              <% pdf = cl_image_path(@document.file, resource_type: "raw") %>
+              <p><%= link_to "Download", pdf, target: "_blank", class: "btn btn-normal", role: "button" %> </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+</div>
+<div class="modal-footer">
+  <%= link_to "I confirm and accept this message", read_customers_unit_information_path(@unit, @information), :method=>:patch, class: "btn btn-default" %>
+</div>
+
+
+
+

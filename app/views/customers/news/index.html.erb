@@ -19,7 +19,7 @@
             <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Posted on <%= newsitem.date %></small></p>
           </div>
           <div class="timeline-body">
-            <% if newsitem.picture %>
+            <% if newsitem.picture.url %>
               <div class="timeline-image" style="background-image: url('<%= cl_image_path(newsitem.picture) %>');">
               </div>
             <% end %>
@@ -46,7 +46,7 @@
             <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Posted on <%= newsitem.date %></small></p>
           </div>
           <div class="timeline-body">
-            <% if newsitem.picture %>
+            <% if newsitem.picture.url %>
               <div class="timeline-image" style="background-image: url('<%= cl_image_path(newsitem.picture) %>');">
               </div>
             <% end %>

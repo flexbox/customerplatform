@@ -22,7 +22,7 @@ class Customers::HandoversController < Customers::BaseController
     @handover = Handover.find(params[:id])
     if @handover.update(params_handover)
       flash[:notice] = 'Remarks Saved'
-      redirect_to customers_unit_handovers_path and return
+      redirect_to customers_unit_site_visits_path and return
     else
       flash[:alert] = 'Error saving'
       redirect_back(fallback_location: root_path) and return

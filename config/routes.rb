@@ -92,7 +92,11 @@ Rails.application.routes.draw do
       resources :documents,     only: [:index]
       resources :pictures,      only: [:index, :show]
 
-      resources :informations, only: [:index, :show]
+      resources :informations, only: [:index, :show] do
+        member do
+          patch :read
+        end
+      end
 
       resources :parking_units, only: [:show, :index]
       resources :storage_units, only: [:show, :index]

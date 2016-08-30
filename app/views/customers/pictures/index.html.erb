@@ -1,4 +1,5 @@
-<% @pictures.each do |pictures| %>
-  <%= picture.title %>
 
+
+<% @pictures.each do |picture| %>
+  <%= cl_image_tag picture.file %>
 <% end %>

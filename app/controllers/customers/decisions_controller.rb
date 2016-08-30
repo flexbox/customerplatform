@@ -5,6 +5,7 @@ class Customers::DecisionsController < Customers::BaseController
     unit_id = params[:unit_id]
     @decisions = Decision.where(unit_id:unit_id)
     @unit = Unit.find(unit_id)
+    @current_page_decisions = true
   end
 
   def show # -------------------------------------------------------

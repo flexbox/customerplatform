@@ -2,11 +2,12 @@
     // $(".navbar-wagon-link:nth-child(2)").on("click", function(e) {
     //   $(".navbar-wagon-link:nth-child(2)").addClass("active");
     // });
-var navbarlinks = ".navbar-wagon-right a"
-  $(navbarlinks).on("click", function(e){
-    $(".navbar-wagon-right").find(".active").removeClass("active");
-    $(this).addClass("active");
-  });
+
+// var navbarlinks = ".navbar-wagon-right a"
+//   $(navbarlinks).on("click", function(e){
+//     $(".navbar-wagon-right").find(".active").removeClass("active");
+//     $(this).addClass("active");
+//   });
 // });
 
 // $(".nav a").on("click", function(){

@@ -6,7 +6,9 @@
           <%= simple_form_for(@helpdesk_ticket, url: customers_unit_helpdesk_tickets_path(@unit, @helpdesk_ticket)) do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
-          <%= f.button :submit %>
-          <% end %>
 </div>
 
+  <div class="modal-footer">
+      <%= f.button :submit %>
+  </div>
+<% end %>

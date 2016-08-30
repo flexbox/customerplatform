@@ -6,6 +6,13 @@ class Customers::HelpdeskTicketsController < Customers::BaseController
   end
 
   def show #--------------------------------------------------------
+    @ticket = HelpdeskTicket.find(params[:id])
+    @unit = Unit.find(@ticket.unit_id)
+    respond_to do |format|
+      format.html { redirect_to customers_unit_helpdesk_ticket_path(@unit, @ticket) }
+      format.js
+    end
+
   end
 
 
@@ -22,6 +29,7 @@ class Customers::HelpdeskTicketsController < Customers::BaseController
   def create #--------------------------------------------------------
     @helpdesk_ticket = HelpdeskTicket.new(params_helpdesk_ticket)
     @helpdesk_ticket.unit_id = @unit.id
+    @helpdesk_ticket.answers = ""
     project_id = @unit.building.lot.phase.project.id
     @employee_project = EmployeeProject.find_by(project_id:project_id)
     @helpdesk_ticket.employee_id = @employee_project.employee_id

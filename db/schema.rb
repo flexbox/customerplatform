@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829195304) do
+ActiveRecord::Schema.define(version: 20160830081514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(version: 20160829195304) do
     t.string   "status",      default: "open"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.text     "answers"
     t.index ["employee_id"], name: "index_helpdesk_tickets_on_employee_id", using: :btree
     t.index ["unit_id"], name: "index_helpdesk_tickets_on_unit_id", using: :btree
   end

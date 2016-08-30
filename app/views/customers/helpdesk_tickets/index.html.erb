@@ -5,8 +5,9 @@
 
   <% if @tickets.any? {|d| d.status == "open" } %>
     <div class="row">
-      <h3> Open Tickets</h3>
+      <h3> Your Open Tickets</h3>
       <% @tickets.each do |ticket| %>
+        <% if ticket.status == "open" %>
           <div class="col-xs-12 col-sm-4">
 
             <div class="thumbnail">
@@ -19,48 +20,33 @@
             </div>
 
           </div>
+        <% end %>
       <% end %>
 
+    </div>
+  <% end %>
 
+  <% if @tickets.any? {|d| d.status == "closed" } %>
+    <div class="row">
+      <h3> Your Closed Tickets</h3>
+      <% @tickets.each do |ticket| %>
+        <% if ticket.status == "closed" %>
           <div class="col-xs-12 col-sm-4">
 
             <div class="thumbnail">
+              <%= image_tag( icons[ticket.status.to_sym], class: "img-rounded" ) %>
               <div class="caption text-center">
-                <p>
-                  <%= link_to "New Question", new_customers_unit_helpdesk_ticket_path(@unit, @helpdesk_ticket), remote:true, class: "btn btn-normal", role: "button"  %>
-                </p>
-
+                <h3><%= ticket.title %></h3>
+                <p><%= ticket.description %></p>
+                <p><%= link_to "Show Answer", customers_unit_helpdesk_ticket_path(@unit, ticket), remote:true, class: "btn btn-normal", role: "button"  %> </p>
 
               </div>
             </div>
 
           </div>
-
-
-
-    </div>
-  <% end %>
-
-
-  <% if @tickets.any? {|d| d.status == "closed" } %>
-    <div class="row">
-      <h3> Closed Tickets</h3>
-      <% @tickets.each do |ticket| %>
-        <% if ticket.status == "solved" %>
-          <div class="col-xs-12 col-sm-3">
-              <div class="thumbnail">
-                <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
-                <div class="caption text-center">
-                  <h3><%= decision.title %></h3>
-                  <p><%= decision.description %></p>
-                  <p><%= decision.due_date.to_formatted_s(:rfc822) %></p>
-                  <p><%= decision.status %></p>
-                  <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button" %></p>
-                </div>
-              </div>
-          </div>
         <% end %>
       <% end %>
+
     </div>
   <% end %>
 
@@ -68,7 +54,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="helpdeskticketModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="helpdeskticketanswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 

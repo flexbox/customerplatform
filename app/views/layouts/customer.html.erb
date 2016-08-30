@@ -1,5 +1,19 @@
 <% content_for :content do %>
   <%= render 'shared/navbar' %>
   <%= yield %>
+
+  <!-- Modal Button Questions -->
+  <div id="fixedbutton">
+      <%= link_to "New Question", new_customers_unit_helpdesk_ticket_path(@unit, @helpdesk_ticket), remote:true, class: "btn btn-normal", role: "button"  %>
+  </div>
 <% end %>
 <%= render template: "layouts/application" %>
+
+<!-- Modal -->
+<div class="modal fade" id="helpdeskticketModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>

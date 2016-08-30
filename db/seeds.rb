@@ -34,6 +34,7 @@ Document.destroy_all
 Webcam.destroy_all
 
 
+
 #seed Customers ----------------------------------------------------------------
 
 customer1 = Customer.create!(
@@ -240,7 +241,8 @@ unit1 = Unit.create!(
   floor_size: 100,
   sold: false,
   price_contracted: 300_000,
-  sales_person: "Dirk Dewachter"
+  sales_person: "Dirk Dewachter",
+  consulting_hours: 15,
 )
 
 unit2 = Unit.create!(
@@ -254,7 +256,8 @@ unit2 = Unit.create!(
   floor_size: 100,
   sold: false,
   price_contracted: 300_000,
-  sales_person: "Dirk Dewachter"
+  sales_person: "Dirk Dewachter",
+  consulting_hours: 15,
 )
 
 
@@ -407,7 +410,21 @@ consulting_hours1 = ConsultingHour.create!(
   customer_id: customer1.id,
   employee_id: employee1.id,
   elapsed_time: 2,
-  description: "first consultation",
+  description: "Changes to interior layout",
+)
+
+consulting_hours1b = ConsultingHour.create!(
+  customer_id: customer1.id,
+  employee_id: employee1.id,
+  elapsed_time: 1,
+  description: "Selecting different floor finishes",
+)
+
+consulting_hours1c = ConsultingHour.create!(
+  customer_id: customer1.id,
+  employee_id: employee1.id,
+  elapsed_time: 2,
+  description: "Different window finish on interior side",
 )
 
 consulting_hours2 = ConsultingHour.create!(

@@ -10,5 +10,6 @@ class Customers::DashboardsController < Customers::BaseController
 
     @employee_id = @project.employee_projects.first.employee_id
     @employee = Employee.find(@employee_id)
+    @current_page_dashboard = true
   end
 end

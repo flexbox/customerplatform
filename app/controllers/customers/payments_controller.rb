@@ -4,6 +4,7 @@ class Customers::PaymentsController < Customers::BaseController
     @pending = pending(@payments)
     @completed = completed(@payments)
     @future_payments = future_payments(@payments)
+    @current_page_payments = true
   end
 
   def show

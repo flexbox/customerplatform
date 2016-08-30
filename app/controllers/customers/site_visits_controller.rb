@@ -3,6 +3,7 @@ class Customers::SiteVisitsController < Customers::BaseController
     unit_id = @unit.id
     @sitevisits = SiteVisit.where(unit_id: unit_id)
     @project = @unit.building.lot.phase.project
+    @current_page_sitevisits = true
 
     @hash = Gmaps4rails.build_markers(@project) do |project, marker|
       marker.lat project.latitude

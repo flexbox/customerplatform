@@ -33,6 +33,8 @@ Document.destroy_all
 
 Webcam.destroy_all
 
+Picture.destroy_all
+
 
 #seed Customers ----------------------------------------------------------------
 

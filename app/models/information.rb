@@ -4,5 +4,5 @@ class Information < ApplicationRecord
 
   belongs_to :unit
   # has_many :documents, dependent: :destroy
-  # belongs_to :document
+  belongs_to :document
 end

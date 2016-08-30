@@ -2,6 +2,7 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h4 class="modal-title"><%= @information.title %></h4>
 </div>
+
 <div class="modal-body">
 
     <div class="row">
@@ -15,7 +16,6 @@
       </div>
 
       <div class="col-xs-12 col-sm-4">
-
         <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
           <div class="thumbnail thumb-modal">
             <%= image_tag( 'pdf.png', class: "img-rounded" ) %>
@@ -30,6 +30,7 @@
 
 
 </div>
+
 <div class="modal-footer">
   <%= link_to "I confirm and accept this message", read_customers_unit_information_path(@unit, @information), :method=>:patch, class: "btn btn-default" %>
 </div>

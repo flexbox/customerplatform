@@ -35,7 +35,7 @@
           <div class="thumbnail">
             <%= image_tag( icons[status], class: "img-rounded" ) %>
             <div class="caption text-center">
-              <h3><%= payment.name.capitalize %></h3>
+              <h3><%= payment.title.capitalize %></h3>
               <p><%= payment.description.capitalize %></p>
               <h6>€ <%=number_with_delimiter(payment.amount)   %></h6>
               <p>Due: <%= payment.due_date.to_formatted_s(:rfc822) %></p>

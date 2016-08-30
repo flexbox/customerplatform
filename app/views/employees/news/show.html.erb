@@ -1,0 +1,19 @@
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    News <%= @news.date %> > Show
+    <hr>
+  </p>
+  <hr>
+</div>
+
+<p>Title: <%= @news.date %></p>
+<p>Description: <%= @news.description %></p>
+<p>Date: <%= @news.date %></p>
+<% unless @news.picture.url.nil? %>
+  <%= image_tag @news.picture.url(:std) %>
+<% end %>
+
+<%= link_to 'Edit', edit_employees_project_news_path %>
+<%= link_to 'Back', employees_project_news_index_path %>

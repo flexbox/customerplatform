@@ -1,48 +1,57 @@
 class Employees::NewsController < Employees::BaseController
-  def index
-    # /employees/projects/:project_id/news(.:format)
 
-    # @phase = Phase.where(project_id: params[:project_id])
+  before_action :set_init, except: [:destroy]
+
+  def index #--------------------------------------------------------
     @news= News.where(phase_id: @phase)
-    # @phase_id = @phase.id
-    # @news = News.find(@phase_id)
-    # @projects = current_employee.projects.all
   end
 
-  def show
-    # /employees/projects/:project_id/news/:id(.:format)
-
-
+  def show #---------------------------------------------------------
+    @news = @phase.news.find(params[:id])
   end
 
-  def new
-    # /employees/projects/:project_id/phases/:phase_id/news/new(.:format)
-    @news = News.new
+  def new #----------------------------------------------------------
+     @news = News.new
   end
 
-  def create
-    # /employees/projects/:project_id/phases/:phase_id/news(.:format)
+  def create #-------------------------------------------------------
     @news = News.new(params_news)
-    @news.save
+    @news.phase_id = @phase.id
+    if @news.save
+      redirect_to employees_project_news_path(@project.id, @news)
+    else
+      render :new
+    end
   end
 
-  def edit
-    # /employees/projects/:project_id/news/:id(.:format)
+  def edit #---------------------------------------------------------
+    @news = @phase.news.find(params[:id])
   end
 
-  def update
-    # /employees/projects/:project_id/news/:id(.:format)
+  def update #-------------------------------------------------------
+    @news = @phase.news.find(params[:id])
+    if @news.update(params_news)
+      redirect_to employees_project_news_path(@project.id, @news)
+    else
+      render :edit
+    end
   end
 
-  def destroy
-    # /employees/projects/:project_id/news/:id(.:format)
+  def destroy #------------------------------------------------------
   end
 
 
-  private
+  private ###########################################################
+
+  def set_init
+    @project = current_employee.projects.find(params[:project_id])
+    @phase = @project.phases.find(get_current_phase_id)
+  end
 
   def params_news
-     params.require(:news).permit(:title, :description, :date)
+    params.fetch(:news, {}).permit(:phase_id, :title,
+                                   :description, :date,
+                                   :picture, :picture_cache)
   end
 end
 

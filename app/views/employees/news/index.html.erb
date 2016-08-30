@@ -1,8 +1,29 @@
+<div>
+  <p>
+    Employees > Projects <%= @project.commercial_name %> >
+    Phases <%= @phase.phase_number %> >
+    News > Index
+    <hr>
+  </p>
+  <hr>
+</div>
 
-<% @news.each do |news| %>
-<h1><%= news.title %></h1>
-<p><%= news.description %></p>
+<% if @news.nil? || @news.empty? %>
+  <p>There's no news for this phase.</p>
+<% else %>
+  <% @news.each do |anews| %>
+    <div class="std_box">
+      <p>
+        <%= anews.title %>
+        <%= link_to "Show", employees_project_news_path(@project.id, anews) %>
+      </p>
+      <p><%= anews.description %></p>
+      <p><%= anews.date %></p>
+    </div>
+  <% end %>
 <% end %>
 
+  <hr>
+  <%= link_to "Add News", new_employees_project_news_path(@project.id) %>
+  <%= link_to "Back", employees_project_phase_path(@project.id, @phase) %>
 
-<%#= @project_id %>

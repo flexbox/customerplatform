@@ -164,6 +164,11 @@
           <% @informations.each do |information| %>
             <%= link_to  customers_unit_information_path(@unit, information), class: "list-group-item padding-item", remote: true do %>
               <%= information.title %>
+              <% if information.read %>
+                <span class="badge badge-success text-right">accepted</span>
+              <% else %>
+                <span class="badge badge-warning text-right">unread</span>
+              <% end %>
             <% end %>
           <% end %>
         </div>

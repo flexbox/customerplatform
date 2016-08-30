@@ -31,8 +31,7 @@
 
 </div>
 <div class="modal-footer">
-  <%#= link_to "Reject", reject_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-danger" %>
-  <%#= link_to "Approve", approve_customers_unit_decision_path(@decision.unit_id, @decision), :method=>:patch, class: "btn btn-default" %>
+  <%= link_to "I confirm and accept this message", read_customers_unit_information_path(@unit, @information), :method=>:patch, class: "btn btn-default" %>
 </div>
 
 

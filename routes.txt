@@ -32,8 +32,6 @@
                                             PUT      /employees/invitation(.:format)                                                    devise/invitations#update
                                             GET      /employees(.:format)                                                               employees/dashboards#show
                         employees_dashboard GET      /employees/dashboard(.:format)                                                     employees/dashboards#show
-         employees_project_phase_news_index POST     /employees/projects/:project_id/phases/:phase_id/news(.:format)                    employees/news#create
-           new_employees_project_phase_news GET      /employees/projects/:project_id/phases/:phase_id/news/new(.:format)                employees/news#new
                    employees_project_phases GET      /employees/projects/:project_id/phases(.:format)                                   employees/phases#index
                                             POST     /employees/projects/:project_id/phases(.:format)                                   employees/phases#create
                 new_employees_project_phase GET      /employees/projects/:project_id/phases/new(.:format)                               employees/phases#new
@@ -43,6 +41,9 @@
                                             PUT      /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#update
                                             DELETE   /employees/projects/:project_id/phases/:id(.:format)                               employees/phases#destroy
                employees_project_news_index GET      /employees/projects/:project_id/news(.:format)                                     employees/news#index
+                                            POST     /employees/projects/:project_id/news(.:format)                                     employees/news#create
+                 new_employees_project_news GET      /employees/projects/:project_id/news/new(.:format)                                 employees/news#new
+                edit_employees_project_news GET      /employees/projects/:project_id/news/:id/edit(.:format)                            employees/news#edit
                      employees_project_news GET      /employees/projects/:project_id/news/:id(.:format)                                 employees/news#show
                                             PATCH    /employees/projects/:project_id/news/:id(.:format)                                 employees/news#update
                                             PUT      /employees/projects/:project_id/news/:id(.:format)                                 employees/news#update
@@ -135,6 +136,14 @@ edit_employees_project_unit_consulting_hour GET      /employees/projects/:projec
                                             PATCH    /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
                                             PUT      /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#update
                                             DELETE   /employees/projects/:project_id/units/:unit_id/payments/:id(.:format)              employees/payments#destroy
+            employees_project_unit_pictures GET      /employees/projects/:project_id/units/:unit_id/pictures(.:format)                  employees/pictures#index
+                                            POST     /employees/projects/:project_id/units/:unit_id/pictures(.:format)                  employees/pictures#create
+         new_employees_project_unit_picture GET      /employees/projects/:project_id/units/:unit_id/pictures/new(.:format)              employees/pictures#new
+        edit_employees_project_unit_picture GET      /employees/projects/:project_id/units/:unit_id/pictures/:id/edit(.:format)         employees/pictures#edit
+             employees_project_unit_picture GET      /employees/projects/:project_id/units/:unit_id/pictures/:id(.:format)              employees/pictures#show
+                                            PATCH    /employees/projects/:project_id/units/:unit_id/pictures/:id(.:format)              employees/pictures#update
+                                            PUT      /employees/projects/:project_id/units/:unit_id/pictures/:id(.:format)              employees/pictures#update
+                                            DELETE   /employees/projects/:project_id/units/:unit_id/pictures/:id(.:format)              employees/pictures#destroy
                     employees_project_units GET      /employees/projects/:project_id/units(.:format)                                    employees/units#index
                                             POST     /employees/projects/:project_id/units(.:format)                                    employees/units#create
                  new_employees_project_unit GET      /employees/projects/:project_id/units/new(.:format)                                employees/units#new
@@ -172,11 +181,17 @@ edit_employees_project_unit_consulting_hour GET      /employees/projects/:projec
                     customers_unit_payments GET      /customers/units/:unit_id/payments(.:format)                                       customers/payments#index
                      customers_unit_payment GET      /customers/units/:unit_id/payments/:id(.:format)                                   customers/payments#show
                    customers_unit_documents GET      /customers/units/:unit_id/documents(.:format)                                      customers/documents#index
+                    customers_unit_pictures GET      /customers/units/:unit_id/pictures(.:format)                                       customers/pictures#index
+                     customers_unit_picture GET      /customers/units/:unit_id/pictures/:id(.:format)                                   customers/pictures#show
                 customers_unit_informations GET      /customers/units/:unit_id/informations(.:format)                                   customers/informations#index
                  customers_unit_information GET      /customers/units/:unit_id/informations/:id(.:format)                               customers/informations#show
                customers_unit_parking_units GET      /customers/units/:unit_id/parking_units(.:format)                                  customers/parking_units#index
                 customers_unit_parking_unit GET      /customers/units/:unit_id/parking_units/:id(.:format)                              customers/parking_units#show
                customers_unit_storage_units GET      /customers/units/:unit_id/storage_units(.:format)                                  customers/storage_units#index
                 customers_unit_storage_unit GET      /customers/units/:unit_id/storage_units/:id(.:format)                              customers/storage_units#show
+            customers_unit_helpdesk_tickets GET      /customers/units/:unit_id/helpdesk_tickets(.:format)                               customers/helpdesk_tickets#index
+                                            POST     /customers/units/:unit_id/helpdesk_tickets(.:format)                               customers/helpdesk_tickets#create
+         new_customers_unit_helpdesk_ticket GET      /customers/units/:unit_id/helpdesk_tickets/new(.:format)                           customers/helpdesk_tickets#new
+             customers_unit_helpdesk_ticket GET      /customers/units/:unit_id/helpdesk_tickets/:id(.:format)                           customers/helpdesk_tickets#show
                             customers_units GET      /customers/units(.:format)                                                         customers/units#index
                              customers_unit GET      /customers/units/:id(.:format)                                                     customers/units#show

@@ -15,6 +15,9 @@ picture
 <%= image_tag @phase.picture.url(:std)%>
 </p>
 <%= link_to "Edit", edit_employees_project_phase_path(@phase.project_id, @phase) %>
+<%= link_to "News", employees_project_news_index_path(@phase.project_id) %>
 <%= link_to "Lots", employees_project_lots_path(@phase.project_id) %>
-
 <%= link_to "Back", employees_project_phases_path %>
+<br>
+<br>
+<br>

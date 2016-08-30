@@ -22,39 +22,21 @@ Rails.application.routes.draw do
       # /projects/:project_id/phases/new + create
       # /projects/:project_id/phases/:id # listing lots
       resources :phases do
-
-        resources :news, only: [:new, :create]
-
-        # /projects/:project_id/phases/:phase_id/lots/new + create + edit/update
-        # resources :lots, only: []
       end
 
-      resources :news, only: [:index, :show, :update, :destroy]
+      resources :news, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
+      end
 
-      # /projects/:project_id/lots/:id # listing buildings + parking lots
       resources :lots, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-
-        # /projects/:project_id/lots/:lot_id/buildings/new + create + edit/update
-        # resources :buildings, only: [:new, :create]
-        # resources :parking_units, only: [:new, :create]
       end
 
-      # /projects/:project_id/buildings/:id # listing units + storage units
       resources :buildings, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-
-        # /projects/:project_id/buildings/:building_id/units/new + create
-        # resources :units, only: [:new, :create]
-        # resources :storage_units, only: [:new, :create]
       end
 
       resources :storage_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       resources :parking_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-
-      # /projects/:project_id/units/:id
       resources :units, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
         resources :consulting_hours
-        # resources :suppliers TODO
-        #  resources :news
         resources :documents
         resources :decisions
         resources :handovers

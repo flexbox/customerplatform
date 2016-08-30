@@ -5,8 +5,10 @@
 
 
 <% @projects.each do |project| %>
-  <p>Commercial name: <%= project.commercial_name %></p>
-  <%= link_to "Show", employees_project_path(project.id) %>
+  <p>
+    Commercial name: <%= project.commercial_name %>
+    <%= link_to "Show", employees_project_path(project.id) %>
+  </p>
 <% end %>
 
 <%= link_to "New Project", new_employees_project_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830081514) do
+ActiveRecord::Schema.define(version: 20160830151125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,11 +89,12 @@ ActiveRecord::Schema.define(version: 20160830081514) do
     t.text     "description"
     t.date     "date"
     t.date     "due_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "status"
     t.integer  "document_id"
     t.string   "kind"
+    t.boolean  "important_read", default: false
     t.index ["supplier_id"], name: "index_decisions_on_supplier_id", using: :btree
     t.index ["unit_id"], name: "index_decisions_on_unit_id", using: :btree
   end
@@ -161,11 +162,12 @@ ActiveRecord::Schema.define(version: 20160830081514) do
     t.string   "title"
     t.text     "description"
     t.date     "date"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "document_id"
     t.text     "customer_remarks"
     t.text     "employee_remarks"
+    t.boolean  "important_read",   default: false
     t.index ["unit_id"], name: "index_handovers_on_unit_id", using: :btree
   end
 
@@ -238,14 +240,15 @@ ActiveRecord::Schema.define(version: 20160830081514) do
 
   create_table "payments", force: :cascade do |t|
     t.integer  "unit_id"
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.integer  "amount"
     t.string   "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.date     "due_date"
     t.integer  "document_id"
+    t.boolean  "important_read", default: false
     t.index ["unit_id"], name: "index_payments_on_unit_id", using: :btree
   end
 
@@ -286,9 +289,10 @@ ActiveRecord::Schema.define(version: 20160830081514) do
     t.string   "title"
     t.text     "description"
     t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "document_id"
+    t.boolean  "important_read", default: false
     t.index ["unit_id"], name: "index_site_visits_on_unit_id", using: :btree
   end
 

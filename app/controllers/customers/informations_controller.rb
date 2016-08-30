@@ -18,7 +18,7 @@ class Customers::InformationsController < Customers::BaseController
 
   def read
     @information = Information.find(params[:id])
-    @information.update(read: true)
+    @information.update!(read: true)
     redirect_to root_path
   end
 

@@ -32,7 +32,9 @@
   <body>
    <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
 
+      <body class="padding_body">
       <%= render 'shared/flash' %>
+
 
     <% end %>
 

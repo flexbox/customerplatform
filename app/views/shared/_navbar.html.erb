@@ -10,7 +10,7 @@
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to t(".dashboard", default: "Dashboard "), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
+    <%= link_to t(".dashboard", default: "Home"), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
 
     <!-- News -->
     <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_news}" %>

@@ -1,66 +1,64 @@
 <% icons = { "pending" => "payment-pending.png", "completed" => "payment-completed.png", "future payment" => "payment-future.png"} %>
 
 <div class="container">
-  <div class="row">
 
-    <div class="col-xs-8">
-      <div class="container">
+ <div class="well">
+  <h3>Balance:</h3>
+   <div class="flex-payment" >
+    <h4>Pending: € <%=number_with_delimiter(@pending)   %></h4>
+    <h4>Completed: € <%=number_with_delimiter(@completed) %> </h4>
+    <h4>Future Payments: € <%=number_with_delimiter(@future_payments) %></h4>
+  </div>
+</div>
+<div class="row">
 
-        <% status = ['pending','completed','future payment'] %>
-        <% title = ['Pending', 'Completed' , 'Future Payment'] %>
+  <div class="col-xs-8">
+    <div class="container">
 
-        <% status.each_with_index do |status, index| %>
+      <% status = ['pending','completed','future payment'] %>
+      <% title = ['Pending', 'Completed' , 'Future Payment'] %>
 
-          <div class="row">
+      <% status.each_with_index do |status, index| %>
 
-            <% if @payments.any? {|d| d.status == status } %>
+      <h3><%= title[index] %></h3>
 
-            <h3><%= title[index] %></h3>
+      <div class="row">
 
-              <% @payments.each do |payment|%>
+        <% if @payments.any? {|d| d.status == status } %>
 
-                <% if payment.status == status %>
+        <% @payments.each do |payment|%>
 
-                  <div class="col-xs-12 col-sm-3">
+        <% if payment.status == status %>
 
-                    <div class="thumbnail">
-                      <%= image_tag( icons[status], class: "img-rounded" ) %>
-                      <div class="caption text-center">
-                        <h3><%= payment.name %></h3>
-                        <p><%= payment.description %></p>
-                        <h1>€ <%= payment.amount %></h1>
-                        <p>Due: <%= payment.due_date.to_formatted_s(:rfc822) %></p>
-                        <% @document = Document.find(payment.document_id) %>
-                        <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
-                          <% pdf = cl_image_path(@document.file, resource_type: "raw", target: "_blank") %>
-                          <%= link_to pdf, target: "_blank" do %>
-                            <button class="btn btn-normal">
-                            Download invoice
-                            </button>
-                          <% end %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
+        <div class="col-xs-12 col-sm-3">
+
+          <div class="thumbnail">
+            <%= image_tag( icons[status], class: "img-rounded" ) %>
+            <div class="caption text-center">
+              <h3><%= payment.name.capitalize %></h3>
+              <p><%= payment.description.capitalize %></p>
+              <h6>€ <%=number_with_delimiter(payment.amount)   %></h6>
+              <p>Due: <%= payment.due_date.to_formatted_s(:rfc822) %></p>
+              <% @document = Document.find(payment.document_id) %>
+              <% unless @document.nil? || @document.file.nil? || @document.file == '' %>
+              <% pdf = cl_image_path(@document.file, resource_type: "raw", target: "_blank") %>
+              <%= link_to pdf, target: "_blank" do %>
+              <button class="btn btn-normal">
+                Download invoice
+              </button>
               <% end %>
-            <% end %>
+              <% end %>
+            </div>
           </div>
+        </div>
+        <% end %>
+        <% end %>
         <% end %>
       </div>
+      <% end %>
     </div>
-
-
-    <div class="col-xs-4">
-      <div class="well">
-      <h3>Balance:</h3>
-        <h4>Pending: € <%= @pending %></h4>
-        <h4>Completed: € <%= @completed %></h4>
-        <h4>Future Payments: € <%= @future_payments %></h4>
-        </div>
-    </div>
-
   </div>
+</div>
 </div>
 
 

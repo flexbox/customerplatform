@@ -11,6 +11,3 @@ setTimeout(
   {
     $('.alert').slideUp(500);
   }, 2500);
-
-
-

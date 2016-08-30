@@ -677,3 +677,49 @@ helpdesk_ticket4 = HelpdeskTicket.create!(
 #   helpdesk_ticket_id: helpdesk_ticket1.id,
 #   employee_id: employee1.id,
 #   )
+
+
+#seed Pictures Comments --------------------------------------------------------
+
+picture1 = Picture.create!(
+  title: "Photo 1",
+  description: "Front",
+  file: "photo1.jpg",
+  unit_id: unit1.id,
+  )
+
+picture2 = Picture.create!(
+  title: "Photo 2",
+  description: "Left",
+  file: "photo2.jpg",
+  unit_id: unit1.id,
+  )
+
+picture3 = Picture.create!(
+  title: "Photo 3",
+  description: "Right",
+  file: "photo3.jpg",
+  unit_id: unit1.id,
+  )
+
+picture4 = Picture.create!(
+  title: "Photo 4",
+  description: "Back",
+  file: "photo4.jpg",
+  unit_id: unit1.id,
+  )
+
+picture5 = Picture.create!(
+  title: "Photo 5",
+  description: "Top",
+  file: "photo5.jpg",
+  unit_id: unit2.id,
+  )
+
+picture6 = Picture.create!(
+  title: "Photo 6",
+  description: "Bottom",
+  file: "photo6.jpg",
+  unit_id: unit2.id,
+  )
+

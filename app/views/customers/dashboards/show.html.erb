@@ -152,7 +152,9 @@
           <p class="line middle"></p>
           <p class="list-group-item"><i class="fa fa-newspaper-o" aria-hidden="true"></i><strong> NEWS</strong></p>
           <% @news.each do |news_item| %>
-          <a href='<%= link_to  customers_unit_news_index_path(@unit)%>' class="list-group-item padding-item"><%= news_item.title %></a>
+            <%= link_to  customers_unit_news_path(@unit, news_item), class: "list-group-item padding-item", remote: true do %>
+              <%= news_item.title %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -191,6 +193,16 @@
 
 <!-- Modal Information check-->
 <div class="modal fade" id="informationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal News check-->
+<div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 

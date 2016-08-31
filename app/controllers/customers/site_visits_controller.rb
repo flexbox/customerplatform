@@ -17,6 +17,9 @@ class Customers::SiteVisitsController < Customers::BaseController
         flash[:alert] = "There can only be two handovers."
       end
     end
+
+    @longitude_project = @project.longitude
+    @latitude_project = @project.latitude
   end
 
 

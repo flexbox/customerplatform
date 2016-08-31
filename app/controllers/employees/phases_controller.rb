@@ -23,6 +23,10 @@ class Employees::PhasesController < Employees::BaseController
   def new #----------------------------------------------------------
     # @project = current_employee.projects.find(params[:project_id])
     @phase = Phase.new
+    respond_to do |format|
+      format.html { redirect_to new_employees_project_lot_path(@project.id) }
+      format.js
+    end
   end
 
   def create #-------------------------------------------------------

@@ -13,8 +13,10 @@
               <div class="caption text-center">
                 <h3><%= project.internal_name %></h3>
                 <p><%= project.description %></p>
-                <p><%= link_to "Show Project",  employees_project_phases_path(project), class: "btn btn-normal" %> </p>
-
+                <p>
+                  <%= link_to "Phases",  employees_project_phases_path(project), class: "btn btn-normal" %>
+                  <%= link_to "Details",  employees_project_path(project), class: "btn btn-normal" %>
+                </p>
               </div>
             </div>
 

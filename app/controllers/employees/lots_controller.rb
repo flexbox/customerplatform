@@ -13,6 +13,10 @@ class Employees::LotsController < Employees::BaseController
 
   def new #----------------------------------------------------------
     @lot = Lot.new
+    respond_to do |format|
+      format.html { redirect_to employees_project_lots_path }
+      format.js
+    end
   end
 
   def create #--------------------------------------------------------

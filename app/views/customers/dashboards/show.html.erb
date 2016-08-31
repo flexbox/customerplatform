@@ -12,37 +12,31 @@
         <!-- Timeline col -->
         <div class="col-sm-8">
          <p class="line large"></p>
-         <div class="well" style="height: 254px;">
+         <div class="well">
 
           <p class="list-group-item"><i class="fa fa-calendar padd-icon" aria-hidden="true"></i><strong> TIMELINE</strong></p>
-          <ul class="timeline-hor timeline-margin" id="timeline-dashboard">
-            <% @timeline.each do |payment| %>
-            <% if payment.status == "future payment" %>
-            <li class="li">
-              <div class="timestamp">
+          <div class="progress-bar-custom">
+            <div class="dot dot-active" data-toggle="tooltip" title="Start of project!"></div>
+            <% @timeline.each do  |item| %>
 
-                <span class="date"><%= payment.due_date %></span>
-              </div>
-              <div class="status">
-                <h4> <%= payment.status %> </h4>
-              </div>
-            </li>
+            <!-- Generated markup by the plugin -->
+            <div class="tooltip bottom" role="tooltip">
+              <div class="tooltip-arrow"></div>
+              <div class="tooltip-inner">
 
+              </div>
+            </div>
+
+            <% if item.status == "future payment" %>
+            <div class="bar"></div>
+            <div class="dot" data-toggle="tooltip" title="<%= item.description %>"></div>
             <% else %>
-
-            <li class="li complete">
-              <div class="timestamp">
-
-                <span class="date"><%= payment.due_date %></span>
-              </div>
-              <div class="status">
-                <h4> <%= payment.status %> </h4>
-              </div>
-            </li>
-
+            <div class="bar bar-active"></div>
+            <div class="dot dot-active" data-toggle="tooltip" title="<%= item.description %>"></div>
             <% end %>
             <% end %>
-          </ul>
+          </div>
+
         </div>
       </div>
 

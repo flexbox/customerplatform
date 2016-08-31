@@ -1,0 +1,29 @@
+<% icons = { open: "open.png", closed: "closed.png" } %>
+
+
+<div class="container">
+
+  <% if @tickets.any? {|d| d.status == "open" } %>
+    <div class="row">
+      <h3> Your Open Tickets</h3>
+      <% @tickets.each do |ticket| %>
+        <% if ticket.status == "open" %>
+          <div class="col-xs-12 col-sm-4">
+
+            <div class="thumbnail">
+              <%= image_tag( icons[ticket.status.to_sym], class: "img-rounded" ) %>
+              <div class="caption text-center">
+                <h3><%= ticket.title %></h3>
+                <p><%= ticket.description %></p>
+                <%= link_to "Details", employees_helpdesk_ticket_path(ticket), class: "btn btn-normal" %>
+
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

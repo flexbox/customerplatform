@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :employees do
     root to: 'dashboards#show'
     resource :dashboard, only: [:show]
+    resources :helpdesk_tickets
 
     ## !! MFR 30-Aug-2016
     # routes added for consulting hours because it's related

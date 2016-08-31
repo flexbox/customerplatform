@@ -75,8 +75,14 @@ $label-default-font-color:      $darkgray-dark !default;
   .badge-pending {
     border-color: red;
     background-color: red;
-
   }
+
+ .label-information,
+  .badge-information {
+    border-color: $bluerevive;
+    background-color: $bluerevive;
+  }
+
 
 }
 

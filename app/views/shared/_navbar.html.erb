@@ -10,7 +10,9 @@
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to t(".dashboard", default: "Home"), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
+
+
+    <%= link_to t(".dashboard", default: '<i class="fa fa-home" aria-hidden="true"></i> Home'.html_safe ), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
 
     <!-- Decisions -->
     <%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_decisions}" %>

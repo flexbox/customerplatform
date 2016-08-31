@@ -40,12 +40,14 @@ class Customers::HelpdeskTicketsController < Customers::BaseController
     end
   end
 
-end
-
-
-
 private
 
   def params_helpdesk_ticket
     params.fetch(:helpdesk_ticket, {}).permit(:title, :description)
   end
+
+
+end
+
+
+

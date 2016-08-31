@@ -6,8 +6,9 @@
 <div class="container">
 
   <% if @decisions.any? {|d| d.status == "pending" } %>
+  <h3> Pending Decisions</h3>
     <div class="row">
-      <h3> Pending Decisions</h3>
+
       <% @decisions.each do |decision| %>
         <% if decision.status == "pending" %>
           <div class="col-xs-12 col-sm-4">
@@ -16,7 +17,7 @@
               <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
               <div class="caption text-center">
                 <h4><%= decision.title.capitalize %></h4>
-                <span class="badge badge-primary card-show label-position"><%= decision.status %></span>
+                <span class="badge badge-pending card-show label-position"><%= decision.status.capitalize %></span>
                 <p><strong>Due: <%= decision.due_date.to_formatted_s(:rfc822) %></strong></p>
                 <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button"  %> </p>
               </div>
@@ -29,8 +30,9 @@
   <% end %>
 
   <% if @decisions.any? {|d| d.status == "approved" } %>
+  <h3> Approved Decisions</h3>
     <div class="row">
-      <h3> Approved Decisions</h3>
+
       <% @decisions.each do |decision| %>
         <% if decision.status == "approved" %>
           <div class="col-xs-12 col-sm-3">
@@ -39,7 +41,7 @@
               <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
               <div class="caption text-center">
                 <h4><%= decision.title.capitalize %></h4>
-                <span class="badge badge-success card-show"><%= decision.status %></span>
+                <span class="badge badge-success card-show label-position"><%= decision.status.capitalize %></span>
                 <p><strong>Approved: <%= decision.updated_at.to_formatted_s(:rfc822) %></strong></p>
                 <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button" %> </p>
               </div>
@@ -51,8 +53,9 @@
   <% end %>
 
   <% if @decisions.any? {|d| d.status == "rejected" } %>
+        <h3> Rejected Decisions</h3>
     <div class="row">
-      <h3> Rejected Decisions</h3>
+
       <% @decisions.each do |decision| %>
         <% if decision.status == "rejected" %>
           <div class="col-xs-12 col-sm-3">
@@ -60,7 +63,7 @@
                 <%= image_tag( icons[decision.kind.to_sym], class: "img-rounded" ) %>
                 <div class="caption text-center">
                   <h4><%= decision.title.capitalize %></h4>
-                  <span class="badge badge-danger card-show"><%= decision.status %></span>
+                  <span class="badge badge-danger card-show label-position"><%= decision.status.capitalize %></span>
                   <p><strong>Rejected: <%= decision.updated_at.to_formatted_s(:rfc822) %></strong></p>
                   <p><%= link_to "Show", customers_unit_decision_path(@unit, decision), remote:true, class: "btn btn-normal", role: "button" %></p>
                 </div>

@@ -72,6 +72,12 @@ $label-default-font-color:      $darkgray-dark !default;
     background-color: $greenrevive;
   }
 
+  .badge-pending {
+    border-color: red;
+    background-color: red;
+
+  }
+
 }
 
 

@@ -12,22 +12,21 @@
 
     <%= link_to t(".dashboard", default: "Home"), customers_dashboard_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
 
-    <!-- News -->
-    <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_news}" %>
-
     <!-- Decisions -->
     <%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_decisions}" %>
 
     <!-- Site Visits -->
     <%= link_to t(".site visits", default: "Events"), customers_unit_site_visits_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_sitevisits}" %>
 
-
-
     <!-- Payments -->
     <%= link_to t(".payments", default: "Payments"), customers_unit_payments_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_payments}" %>
 
     <!-- Documents -->
     <%= link_to t(".documents", default: "Documents"), customers_unit_documents_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_documents}" %>
+
+
+    <!-- News -->
+    <%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit), class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_news}" %>
   </div>
 
 
@@ -35,10 +34,16 @@
   <div class="avatar-navbar-padding">
 
     <div class="navbar-wagon-right">
-      <div class="name-navbar">  <%= current_customer.first_name.capitalize %> </div>
 
-      <div class="dropdown">
+
+
+      <div class="dropdown dropdown-both-elements">
+
+         <div class="name-navbar dropdown-toggle" id= "navbar-wagon-menu" data-toggle="dropdown">  <%= current_customer.first_name.capitalize %> </div>
+
+
         <%= cl_image_tag current_customer.picture, class: "avatar-navbar avatar-navbar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
 

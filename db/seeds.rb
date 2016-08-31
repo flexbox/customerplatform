@@ -19,6 +19,8 @@ EmployeeProject.destroy_all
 
 Document.destroy_all
 
+Picture.destroy_all
+
 Unit.destroy_all
 Building.destroy_all
 Lot.destroy_all
@@ -33,7 +35,6 @@ Document.destroy_all
 
 Webcam.destroy_all
 
-Picture.destroy_all
 
 
 
@@ -382,7 +383,7 @@ decision2 = Decision.create!(
 )
 
 decision3 = Decision.create!(
-  unit_id: unit2.id,
+  unit_id: unit1.id,
   supplier_id: supplier1.id,
   title: "meeting with first supplier",
   description: "urgent",
@@ -393,8 +394,8 @@ decision3 = Decision.create!(
   kind: "construction"
 )
 
-decision3 = Decision.create!(
-  unit_id: unit2.id,
+decision4 = Decision.create!(
+  unit_id: unit1.id,
   supplier_id: supplier2.id,
   title: "meeting with second supplier",
   description: "urgent",
@@ -405,6 +406,41 @@ decision3 = Decision.create!(
   kind: "flooring"
 )
 
+decision5 = Decision.create!(
+  unit_id: unit1.id,
+  supplier_id: supplier2.id,
+  title: "meeting with third supplier",
+  description: "not urgent",
+  date: Date.new(2016,8,24),
+  due_date: Date.new(2016,9,26),
+  status: "pending",
+  document_id: document4.id,
+  kind: "electrical"
+)
+
+decision5 = Decision.create!(
+  unit_id: unit1.id,
+  supplier_id: supplier2.id,
+  title: "meeting with third supplier",
+  description: "not urgent",
+  date: Date.new(2016,8,24),
+  due_date: Date.new(2016,9,26),
+  status: "pending",
+  document_id: document4.id,
+  kind: "door"
+)
+
+decision5 = Decision.create!(
+  unit_id: unit1.id,
+  supplier_id: supplier2.id,
+  title: "meeting with third supplier",
+  description: "not urgent",
+  date: Date.new(2016,8,24),
+  due_date: Date.new(2016,9,26),
+  status: "pending",
+  document_id: document4.id,
+  kind: "technical"
+)
 
 #seed Consulting hours----------------------------------------------------------
 

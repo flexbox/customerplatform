@@ -38,6 +38,12 @@ class Employees::LotsController < Employees::BaseController
     end
   end
 
+
+  def save_phase(phase)
+    set_current_phase_id(phase)
+  end
+  helper_method :save_phase
+
 private ##################################################################
 
   def set_init

@@ -20,6 +20,11 @@ class Customers::SiteVisitsController < Customers::BaseController
 
     @longitude_project = @project.longitude
     @latitude_project = @project.latitude
+
+    @unit
+
+    @longitude_customer = @unit.customer.longitude
+    @latitude_customer = @unit.customer.latitude
   end
 
 

@@ -1,4 +1,4 @@
-<div class="navbar-top-employees">
+<div class="navbar-top-employees js-navbar navbar-wagon-fixed">
 
   <!-- Logo -->
   <div>
@@ -9,6 +9,8 @@
 
   <!-- Middle Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <%= link_to t(".dashboard", default: "Dashboard"), employees_dashboard_path, class: "navbar-wagon-item navbar-wagon-link #{"active" if @current_page_dashboard}" %>
 
   <% unless @project.nil? || @unit.nil? %>
 

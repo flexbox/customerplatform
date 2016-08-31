@@ -1,12 +1,15 @@
 <div>
   <p>
-    Employees > Projects <%= @project.commercial_name %> >
-    Phases <%= @phase.phase_number %> >
-    Lots <%= @lot.lot_number %> >
-    Buildings > Index
-    <hr>
+    <%= link_to "Dashboard", employees_dashboard_path %> >
+    <%= link_to "Projects", employees_projects_path %> >
+    <%= link_to @project.commercial_name, employees_project_path(@project) %> >
+    <%= link_to "Phases", employees_project_phases_path(@project) %> >
+    <%= link_to @phase.phase_number, employees_project_phase_path(@project.id, @phase.id) %> >
+    <%= link_to "Lots", employees_project_lots_path(@phase.project_id) %> >
+    <%= link_to @lot.lot_number, employees_project_lot_path(@project.id, @lot) %> >
+    <%= link_to "Buildings", employees_project_buildings_path(@phase.project_id) %> >
+      Index
   </p>
-  <hr>
 </div>
 
 <div class="container">

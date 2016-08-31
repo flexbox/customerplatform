@@ -1,9 +1,9 @@
 <!-- Title for page -->
 <% content_for :title, "Log in" %>
 <% images = ["bg_01_blur","bg_02_blur","bg_03_blur","bg_04_blur","bg_05_blur"] %>
+<% images_without_blur = ["bg_01","bg_02","bg_03","bg_04","bg_05"] %>
 
-
-<div class="backgroundcolorwrapper" style="background-image: url(<%= image_path "#{images.sample}.jpg" %>);">
+<div class="backgroundcolorwrapper" style="background-image: url(<%= image_path "#{images_without_blur.sample}.jpg" %>);">
 
   <div class="centerscreen">
     <div class="container">

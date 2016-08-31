@@ -2,27 +2,32 @@
   <p>Employees > Projects > New</p>
   <hr>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-xs-offset-1 col-xs-offset-right-1">
 
-<%= simple_form_for(@project, url: employees_projects_path ) do |f| %>
+      <%= simple_form_for(@project, url: employees_projects_path ) do |f| %>
 
-  <%= f.error_notification %>
+        <%= f.error_notification %>
 
- <div class="form-inputs">
-    <%= f.input :commercial_name %>
-    <%= f.input :internal_name %>
-    <%= f.input :description %>
-    <%= f.input :plotsize %>
-    <%= f.input :longitude %>
-    <%= f.input :latitude %>
-   </div>
+        <div class="form-inputs">
+          <%= f.input :commercial_name %>
+          <%= f.input :internal_name %>
+          <%= f.input :description %>
+          <%= f.input :plotsize %>
+          <%= f.input :longitude %>
+          <%= f.input :latitude %>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <div class="form-actions  ">
+          <%= f.button :submit %>
+          <%= link_to 'Cancel', employees_projects_path, class: "btn btn-danger" %>
+
+        </div>
+
+      <% end %>
+
+
+    </div>
   </div>
-
-<% end %>
-
-<%= link_to 'Back', employees_projects_path %>
-<br>
-<br>
-<br>
+</div>

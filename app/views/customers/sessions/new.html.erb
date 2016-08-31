@@ -1,9 +1,9 @@
 <!-- Title for page -->
 <% content_for :title, "Log in" %>
+<% images = ["bg_01_blur","bg_02_blur","bg_03_blur","bg_04_blur","bg_05_blur"] %>
 
-<% @revivecolors = ["#CFDE00", "#ECC85C", "#F6A9CB", "#BBADCD", "#00B295", "#00AEEF", "#FF9E16"] %>
 
-<div class="backgroundcolorwrapper">
+<div class="backgroundcolorwrapper" style="background-image: url(<%= image_path "#{images.sample}.jpg" %>);">
 
   <div class="centerscreen">
     <div class="container">

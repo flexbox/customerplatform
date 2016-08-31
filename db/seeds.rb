@@ -51,7 +51,7 @@ customer1 = Customer.create!(
   mobile_number: "+337687678676",
   password: "123456",
   signing_date: Date.new(2016,8,20),
-  picture: "hju5b3kbn5habwvx3exy.jpg",
+  picture: File.open(File.join(Rails.root, 'app/assets/images/bathroom.png')),
 )
 puts "this should show something: #{customer1.picture} <- right there"
 puts "this should show something: #{customer1.email} <- right there"

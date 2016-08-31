@@ -65,46 +65,42 @@
 
 
 
-<div id="map" class="map-position" ; "></div>
+<div id="directions" class="map-position" ; "></div>
+
 
 
 
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
-$(document).on('ready', function() {
-var handler = Gmaps.build('Google');
 
 
-handler.buildMap( {provider: { scrollwheel: false, zoomControl: false, styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}] }, internal:{ id: 'map' }},
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
 
-function()
-  {
-
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-
-
-
-    if (markers.length == 0) {
-
-
-    handler.getMap().setZoom(2);
-
-
-      } else if (markers.length == 1) {
-
-    handler.getMap().setZoom(14);
-  }
-
+function calcRoute() {
+  var origin      = new google.maps.LatLng(<%= @latitude_customer %>, <%= @longitude_customer %> );
+  var destination = new google.maps.LatLng(<%= @latitude_project %>, <%= @longitude_project %>);
+  var request = {
+      origin:      origin,
+      destination: destination,
+      travelMode:  google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
   });
+}
+
+calcRoute();
+
+var handler = Gmaps.build('Google');
+handler.buildMap({ provider: { scrollwheel: false, zoomControl: false, styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}] }, internal: {id: 'directions'}}, function(){
+  directionsDisplay.setMap(handler.getMap());
 });
+
 <% end %>
 <% end %>
-
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="handoverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -114,7 +110,5 @@ function()
     </div>
   </div>
 </div>
-
-
 
 

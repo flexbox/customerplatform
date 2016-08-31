@@ -10,6 +10,9 @@ class Customer < ApplicationRecord
   validates :mobile_number, uniqueness: true
   validates :email, uniqueness: { case_sensitive: false }
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   has_many :consulting_hours, dependent: :destroy
   has_many :employees, through: :consulting_hours
 
@@ -20,5 +23,7 @@ class Customer < ApplicationRecord
   has_many :units, dependent: :nullify
 
 
-
 end
+
+
+

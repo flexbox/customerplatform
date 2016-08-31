@@ -79,12 +79,12 @@
 
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to t(".dashboard", default: "Dashboard "), customers_dashboard_path(@unit) %></li>
-        <li><%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit) %></li>
+        <li><%= link_to t(".dashboard", default: "Home"), customers_dashboard_path(@unit) %></li>
         <li><%= link_to t(".decisions", default: "Decisions"), customers_unit_decisions_path(@unit) %></li>
         <li><%= link_to t(".site visits", default: "Events"), customers_unit_site_visits_path(@unit) %></li>
         <li><%= link_to t(".payments", default: "Payments"), customers_unit_payments_path(@unit) %></li>
         <li><%= link_to t(".documents", default: "Documents"), customers_unit_documents_path(@unit) %></li>
+        <li><%= link_to t(".news", default: "News"), customers_unit_news_index_path(@unit) %></li>
 
       </ul>
     </div>

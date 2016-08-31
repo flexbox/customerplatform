@@ -11,3 +11,7 @@ setTimeout(
   {
     $('.alert').slideUp(500);
   }, 2500);
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

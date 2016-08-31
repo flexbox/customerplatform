@@ -15,6 +15,14 @@ Rails.application.routes.draw do
     root to: 'dashboards#show'
     resource :dashboard, only: [:show]
 
+    ## !! MFR 30-Aug-2016
+    # routes added for consulting hours because it's related
+    # to customer
+    # /employees/customers/:customer_id/consulting_hours...
+    resources :customers, only: [:index, :show] do |variable|
+      resources :consulting_hours
+    end
+    ## !!
 
     # /projects (bla)
     # /projects/:id # listing the phases
@@ -36,7 +44,7 @@ Rails.application.routes.draw do
       resources :storage_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       resources :parking_units, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       resources :units, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-        resources :consulting_hours
+        #resources :consulting_hours
         resources :documents
         resources :decisions
         resources :handovers

@@ -11,7 +11,7 @@
 
   <div class="row">
     <h3>
-      Phases <%= link_to "New Phase", new_employees_project_phase_path , class: "btn btn-warning"%>
+      Phases <%= link_to "New Phase", new_employees_project_phase_path, class: "btn btn-warning"%>
     </h3>
       <% if @phases.nil? || @phases.empty? %>
         <p>There is no phase for this project.</p>
@@ -22,7 +22,8 @@
             <div class="thumbnail">
               <div class="caption text-center">
                 <h3>Phase number <%= phase.phase_number %></h3>
-                <p><%= phase.description %></p>
+                <% save_phase(phase) %>
+                <p><%= link_to 'Lots index', employees_project_lots_path(@project.id), class: "btn btn-normal"%></p>
               </div>
             </div>
 

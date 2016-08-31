@@ -8,6 +8,41 @@
   <hr>
 </div>
 
+<div class="container">
+
+  <div class="row">
+    <h3>
+      Lots <%= link_to "New lot", new_employees_project_lot_path(@project.id, @phase) , class: "btn btn-warning"%>
+    </h3>
+      <% if @lots.nil? || @lots.empty? %>
+        <p>There is no phase for this project.</p>
+      <% else %>
+        <% @lots.each do |lot| %>
+          <div class="col-xs-12 col-sm-4">
+          <%  %>
+            <div class="thumbnail">
+              <div class="caption text-center">
+                <h3>Lot number <%= lot.lot_number %></h3>
+                <p>Lot description: <%= lot.description %></p>
+                <% save_phase(lot.phase) %>
+                <%= link_to "Buildings", employees_project_buildings_path(@project.id), class: "btn btn-normal"%>
+                <%= link_to "Parking units", employees_project_parking_units_path, class: "btn btn-normal" %>
+                <%= link_to "Details", employees_project_lot_path(@project.id, lot), class: "btn btn-normal" %>
+              </div>
+            </div>
+
+          </div>
+      <% end %>
+
+    </div>
+  <% end %>
+
+
+
+</div>
+
+
+
 <% if @lots.nil? || @lots.empty? %>
   <p>There is no lot for this phase.</p>
 <% else %>

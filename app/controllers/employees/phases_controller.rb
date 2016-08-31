@@ -9,6 +9,7 @@ class Employees::PhasesController < Employees::BaseController
   def index #--------------------------------------------------------
     # @project = current_employee.projects.find(params[:project_id])
     @phases = @project.phases
+
   end
 
   def show #---------------------------------------------------------
@@ -49,6 +50,11 @@ class Employees::PhasesController < Employees::BaseController
       render :edit
     end
   end
+
+  def save_phase(phase)
+    set_current_phase_id(phase)
+  end
+  helper_method :save_phase
 
 private ##################################################################
 

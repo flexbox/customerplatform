@@ -19,6 +19,10 @@ class Employees::ProjectsController < Employees::BaseController
 
   def new #--------------------------------------------------------
     @project = Project.new
+    respond_to do |format|
+      format.html { redirect_to employees_projects_path }
+      format.js
+    end
   end
 
   def create #-----------------------------------------------------

@@ -29,11 +29,23 @@
 
   </head>
 
-  <body>
+
+
+
    <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
 
-      <body class="padding_body">
+      <body class="padding_body"></body>
       <%= render 'shared/flash' %>
+         <% if current_employee %>
+        <%= render 'shared/navbar_employee' %>
+        <% end %>
+
+        <% if current_customer %>
+          <%= render 'shared/navbar' %>
+          <% end %>
+      <% else %>
+
+      <body>
 
 
     <% end %>

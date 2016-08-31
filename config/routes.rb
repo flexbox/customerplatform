@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 #devise routes -----------------------------------------------------------------
 
   devise_for :customers,
-    controllers: { invitations: "customers/invitations" }
+    controllers: { invitations: "customers/invitations"}
 
   devise_for :employees,
-    controllers: { omniauth_callbacks: "employees/omniauth_callbacks" }
+    controllers: { omniauth_callbacks: "employees/omniauth_callbacks"}
+
+
 
 #employee routes --------------------------------------------------------------
 
@@ -96,3 +98,5 @@ Rails.application.routes.draw do
     end
   end
 end
+
+

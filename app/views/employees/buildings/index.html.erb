@@ -1,15 +1,16 @@
 <div>
-  <p>
-    <%= link_to "Dashboard", employees_dashboard_path %> >
-    <%= link_to "Projects", employees_projects_path %> >
-    <%= link_to @project.commercial_name, employees_project_path(@project) %> >
-    <%= link_to "Phases", employees_project_phases_path(@project) %> >
-    <%= link_to @phase.phase_number, employees_project_phase_path(@project.id, @phase.id) %> >
-    <%= link_to "Lots", employees_project_lots_path(@phase.project_id) %> >
-    <%= link_to @lot.lot_number, employees_project_lot_path(@project.id, @lot) %> >
-    <%= link_to "Buildings", employees_project_buildings_path(@phase.project_id) %> >
-      Index
-  </p>
+
+    <ol class="breadcrumb">
+    <li><%= link_to "Dashboard", employees_dashboard_path %></li>
+    <li><%= link_to "Projects", employees_projects_path %></li>
+    <li><%= link_to @project.commercial_name, employees_project_path(@project) %></li>
+    <li><%= link_to "Phases", employees_project_phases_path(@project) %></li>
+    <li><%= link_to @phase.phase_number, employees_project_phase_path(@project.id, @phase.id) %></li>
+    <li><%= link_to "Lots", employees_project_lots_path(@phase.project_id) %></li>
+    <li><%= link_to @lot.lot_number, employees_project_lot_path(@project.id, @lot) %></li>
+    <li><%= link_to "Buildings", employees_project_buildings_path(@phase.project_id) %></li>
+    </ol>
+
 </div>
 
 <div class="container">
